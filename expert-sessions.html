@@ -1153,9 +1153,2261 @@ function updateStatistics(){
    INITIALIZE
 ========================= */
 
-displaySessions(sessions);
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Expert Sessions & Academic Events | Dr. Umakant D. Butkar</title>
+
+<meta name="description"
+content="Expert sessions, invited lectures, workshops, seminars, conferences,
+keynote addresses, webinars and academic events of Dr. Umakant D. Butkar.">
+
+<style>
+
+:root{
+    --navy:#071426;
+    --navy2:#0c2744;
+    --blue:#1769e0;
+    --cyan:#20bfdc;
+    --white:#ffffff;
+    --bg:#f5f8fc;
+    --text:#152033;
+    --muted:#64748b;
+    --border:#e2e8f0;
+    --success:#059669;
+    --orange:#ea580c;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+    background:var(--bg);
+    color:var(--text);
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:92%;
+    max-width:1200px;
+    margin:auto;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    background:rgba(7,20,38,.96);
+
+    backdrop-filter:blur(15px);
+
+    border-bottom:
+    1px solid
+    rgba(255,255,255,.08);
+}
+
+.nav{
+    min-height:68px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    color:#fff;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+    font-size:15px;
+}
+
+.logo span{
+    color:var(--cyan);
+}
+
+.menu{
+    display:flex;
+    gap:25px;
+
+    list-style:none;
+}
+
+.menu a{
+    color:#cbd5e1;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:var(--cyan);
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    padding:
+    100px
+    0
+    125px;
+
+    color:#fff;
+
+    background:
+
+    radial-gradient(
+        circle at 80% 15%,
+        rgba(32,191,220,.25),
+        transparent 28%
+    ),
+
+    radial-gradient(
+        circle at 10% 80%,
+        rgba(23,105,224,.25),
+        transparent 32%
+    ),
+
+    linear-gradient(
+        135deg,
+        var(--navy),
+        var(--navy2)
+    );
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero-label{
+
+    color:#67e8f9;
+
+    font-size:10px;
+
+    font-weight:800;
+
+    letter-spacing:3px;
+
+    margin-bottom:20px;
+}
+
+.hero h1{
+
+    font-size:
+    clamp(
+        40px,
+        6vw,
+        72px
+    );
+
+    line-height:1.03;
+
+    letter-spacing:-3px;
+
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:#67e8f9;
+}
+
+.hero p{
+
+    max-width:780px;
+
+    color:#b7c7d9;
+
+    font-size:14px;
+
+    line-height:1.9;
+}
+
+
+/* =====================================================
+   STATISTICS
+===================================================== */
+
+.stats{
+    margin-top:-55px;
+
+    position:relative;
+
+    z-index:10;
+}
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(5,1fr);
+
+    background:#fff;
+
+    border:
+    1px solid
+    var(--border);
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 20px 55px
+    rgba(15,23,42,.12);
+}
+
+.stat{
+
+    padding:25px 12px;
+
+    text-align:center;
+
+    border-right:
+    1px solid
+    var(--border);
+}
+
+.stat:last-child{
+    border-right:0;
+}
+
+.stat-number{
+
+    color:var(--blue);
+
+    font-size:28px;
+
+    font-weight:800;
+
+    display:block;
+
+    margin-bottom:5px;
+}
+
+.stat-label{
+
+    color:var(--muted);
+
+    font-size:8px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+}
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+section{
+    padding:85px 0;
+}
+
+.section-label{
+
+    color:var(--blue);
+
+    font-family:
+    monospace;
+
+    font-size:10px;
+
+    font-weight:800;
+
+    letter-spacing:3px;
+
+    margin-bottom:10px;
+}
+
+.section-title{
+
+    font-size:38px;
+
+    letter-spacing:-1px;
+
+    margin-bottom:15px;
+}
+
+.section-description{
+
+    max-width:780px;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.8;
+}
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.search-box{
+
+    margin-top:35px;
+
+    display:flex;
+
+    gap:10px;
+}
+
+.search-box input{
+
+    flex:1;
+
+    padding:
+    14px
+    18px;
+
+    border:
+    1px solid
+    var(--border);
+
+    border-radius:10px;
+
+    outline:none;
+
+    background:#fff;
+
+    font-size:12px;
+}
+
+.search-box input:focus{
+
+    border-color:
+    var(--blue);
+
+    box-shadow:
+    0 0 0 3px
+    rgba(23,105,224,.08);
+}
+
+
+/* =====================================================
+   FILTERS
+===================================================== */
+
+.filters{
+
+    margin:
+    20px
+    0
+    35px;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:9px;
+}
+
+.filter{
+
+    padding:
+    9px
+    15px;
+
+    border:
+    1px solid
+    var(--border);
+
+    background:#fff;
+
+    color:#475569;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:10px;
+
+    font-weight:800;
+
+    transition:.3s;
+}
+
+.filter:hover,
+.filter.active{
+
+    background:
+    var(--blue);
+
+    border-color:
+    var(--blue);
+
+    color:#fff;
+}
+
+
+/* =====================================================
+   EVENTS GRID
+===================================================== */
+
+.events-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+}
+
+.event-card{
+
+    background:#fff;
+
+    border:
+    1px solid
+    var(--border);
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    transition:.3s;
+}
+
+.event-card:hover{
+
+    transform:
+    translateY(-6px);
+
+    box-shadow:
+    0 20px 45px
+    rgba(15,23,42,.10);
+}
+
+.event-image{
+
+    height:175px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #071426,
+        #12466d
+    );
+
+    color:#67e8f9;
+
+    font-family:monospace;
+
+    font-size:10px;
+
+    letter-spacing:2px;
+}
+
+.event-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+}
+
+.event-body{
+
+    padding:22px;
+}
+
+.event-type{
+
+    display:inline-block;
+
+    padding:
+    6px
+    9px;
+
+    border-radius:5px;
+
+    background:#edf5ff;
+
+    color:var(--blue);
+
+    font-size:8px;
+
+    font-weight:900;
+
+    letter-spacing:.7px;
+}
+
+.event-title{
+
+    font-size:17px;
+
+    line-height:1.4;
+
+    margin:
+    13px
+    0
+    9px;
+}
+
+.event-description{
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    line-height:1.7;
+}
+
+.event-meta{
+
+    border-top:
+    1px solid
+    #edf1f5;
+
+    margin-top:15px;
+
+    padding-top:14px;
+}
+
+.event-meta div{
+
+    color:#64748b;
+
+    font-size:10px;
+
+    margin-bottom:7px;
+}
+
+.event-meta strong{
+    color:#1e293b;
+}
+
+.source-link{
+
+    color:var(--blue);
+
+    font-weight:800;
+
+    font-size:10px;
+
+    display:inline-block;
+
+    margin-top:7px;
+}
+
+
+/* =====================================================
+   TIMELINE
+===================================================== */
+
+.timeline{
+
+    margin-top:45px;
+
+    position:relative;
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:105px;
+
+    top:0;
+
+    bottom:0;
+
+    width:2px;
+
+    background:#dbe5f0;
+}
+
+.timeline-event{
+
+    display:grid;
+
+    grid-template-columns:
+    80px 1fr;
+
+    gap:50px;
+
+    margin-bottom:30px;
+
+    position:relative;
+}
+
+.timeline-year{
+
+    color:var(--blue);
+
+    font-size:14px;
+
+    font-weight:900;
+
+    text-align:right;
+}
+
+.timeline-card{
+
+    background:#fff;
+
+    border:
+    1px solid
+    var(--border);
+
+    border-radius:15px;
+
+    padding:20px;
+
+    position:relative;
+}
+
+.timeline-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-57px;
+
+    top:24px;
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:var(--cyan);
+
+    border:
+    4px solid
+    #e9faff;
+}
+
+.timeline-card h3{
+
+    font-size:16px;
+
+    margin-bottom:7px;
+}
+
+.timeline-card p{
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    line-height:1.7;
+}
+
+
+/* =====================================================
+   GALLERY
+===================================================== */
+
+.gallery{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:15px;
+
+    margin-top:35px;
+}
+
+.gallery-item{
+
+    height:210px;
+
+    border-radius:14px;
+
+    overflow:hidden;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #071426,
+        #145075
+    );
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#67e8f9;
+
+    font-family:monospace;
+
+    font-size:9px;
+
+    text-align:center;
+}
+
+.gallery-item img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+}
+
+
+/* =====================================================
+   INSTAGRAM
+===================================================== */
+
+.instagram{
+
+    margin-top:35px;
+
+    padding:30px;
+
+    background:#fff;
+
+    border:
+    1px solid
+    var(--border);
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+}
+
+.instagram h3{
+
+    font-size:18px;
+
+    margin-bottom:7px;
+}
+
+.instagram p{
+
+    color:var(--muted);
+
+    font-size:11px;
+}
+
+.instagram-button{
+
+    padding:
+    12px
+    20px;
+
+    border-radius:8px;
+
+    color:#fff;
+
+    background:
+    var(--blue);
+
+    font-size:10px;
+
+    font-weight:800;
+
+    white-space:nowrap;
+}
+
+
+/* =====================================================
+   SOURCE BOX
+===================================================== */
+
+.source-box{
+
+    background:#fff;
+
+    border:
+    1px solid
+    var(--border);
+
+    border-radius:18px;
+
+    padding:25px;
+}
+
+.source-box a{
+
+    display:block;
+
+    color:var(--blue);
+
+    font-size:11px;
+
+    font-weight:700;
+
+    margin-bottom:12px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    background:
+    #030b16;
+
+    color:#8292a6;
+
+    padding:35px 0;
+
+    font-size:10px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1000px){
+
+    .events-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .stats-grid{
+
+        grid-template-columns:
+        repeat(3,1fr);
+    }
+
+    .gallery{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:650px){
+
+    .menu{
+        display:none;
+    }
+
+    .stats-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .events-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .gallery{
+
+        grid-template-columns:1fr;
+    }
+
+    .timeline::before{
+
+        left:8px;
+    }
+
+    .timeline-event{
+
+        grid-template-columns:1fr;
+
+        gap:8px;
+
+        padding-left:30px;
+    }
+
+    .timeline-year{
+
+        text-align:left;
+    }
+
+    .timeline-card::before{
+
+        left:-28px;
+    }
+
+    .instagram{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="navbar">
+
+<div class="container nav">
+
+<a href="index.html" class="logo">
+<span>&lt;</span> DR. BUTKAR <span>/&gt;</span>
+</a>
+
+<ul class="menu">
+
+<li>
+<a href="index.html">Home</a>
+</li>
+
+<li>
+<a href="publications.html">Publications</a>
+</li>
+
+<li>
+<a href="#events">Events</a>
+</li>
+
+<li>
+<a href="#timeline">Timeline</a>
+</li>
+
+<li>
+<a href="#gallery">Gallery</a>
+</li>
+
+</ul>
+
+</div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero">
+
+<div class="container">
+
+<div class="hero-content">
+
+<div class="hero-label">
+
+ACADEMIC EVENTS • EXPERT SESSIONS • CONFERENCES
+
+</div>
+
+<h1>
+
+Dr. Umakant
+<span> D. Butkar</span>
+
+</h1>
+
+<p>
+
+Expert Speaker • Resource Person • Researcher • Academician
+
+<br><br>
+
+A consolidated portfolio of expert lectures, invited talks,
+workshops, seminars, webinars, panel discussions,
+national and international conference activities,
+faculty-development sessions and knowledge-sharing programmes.
+
+</p>
+
+</div>
+
+</div>
+
+</header>
+
+
+
+<!-- =====================================================
+     STATISTICS
+===================================================== -->
+
+<div class="stats">
+
+<div class="container">
+
+<div class="stats-grid">
+
+<div class="stat">
+
+<span class="stat-number"
+id="totalEvents">
+0
+</span>
+
+<span class="stat-label">
+TOTAL EVENTS
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<span class="stat-number"
+id="internationalEvents">
+0
+</span>
+
+<span class="stat-label">
+INTERNATIONAL
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<span class="stat-number"
+id="nationalEvents">
+0
+</span>
+
+<span class="stat-label">
+NATIONAL
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<span class="stat-number"
+id="expertEvents">
+0
+</span>
+
+<span class="stat-label">
+EXPERT / INVITED
+</span>
+
+</div>
+
+
+<div class="stat">
+
+<span class="stat-number">
+13+
+</span>
+
+<span class="stat-label">
+YEARS EXPERIENCE
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     EVENTS
+===================================================== -->
+
+<section id="events">
+
+<div class="container">
+
+<div class="section-label">
+01 · COMPLETE EVENT DATABASE
+</div>
+
+<h2 class="section-title">
+All Academic Events
+</h2>
+
+<p class="section-description">
+
+Search and filter expert sessions, workshops,
+webinars, conferences, seminars, panel discussions,
+keynote activities and other academic engagements.
+
+</p>
+
+
+<!-- SEARCH -->
+
+<div class="search-box">
+
+<input
+type="search"
+id="searchInput"
+placeholder="Search event, topic, institution, year..."
+>
+
+</div>
+
+
+<!-- FILTERS -->
+
+<div class="filters">
+
+<button
+class="filter active"
+data-filter="all">
+
+All Events
+
+</button>
+
+
+<button
+class="filter"
+data-filter="international">
+
+International
+
+</button>
+
+
+<button
+class="filter"
+data-filter="national">
+
+National
+
+</button>
+
+
+<button
+class="filter"
+data-filter="expert">
+
+Expert Talk
+
+</button>
+
+
+<button
+class="filter"
+data-filter="workshop">
+
+Workshop
+
+</button>
+
+
+<button
+class="filter"
+data-filter="conference">
+
+Conference
+
+</button>
+
+
+<button
+class="filter"
+data-filter="webinar">
+
+Webinar
+
+</button>
+
+
+<button
+class="filter"
+data-filter="panel">
+
+Panel Discussion
+
+</button>
+
+
+<button
+class="filter"
+data-filter="seminar">
+
+Seminar
+
+</button>
+
+</div>
+
+
+<!-- EVENT CARDS -->
+
+<div
+class="events-grid"
+id="eventsGrid">
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TIMELINE
+===================================================== -->
+
+<section id="timeline">
+
+<div class="container">
+
+<div class="section-label">
+02 · ACADEMIC TIMELINE
+</div>
+
+<h2 class="section-title">
+Conference & Expert Session Timeline
+</h2>
+
+<p class="section-description">
+
+Chronological presentation of the documented activities.
+
+</p>
+
+
+<div
+class="timeline"
+id="timeline">
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PHOTO GALLERY
+===================================================== -->
+
+<section id="gallery">
+
+<div class="container">
+
+<div class="section-label">
+03 · EVENT PHOTOGRAPHS
+</div>
+
+<h2 class="section-title">
+Expert Session Gallery
+</h2>
+
+<p class="section-description">
+
+Place verified photographs from conference programmes,
+institutional websites and Instagram posts in the gallery.
+
+</p>
+
+
+<div class="gallery">
+
+<div class="gallery-item">
+
+SESSION PHOTO 01
+
+</div>
+
+
+<div class="gallery-item">
+
+SESSION PHOTO 02
+
+</div>
+
+
+<div class="gallery-item">
+
+CONFERENCE PHOTO 03
+
+</div>
+
+
+<div class="gallery-item">
+
+EXPERT TALK PHOTO 04
+
+</div>
+
+
+<div class="gallery-item">
+
+WORKSHOP PHOTO 05
+
+</div>
+
+
+<div class="gallery-item">
+
+KEYNOTE PHOTO 06
+
+</div>
+
+
+<div class="gallery-item">
+
+WEBINAR PHOTO 07
+
+</div>
+
+
+<div class="gallery-item">
+
+PANEL PHOTO 08
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     INSTAGRAM
+===================================================== -->
+
+<section>
+
+<div class="container">
+
+<div class="section-label">
+04 · SOCIAL UPDATES
+</div>
+
+<div class="instagram">
+
+<div>
+
+<h3>
+Latest Event Photographs & Updates
+</h3>
+
+<p>
+
+For current photographs and event announcements,
+visit the official Instagram profile.
+
+</p>
+
+</div>
+
+
+<a
+class="instagram-button"
+href="https://www.instagram.com/dr.butkar/"
+target="_blank"
+rel="noopener noreferrer">
+
+VIEW INSTAGRAM →
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SOURCES
+===================================================== -->
+
+<section>
+
+<div class="container">
+
+<div class="section-label">
+05 · VERIFICATION SOURCES
+</div>
+
+<h2 class="section-title">
+Institutional & Conference Sources
+</h2>
+
+<div class="source-box">
+
+<a
+href="https://www.kbtcoe.org/wp-content/uploads/2017/03/Complete-News-Letter-Sept_Oct-2020_V_2.pdf"
+target="_blank">
+
+2020 — Python Programming and IoT Applications Workshop
+→
+
+</a>
+
+
+<a
+href="https://wcopcpravara.in/wp-content/themes/pharmacywomen/essentials/pdf/nacc2022-23/4.1.1.pdf"
+target="_blank">
+
+2023 — World IP Day Expert Session
+→
+
+</a>
+
+
+<a
+href="https://wcopcpravara.in/wp-content/themes/pharmacywomen/essentials/pdf/Administrative_Academic_Reports_2022_23.pdf"
+target="_blank">
+
+2022–23 — Academic Report / Pharma Trainer Record
+→
+
+</a>
+
+
+<a
+href="https://www.jitnew.jitnashik.edu.in/department/IT/ITseminar.php"
+target="_blank">
+
+2025 — Expert Talk on Intellectual Property Rights
+→
+
+</a>
+
+
+<a
+href="https://engg.ggsf.edu.in/images/pdf/66e29f975297e0Mandatory%20Disclosure%202023-24.pdf"
+target="_blank">
+
+Expert Lecture on AI Revolution / Communication Protocols
+→
+
+</a>
+
+
+<a
+href="https://researchid.co/umakantbutkar"
+target="_blank">
+
+ResearchID — Academic Profile & Conference Publications
+→
+
+</a>
+
+
+<a
+href="https://www.instagram.com/dr.butkar/"
+target="_blank">
+
+Official Instagram — Current Event Updates
+→
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="container">
+
+<strong>
+&lt;DR. BUTKAR /&gt;
+</strong>
+
+<br><br>
+
+Expert Sessions • Conferences • Workshops • Seminars •
+Research • Knowledge Sharing
+
+</div>
+
+</footer>
+
+
+
+<script>
+
+
+/* =====================================================
+   COMPLETE EVENT DATA
+=====================================================
+
+   Add every verified event here.
+
+   type:
+   international
+   national
+
+   category:
+   expert
+   workshop
+   conference
+   webinar
+   panel
+   seminar
+
+===================================================== */
+
+
+const events = [
+
+
+/* =====================================================
+   2025
+===================================================== */
+
+{
+    year:2025,
+
+    type:"national",
+
+    category:"expert",
+
+    title:
+    "Expert Talk on Intellectual Property Rights",
+
+    topic:
+    "Intellectual Property Rights",
+
+    institution:
+    "Jawahar Education Society's Institute of Technology, Management & Research",
+
+    location:
+    "Nashik, Maharashtra",
+
+    date:
+    "03 February 2025",
+
+    description:
+    "Expert session on Intellectual Property Rights.",
+
+    source:
+    "https://www.jitnew.jitnashik.edu.in/department/IT/ITseminar.php"
+},
+
+
+{
+    year:2025,
+
+    type:"national",
+
+    category:"panel",
+
+    title:
+    "Bridging Academia and Industry through IoT",
+
+    topic:
+    "Skills, Standards and Applications",
+
+    institution:
+    "IoT Society of India – Lucknow",
+
+    location:
+    "Online",
+
+    date:
+    "21 November 2025",
+
+    description:
+    "Online panel discussion bringing together experts, innovators, educators and students. Dr. Butkar presented live IoT demonstrations.",
+
+    source:
+    "https://www.linkedin.com/posts/iot-society-of-india-lucknow_we-successfully-organized-the-online-panel-activity-7397915686955569152-mdFb"
+},
+
+
+/* =====================================================
+   2024
+===================================================== */
+
+{
+    year:2024,
+
+    type:"international",
+
+    category:"conference",
+
+    title:
+    "2nd DMIHER International Conference on Artificial Intelligence in Healthcare, Education and Industry",
+
+    topic:
+    "Artificial Intelligence in Healthcare, Education and Industry",
+
+    institution:
+    "DMIHER",
+
+    location:
+    "India",
+
+    date:
+    "2024",
+
+    description:
+    "International conference contribution recorded in the academic profile.",
+
+    source:
+    "https://researchid.co/umakantbutkar"
+},
+
+
+{
+    year:2024,
+
+    type:"national",
+
+    category:"expert",
+
+    title:
+    "AR/VR Domain Expert – World Skill Competition",
+
+    topic:
+    "Augmented Reality and Virtual Reality",
+
+    institution:
+    "Government ITI / CII Nashik Chapter",
+
+    location:
+    "Nashik, Maharashtra",
+
+    date:
+    "16 March 2024",
+
+    description:
+    "Domain-expert engagement connected with the World Skill Competition 2024.",
+
+    source:
+    "https://engg.ggsf.edu.in/images/pdf/66b3469ea331f0Newsletter%20JAN%20to%20MAR%202024.pdf"
+},
+
+
+/* =====================================================
+   2023
+===================================================== */
+
+{
+    year:2023,
+
+    type:"national",
+
+    category:"expert",
+
+    title:
+    "World IP Day 2023 – Expert Session",
+
+    topic:
+    "Women and IP: Accelerating Innovation and Creativity",
+
+    institution:
+    "College of Pharmacy, Pravara",
+
+    location:
+    "Maharashtra, India",
+
+    date:
+    "26 April 2023",
+
+    description:
+    "Dr. Umakant Dinkar Butkar served as resource person and delivered the expert session.",
+
+    source:
+    "https://wcopcpravara.in/wp-content/themes/pharmacywomen/essentials/pdf/nacc2022-23/4.1.1.pdf"
+},
+
+
+/* =====================================================
+   2020
+===================================================== */
+
+{
+    year:2020,
+
+    type:"national",
+
+    category:"workshop",
+
+    title:
+    "Python Programming and IoT Applications",
+
+    topic:
+    "Python Programming and Internet of Things",
+
+    institution:
+    "Department of Information Technology, KBT College of Engineering",
+
+    location:
+    "Nashik, Maharashtra",
+
+    date:
+    "25–27 September 2020",
+
+    description:
+    "Three-day workshop covering Python programming, data types, functions, modules, mini projects and IoT applications.",
+
+    source:
+    "https://www.kbtcoe.org/wp-content/uploads/2017/03/Complete-News-Letter-Sept_Oct-2020_V_2.pdf"
+},
+
+
+/* =====================================================
+   2018–19
+===================================================== */
+
+{
+    year:2019,
+
+    type:"national",
+
+    category:"expert",
+
+    title:
+    "Expert Lecture on Communication Protocols",
+
+    topic:
+    "Communication Protocols",
+
+    institution:
+    "KBT College of Engineering",
+
+    location:
+    "Nashik, Maharashtra",
+
+    date:
+    "2018–19",
+
+    description:
+    "Expert lecture on communication protocols.",
+
+    source:
+    "https://engg.ggsf.edu.in/images/pdf/66e29f975297e0Mandatory%20Disclosure%202023-24.pdf"
+},
+
+
+/* =====================================================
+   ADDITIONAL EVENTS
+=====================================================
+
+   Use this format for remaining Instagram events.
+
+===================================================== */
+
+
+{
+    year:2024,
+
+    type:"national",
+
+    category:"seminar",
+
+    title:
+    "Academic Expert Session",
+
+    topic:
+    "Technology and Engineering",
+
+    institution:
+    "Institution to be verified",
+
+    location:
+    "India",
+
+    date:
+    "2024",
+
+    description:
+    "Record reserved for a verified seminar/session from the event archive.",
+
+    source:
+    "https://www.instagram.com/dr.butkar/"
+}
+
+];
+
+
+
+/* =====================================================
+   EVENT DISPLAY
+===================================================== */
+
+const eventGrid =
+document.getElementById(
+    "eventsGrid"
+);
+
+
+function displayEvents(){
+
+    const search =
+    document
+    .getElementById("searchInput")
+    .value
+    .toLowerCase()
+    .trim();
+
+
+    const activeFilter =
+    document
+    .querySelector(".filter.active")
+    .dataset.filter;
+
+
+    let filtered =
+    events.filter(event => {
+
+
+        const searchable = (
+
+            event.title +
+            " " +
+            event.topic +
+            " " +
+            event.institution +
+            " " +
+            event.location +
+            " " +
+            event.year
+
+        ).toLowerCase();
+
+
+        const searchMatch =
+        !search ||
+        searchable.includes(search);
+
+
+        const filterMatch =
+
+        activeFilter === "all"
+
+        ||
+
+        event.type === activeFilter
+
+        ||
+
+        event.category === activeFilter;
+
+
+        return (
+            searchMatch &&
+            filterMatch
+        );
+
+    });
+
+
+    eventGrid.innerHTML = "";
+
+
+    if(filtered.length === 0){
+
+        eventGrid.innerHTML = `
+
+        <div style="
+            grid-column:1/-1;
+            padding:60px;
+            text-align:center;
+            background:white;
+            border:1px solid #e2e8f0;
+            border-radius:18px;
+        ">
+
+            <h3>
+                No matching events
+            </h3>
+
+            <p style="
+                margin-top:10px;
+                color:#64748b;
+                font-size:12px;
+            ">
+
+                Try another search term or category.
+
+            </p>
+
+        </div>
+
+        `;
+
+        return;
+    }
+
+
+    filtered.forEach(event => {
+
+        const card =
+        document.createElement("article");
+
+
+        card.className =
+        "event-card";
+
+
+        card.innerHTML = `
+
+        <div class="event-image">
+
+            ${event.category.toUpperCase()}
+
+        </div>
+
+
+        <div class="event-body">
+
+
+            <span class="event-type">
+
+                ${event.type.toUpperCase()}
+                ·
+                ${event.category.toUpperCase()}
+
+            </span>
+
+
+            <h3 class="event-title">
+
+                ${event.title}
+
+            </h3>
+
+
+            <p class="event-description">
+
+                ${event.description}
+
+            </p>
+
+
+            <div class="event-meta">
+
+                <div>
+
+                    <strong>
+                    Topic:
+                    </strong>
+
+                    ${event.topic}
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                    Institution:
+                    </strong>
+
+                    ${event.institution}
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                    Date:
+                    </strong>
+
+                    ${event.date}
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                    Location:
+                    </strong>
+
+                    ${event.location}
+
+                </div>
+
+
+                <a
+                class="source-link"
+                href="${event.source}"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                    Verify / View Source →
+
+                </a>
+
+            </div>
+
+        </div>
+
+        `;
+
+
+        eventGrid.appendChild(card);
+
+    });
+
+}
+
+
+
+/* =====================================================
+   FILTER BUTTONS
+===================================================== */
+
+document
+.querySelectorAll(".filter")
+.forEach(button => {
+
+    button.addEventListener(
+        "click",
+        function(){
+
+            document
+            .querySelectorAll(".filter")
+            .forEach(btn =>
+                btn.classList.remove("active")
+            );
+
+
+            this.classList.add("active");
+
+
+            displayEvents();
+
+        }
+    );
+
+});
+
+
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+document
+.getElementById("searchInput")
+.addEventListener(
+    "input",
+    displayEvents
+);
+
+
+
+/* =====================================================
+   STATISTICS
+===================================================== */
+
+function updateStatistics(){
+
+    document
+    .getElementById("totalEvents")
+    .textContent =
+    events.length;
+
+
+    document
+    .getElementById("internationalEvents")
+    .textContent =
+    events.filter(
+        e =>
+        e.type === "international"
+    ).length;
+
+
+    document
+    .getElementById("nationalEvents")
+    .textContent =
+    events.filter(
+        e =>
+        e.type === "national"
+    ).length;
+
+
+    document
+    .getElementById("expertEvents")
+    .textContent =
+    events.filter(
+        e =>
+        e.category === "expert"
+    ).length;
+
+}
+
+
+
+/* =====================================================
+   TIMELINE
+===================================================== */
+
+function createTimeline(){
+
+    const timeline =
+    document.getElementById(
+        "timeline"
+    );
+
+
+    const sorted =
+    [...events].sort(
+        (a,b) =>
+        b.year - a.year
+    );
+
+
+    timeline.innerHTML = "";
+
+
+    sorted.forEach(event => {
+
+        const item =
+        document.createElement(
+            "div"
+        );
+
+
+        item.className =
+        "timeline-event";
+
+
+        item.innerHTML = `
+
+        <div class="timeline-year">
+
+            ${event.year}
+
+        </div>
+
+
+        <div class="timeline-card">
+
+            <h3>
+
+                ${event.title}
+
+            </h3>
+
+
+            <p>
+
+                <strong>
+                ${event.institution}
+                </strong>
+
+                <br>
+
+                ${event.date}
+                ·
+                ${event.location}
+
+            </p>
+
+        </div>
+
+        `;
+
+
+        timeline.appendChild(item);
+
+    });
+
+}
+
+
+
+/* =====================================================
+   START
+===================================================== */
+
+displayEvents();
 
 updateStatistics();
+
+createTimeline();
+
+</script>
+
+</body>
+</html>
 
 </script>
 
