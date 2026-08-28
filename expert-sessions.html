@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Expert Sessions & Conference Talks | Dr. Umakant Butkar</title>
+
+<meta name="description"
+content="Expert sessions, invited talks, keynote addresses and national and international conference sessions by Dr. Umakant Butkar.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Inter,Arial,sans-serif;
+    background:#f5f8fc;
+    color:#172033;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:9999;
+    background:rgba(2,10,23,.94);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    padding:16px 25px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    color:#fff;
+    font-family:"JetBrains Mono";
+    font-size:16px;
+    font-weight:700;
+}
+
+.logo span{
+    color:#38bdf8;
+}
+
+.nav-links{
+    display:flex;
+    gap:28px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:#cbd5e1;
+    font-size:12px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#38bdf8;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    position:relative;
+    overflow:hidden;
+
+    padding:110px 20px 90px;
+
+    color:white;
+
+    background:
+    radial-gradient(
+        circle at 80% 20%,
+        rgba(14,165,233,.22),
+        transparent 32%
+    ),
+
+    radial-gradient(
+        circle at 15% 80%,
+        rgba(37,99,235,.20),
+        transparent 30%
+    ),
+
+    linear-gradient(
+        135deg,
+        #020617,
+        #071b35,
+        #0b2c4d
+    );
+}
+
+.hero-grid{
+    position:absolute;
+    inset:0;
+    opacity:.22;
+
+    background-image:
+    linear-gradient(
+        rgba(56,189,248,.15) 1px,
+        transparent 1px
+    ),
+
+    linear-gradient(
+        90deg,
+        rgba(56,189,248,.15) 1px,
+        transparent 1px
+    );
+
+    background-size:50px 50px;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+
+    max-width:900px;
+    margin:auto;
+
+    text-align:center;
+}
+
+.hero-tag{
+    color:#38bdf8;
+
+    font-family:"JetBrains Mono";
+
+    font-size:10px;
+    letter-spacing:3px;
+
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(40px,6vw,68px);
+    line-height:1.05;
+    letter-spacing:-3px;
+}
+
+.hero h1 span{
+    color:#38bdf8;
+}
+
+.hero-description{
+    max-width:750px;
+    margin:25px auto 0;
+
+    color:#b8c7d9;
+
+    font-size:14px;
+    line-height:1.9;
+}
+
+/* =========================
+   STATISTICS
+========================= */
+
+.stats{
+    margin-top:-40px;
+    position:relative;
+    z-index:10;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    background:#fff;
+
+    border-radius:18px;
+    overflow:hidden;
+
+    box-shadow:0 20px 50px rgba(15,23,42,.12);
+}
+
+.stat{
+    text-align:center;
+    padding:25px 10px;
+
+    border-right:1px solid #e5e7eb;
+}
+
+.stat:last-child{
+    border-right:0;
+}
+
+.stat h2{
+    color:#2563eb;
+    font-size:30px;
+}
+
+.stat p{
+    margin-top:5px;
+
+    color:#64748b;
+
+    font-size:9px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+.section{
+    padding:90px 0;
+}
+
+.section-header{
+    margin-bottom:40px;
+}
+
+.section-label{
+    color:#2563eb;
+
+    font-family:"JetBrains Mono";
+
+    font-size:9px;
+    letter-spacing:3px;
+
+    margin-bottom:10px;
+}
+
+.section-title{
+    font-size:38px;
+    margin-bottom:15px;
+}
+
+.section-description{
+    max-width:750px;
+
+    color:#64748b;
+
+    font-size:13px;
+    line-height:1.8;
+}
+
+/* =========================
+   FILTERS
+========================= */
+
+.filters{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+
+    margin-bottom:35px;
+}
+
+.filter-btn{
+    border:1px solid #dbe3ee;
+    background:#fff;
+
+    padding:10px 16px;
+
+    border-radius:30px;
+
+    color:#475569;
+
+    font-size:11px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active{
+    background:#2563eb;
+    color:#fff;
+    border-color:#2563eb;
+}
+
+/* =========================
+   SESSION GRID
+========================= */
+
+.sessions-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.session-card{
+    background:#fff;
+
+    border:1px solid #e2e8f0;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    transition:.35s;
+
+    box-shadow:0 5px 20px rgba(15,23,42,.04);
+}
+
+.session-card:hover{
+    transform:translateY(-8px);
+
+    border-color:#93c5fd;
+
+    box-shadow:0 20px 45px rgba(15,23,42,.10);
+}
+
+.session-image{
+    height:190px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #020617,
+        #12345b
+    );
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+}
+
+.session-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.session-placeholder{
+    color:#38bdf8;
+
+    font-family:"JetBrains Mono";
+
+    font-size:12px;
+    letter-spacing:2px;
+}
+
+.session-content{
+    padding:23px;
+}
+
+.session-type{
+    display:inline-block;
+
+    padding:6px 9px;
+
+    border-radius:5px;
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    font-size:8px;
+    font-weight:800;
+
+    letter-spacing:.8px;
+
+    margin-bottom:12px;
+}
+
+.session-card h3{
+    font-size:17px;
+    line-height:1.4;
+
+    margin-bottom:10px;
+}
+
+.session-card p{
+    color:#64748b;
+
+    font-size:11px;
+    line-height:1.7;
+}
+
+.session-meta{
+    margin-top:16px;
+
+    padding-top:14px;
+
+    border-top:1px solid #eef2f7;
+
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+}
+
+.meta-item{
+    color:#64748b;
+    font-size:10px;
+}
+
+.meta-item strong{
+    color:#172033;
+}
+
+/* =========================
+   FEATURED SPEAKER
+========================= */
+
+.featured{
+    margin-top:55px;
+
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+
+    background:
+    linear-gradient(
+        135deg,
+        #020617,
+        #12345b
+    );
+
+    border-radius:22px;
+
+    overflow:hidden;
+
+    color:#fff;
+}
+
+.featured-image{
+    min-height:320px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(56,189,248,.2),
+        transparent 55%
+    );
+}
+
+.featured-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.featured-content{
+    padding:50px;
+}
+
+.featured-label{
+    color:#38bdf8;
+
+    font-family:"JetBrains Mono";
+
+    font-size:9px;
+    letter-spacing:2px;
+
+    margin-bottom:15px;
+}
+
+.featured-content h2{
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+.featured-content p{
+    color:#b8c7d9;
+
+    font-size:12px;
+    line-height:1.8;
+}
+
+/* =========================
+   INSTAGRAM
+========================= */
+
+.instagram-box{
+    margin-top:40px;
+
+    padding:30px;
+
+    border-radius:18px;
+
+    background:#fff;
+
+    border:1px solid #e2e8f0;
+
+    display:flex;
+
+    justify-content:space-between;
+    align-items:center;
+
+    gap:20px;
+}
+
+.instagram-box h3{
+    font-size:17px;
+}
+
+.instagram-box p{
+    margin-top:6px;
+
+    color:#64748b;
+
+    font-size:11px;
+}
+
+.instagram-btn{
+    display:inline-block;
+
+    padding:12px 20px;
+
+    border-radius:8px;
+
+    background:#2563eb;
+
+    color:#fff;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    white-space:nowrap;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    background:#020617;
+    color:#fff;
+
+    padding:35px 20px;
+}
+
+.footer-content{
+    max-width:1100px;
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+
+    gap:20px;
+}
+
+.footer-content p{
+    margin-top:5px;
+
+    color:#64748b;
+
+    font-size:9px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    .sessions-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .featured{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:650px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .stat{
+        border-bottom:1px solid #e5e7eb;
+    }
+
+    .sessions-grid{
+        grid-template-columns:1fr;
+    }
+
+    .featured-content{
+        padding:30px;
+    }
+
+    .instagram-box{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .footer-content{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header class="navbar">
+
+<div class="nav-container">
+
+<div class="logo">
+<span>&lt;</span> DR. BUTKAR <span>/&gt;</span>
+</div>
+
+<nav>
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="publications.html">Publications</a></li>
+
+<li><a href="#sessions">Expert Sessions</a></li>
+
+<li><a href="#conferences">Conferences</a></li>
+
+</ul>
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+<div class="hero-grid"></div>
+
+<div class="hero-content">
+
+<div class="hero-tag">
+EXPERT SESSIONS • INVITED TALKS • CONFERENCES
+</div>
+
+<h1>
+Dr. Umakant
+<span>Butkar</span>
+</h1>
+
+<p class="hero-description">
+
+Expert speaker, invited resource person and academic contributor
+for national and international conferences, seminars, workshops,
+faculty development programmes and technology-focused academic sessions.
+
+</p>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     STATS
+========================= -->
+
+<section class="stats">
+
+<div class="container">
+
+<div class="stats-grid">
+
+<div class="stat">
+<h2 id="totalSessions">0</h2>
+<p>EXPERT SESSIONS</p>
+</div>
+
+<div class="stat">
+<h2 id="international">0</h2>
+<p>INTERNATIONAL</p>
+</div>
+
+<div class="stat">
+<h2 id="national">0</h2>
+<p>NATIONAL</p>
+</div>
+
+<div class="stat">
+<h2 id="years">0</h2>
+<p>ACADEMIC ENGAGEMENT</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SESSIONS
+========================= -->
+
+<section class="section" id="sessions">
+
+<div class="container">
+
+<div class="section-header">
+
+<div class="section-label">
+ACADEMIC ENGAGEMENT
+</div>
+
+<h2 class="section-title">
+Expert Sessions & Invited Talks
+</h2>
+
+<p class="section-description">
+
+A curated record of expert sessions, invited lectures,
+keynote addresses, technical talks and academic interactions.
+
+</p>
+
+</div>
+
+
+<!-- FILTERS -->
+
+<div class="filters">
+
+<button class="filter-btn active"
+onclick="filterSessions('all',this)">
+All
+</button>
+
+<button class="filter-btn"
+onclick="filterSessions('international',this)">
+International
+</button>
+
+<button class="filter-btn"
+onclick="filterSessions('national',this)">
+National
+</button>
+
+<button class="filter-btn"
+onclick="filterSessions('expert',this)">
+Expert Session
+</button>
+
+<button class="filter-btn"
+onclick="filterSessions('keynote',this)">
+Keynote
+</button>
+
+</div>
+
+
+<!-- SESSION CARDS -->
+
+<div class="sessions-grid" id="sessionGrid">
+</div>
+
+
+<!-- =========================
+     FEATURED SPEAKER
+========================= -->
+
+<div class="featured">
+
+<div class="featured-image">
+
+<img
+src="session-featured.jpg"
+alt="Dr. Umakant Butkar expert session"
+onerror="this.style.display='none';">
+
+</div>
+
+<div class="featured-content">
+
+<div class="featured-label">
+FEATURED SPEAKER
+</div>
+
+<h2>
+Academic Expertise & Knowledge Sharing
+</h2>
+
+<p>
+
+Dr. Umakant Butkar contributes to academic knowledge sharing
+through invited expert sessions, technical presentations,
+conference sessions, workshops and emerging-technology discussions.
+
+His areas of interest include Artificial Intelligence,
+Machine Learning, Internet of Things, Cyber Security,
+Data Science and Computer Engineering.
+
+</p>
+
+</div>
+
+</div>
+
+
+<!-- =========================
+     INSTAGRAM
+========================= -->
+
+<div class="instagram-box">
+
+<div>
+
+<h3>
+Follow Recent Sessions
+</h3>
+
+<p>
+Photos and updates from recent academic and conference activities.
+</p>
+
+</div>
+
+<a
+class="instagram-btn"
+href="https://www.instagram.com/dr.butkar/"
+target="_blank"
+rel="noopener noreferrer">
+
+View Instagram →
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<div class="footer-content">
+
+<div>
+
+<strong>
+&lt;DR. BUTKAR /&gt;
+</strong>
+
+<p>
+Academician • Researcher • Author • Expert Speaker
+</p>
+
+</div>
+
+<div>
+
+<p>
+Expert Sessions • Conferences • Knowledge Sharing
+</p>
+
+</div>
+
+</div>
+
+</footer>
+
+
+<script>
+
+/*
+=========================================================
+SESSION DATA
+=========================================================
+
+IMPORTANT:
+The following structure is intentionally ready for
+Instagram-derived information.
+
+Do not publish invented event information.
+
+Replace/add records after confirming the corresponding
+Instagram post, conference programme or invitation.
+=========================================================
+*/
+
+const sessions = [
+
+    /*
+    Example structure:
+
+    {
+        type: "international",
+        category: "Keynote",
+        title: "Actual Session Title",
+        event: "Actual Conference Name",
+        institution: "Actual Institution",
+        location: "City, Country",
+        date: "DD Month YYYY",
+        image: "images/session-01.jpg",
+        instagram: "https://www.instagram.com/p/POST_ID/"
+    }
+    */
+
+];
+
+
+/* =========================
+   DISPLAY SESSIONS
+========================= */
+
+function displaySessions(data){
+
+    const grid = document.getElementById("sessionGrid");
+
+    grid.innerHTML = "";
+
+    if(data.length === 0){
+
+        grid.innerHTML = `
+        <div style="
+            grid-column:1/-1;
+            text-align:center;
+            padding:60px 20px;
+            background:#fff;
+            border:1px solid #e2e8f0;
+            border-radius:18px;
+        ">
+
+            <h3 style="font-size:18px;margin-bottom:10px;">
+                Session Records
+            </h3>
+
+            <p style="
+                color:#64748b;
+                font-size:12px;
+                line-height:1.7;
+            ">
+                Verified conference and expert-session records
+                will appear here after the corresponding
+                Instagram posts are added.
+            </p>
+
+        </div>
+        `;
+
+        return;
+    }
+
+
+    data.forEach(session => {
+
+        const card = document.createElement("article");
+
+        card.className = "session-card";
+
+        card.dataset.type = session.type;
+
+        card.innerHTML = `
+
+            <div class="session-image">
+
+                ${
+                    session.image
+                    ?
+                    `<img src="${session.image}"
+                          alt="${session.title}"
+                          loading="lazy"
+                          onerror="this.style.display='none';">`
+                    :
+                    `<div class="session-placeholder">
+                        SESSION
+                    </div>`
+                }
+
+            </div>
+
+            <div class="session-content">
+
+                <span class="session-type">
+                    ${session.category}
+                </span>
+
+                <h3>
+                    ${session.title}
+                </h3>
+
+                <p>
+                    ${session.event}
+                </p>
+
+                <div class="session-meta">
+
+                    <div class="meta-item">
+                        <strong>Institution:</strong>
+                        ${session.institution}
+                    </div>
+
+                    <div class="meta-item">
+                        <strong>Location:</strong>
+                        ${session.location}
+                    </div>
+
+                    <div class="meta-item">
+                        <strong>Date:</strong>
+                        ${session.date}
+                    </div>
+
+                    ${
+                        session.instagram
+                        ?
+                        `<div style="margin-top:8px;">
+                            <a href="${session.instagram}"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               style="
+                               color:#2563eb;
+                               font-size:10px;
+                               font-weight:700;">
+                               View Instagram Post →
+                            </a>
+                        </div>`
+                        :
+                        ""
+                    }
+
+                </div>
+
+            </div>
+        `;
+
+        grid.appendChild(card);
+
+    });
+
+}
+
+
+/* =========================
+   FILTER
+========================= */
+
+function filterSessions(type, button){
+
+    document
+    .querySelectorAll(".filter-btn")
+    .forEach(btn => btn.classList.remove("active"));
+
+    button.classList.add("active");
+
+    if(type === "all"){
+
+        displaySessions(sessions);
+
+        return;
+    }
+
+    const filtered = sessions.filter(
+        session =>
+        session.type === type ||
+        session.category.toLowerCase().includes(type)
+    );
+
+    displaySessions(filtered);
+}
+
+
+/* =========================
+   STATISTICS
+========================= */
+
+function updateStatistics(){
+
+    const total = sessions.length;
+
+    const international =
+        sessions.filter(
+            s => s.type === "international"
+        ).length;
+
+    const national =
+        sessions.filter(
+            s => s.type === "national"
+        ).length;
+
+    document.getElementById("totalSessions")
+        .textContent = total;
+
+    document.getElementById("international")
+        .textContent = international;
+
+    document.getElementById("national")
+        .textContent = national;
+
+}
+
+
+/* =========================
+   INITIALIZE
+========================= */
+
+displaySessions(sessions);
+
+updateStatistics();
+
+</script>
+
+</body>
+</html>
