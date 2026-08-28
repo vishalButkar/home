@@ -1,0 +1,3623 @@
+<!DOCTYPE html>
+<html lang="en">
+   
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dr. Umakant Butkar | Research • Innovation • Academia</title>
+
+<meta name="description"
+content="Official profile of Dr. Umakant Butkar – Academician, Researcher, Author and Innovator.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+rel="stylesheet">
+
+
+<style>
+
+/* =====================================================
+   BASIC RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Inter,Arial,sans-serif;
+    background:#f5f8fc;
+    color:#172033;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+}
+
+.container{
+    width:90%;
+    max-width:1150px;
+    margin:auto;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.navbar{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+    right:0;
+
+    z-index:9999;
+
+    background:rgba(2,10,23,.88);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:
+    1px solid rgba(255,255,255,.08);
+
+}
+
+.nav-container{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:15px 25px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.logo{
+
+    color:#fff;
+
+    font-family:"JetBrains Mono";
+
+    font-size:17px;
+
+    font-weight:700;
+
+}
+
+.logo span{
+    color:#38bdf8;
+}
+
+.nav-links{
+
+    display:flex;
+
+    gap:28px;
+
+    list-style:none;
+
+}
+
+.nav-links a{
+
+    color:#cbd5e1;
+
+    font-size:12px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover{
+    color:#38bdf8;
+}
+
+.menu-btn{
+
+    display:none;
+
+    background:none;
+
+    border:0;
+
+    color:white;
+
+    font-size:26px;
+
+    cursor:pointer;
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+
+    min-height:100vh;
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:
+    150px 20px
+    100px;
+
+    color:white;
+
+    background:
+
+    radial-gradient(
+        circle at 80% 25%,
+        rgba(14,165,233,.20),
+        transparent 30%
+    ),
+
+    radial-gradient(
+        circle at 15% 80%,
+        rgba(37,99,235,.20),
+        transparent 30%
+    ),
+
+    linear-gradient(
+        135deg,
+        #020617,
+        #071b35,
+        #0b2c4d
+    );
+
+}
+
+
+/* =====================================================
+   ANIMATED GRID
+===================================================== */
+
+.hero-grid{
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:.25;
+
+    background-image:
+
+    linear-gradient(
+        rgba(56,189,248,.15) 1px,
+        transparent 1px
+    ),
+
+    linear-gradient(
+        90deg,
+        rgba(56,189,248,.15) 1px,
+        transparent 1px
+    );
+
+    background-size:
+    50px 50px;
+
+    animation:
+    gridMove 15s linear infinite;
+
+}
+
+@keyframes gridMove{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(50px);
+    }
+
+}
+
+
+/* =====================================================
+   MOVING GLOW
+===================================================== */
+
+.glow{
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    border-radius:50%;
+
+    background:
+    rgba(14,165,233,.12);
+
+    filter:blur(70px);
+
+    animation:
+    glowMove 8s ease-in-out infinite;
+
+}
+
+.glow.one{
+
+    top:15%;
+
+    right:10%;
+
+}
+
+.glow.two{
+
+    bottom:5%;
+
+    left:5%;
+
+    animation-delay:3s;
+
+}
+
+@keyframes glowMove{
+
+    0%,100%{
+        transform:translate(0,0);
+    }
+
+    50%{
+        transform:translate(40px,-30px);
+    }
+
+}
+
+
+/* =====================================================
+   PARTICLES
+===================================================== */
+
+.particles{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+}
+
+.particle{
+
+    position:absolute;
+
+    width:3px;
+
+    height:3px;
+
+    background:#38bdf8;
+
+    border-radius:50%;
+
+    box-shadow:
+    0 0 10px #38bdf8;
+
+    animation:
+    particleFloat 8s linear infinite;
+
+    opacity:.7;
+
+}
+
+.particle:nth-child(1){
+    left:8%;
+    top:30%;
+    animation-delay:0s;
+}
+
+.particle:nth-child(2){
+    left:20%;
+    top:70%;
+    animation-delay:2s;
+}
+
+.particle:nth-child(3){
+    left:35%;
+    top:20%;
+    animation-delay:4s;
+}
+
+.particle:nth-child(4){
+    left:55%;
+    top:75%;
+    animation-delay:1s;
+}
+
+.particle:nth-child(5){
+    left:70%;
+    top:35%;
+    animation-delay:3s;
+}
+
+.particle:nth-child(6){
+    left:85%;
+    top:65%;
+    animation-delay:5s;
+}
+
+.particle:nth-child(7){
+    left:92%;
+    top:20%;
+    animation-delay:2s;
+}
+
+@keyframes particleFloat{
+
+    0%{
+        transform:translateY(30px);
+        opacity:0;
+    }
+
+    20%{
+        opacity:1;
+    }
+
+    80%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-120px);
+        opacity:0;
+    }
+
+}
+
+
+/* =====================================================
+   HERO CONTENT
+===================================================== */
+
+.hero-content{
+
+    position:relative;
+
+    z-index:5;
+
+    max-width:1150px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    1.35fr .75fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+
+/* =====================================================
+   HERO TEXT ANIMATION
+===================================================== */
+
+.hero-text{
+
+    animation:
+    heroText .9s ease forwards;
+
+    opacity:0;
+
+}
+
+@keyframes heroText{
+
+    from{
+        opacity:0;
+        transform:translateY(35px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.hero-tag{
+
+    font-family:"JetBrains Mono";
+
+    color:#38bdf8;
+
+    font-size:10px;
+
+    letter-spacing:3px;
+
+    margin-bottom:20px;
+
+}
+
+.hero h1{
+
+    font-size:
+    clamp(48px,6vw,78px);
+
+    line-height:1.02;
+
+    letter-spacing:-4px;
+
+    margin-bottom:20px;
+
+}
+
+.hero h1 span{
+
+    color:#38bdf8;
+
+    text-shadow:
+    0 0 25px
+    rgba(56,189,248,.4);
+
+}
+
+.hero-subtitle{
+
+    min-height:30px;
+
+    color:#dbeafe;
+
+    font-size:19px;
+
+    font-weight:500;
+
+}
+
+.typing{
+
+    color:#7dd3fc;
+
+}
+
+.cursor{
+
+    display:inline-block;
+
+    width:2px;
+
+    height:20px;
+
+    background:#38bdf8;
+
+    margin-left:5px;
+
+    animation:
+    blink .7s infinite;
+
+}
+
+@keyframes blink{
+
+    50%{
+        opacity:0;
+    }
+
+}
+
+.hero-description{
+
+    max-width:650px;
+
+    margin-top:18px;
+
+    color:#a9bad0;
+
+    font-size:13px;
+
+    line-height:1.9;
+
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:14px;
+
+    flex-wrap:wrap;
+
+    margin-top:30px;
+
+}
+
+.btn{
+
+    display:inline-block;
+
+    padding:13px 21px;
+
+    border-radius:8px;
+
+    font-size:11px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.btn-primary{
+
+    color:#fff;
+
+    background:#2563eb;
+
+    box-shadow:
+    0 0 25px
+    rgba(37,99,235,.35);
+
+}
+
+.btn-primary:hover{
+
+    transform:
+    translateY(-4px)
+    scale(1.02);
+
+    box-shadow:
+    0 0 35px
+    rgba(37,99,235,.55);
+
+}
+
+.btn-outline{
+
+    color:#dbeafe;
+
+    border:
+    1px solid
+    rgba(125,211,252,.35);
+
+}
+
+.btn-outline:hover{
+
+    color:#38bdf8;
+
+    border-color:#38bdf8;
+
+    box-shadow:
+    0 0 20px
+    rgba(56,189,248,.15);
+
+}
+
+
+/* =====================================================
+   PROFILE CARD
+===================================================== */
+
+.profile-wrapper{
+
+    animation:
+    cardEntrance 1.2s ease forwards;
+
+    opacity:0;
+
+    animation-delay:.4s;
+
+}
+
+@keyframes cardEntrance{
+
+    from{
+        opacity:0;
+        transform:
+        translateY(40px)
+        rotateY(15deg);
+    }
+
+    to{
+        opacity:1;
+        transform:
+        translateY(0)
+        rotateY(0);
+    }
+
+}
+
+.profile-card{
+
+    position:relative;
+
+    padding:30px;
+
+    border-radius:22px;
+
+    background:
+    rgba(255,255,255,.07);
+
+    border:
+    1px solid
+    rgba(125,211,252,.20);
+
+    backdrop-filter:blur(20px);
+
+    box-shadow:
+    0 25px 70px
+    rgba(0,0,0,.35);
+
+    animation:
+    floatingCard 5s ease-in-out infinite;
+
+}
+
+@keyframes floatingCard{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+}
+
+
+/* =====================================================
+   PROFILE PHOTO
+===================================================== */
+
+.photo-ring{
+
+    width:190px;
+
+    height:190px;
+
+    margin:
+    0 auto 22px;
+
+    padding:5px;
+
+    border-radius:50%;
+
+    background:
+
+    conic-gradient(
+        #38bdf8,
+        #2563eb,
+        transparent,
+        #38bdf8
+    );
+
+    animation:
+    rotateRing 5s linear infinite;
+
+}
+
+@keyframes rotateRing{
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+.profile-photo{
+
+    width:100%;
+
+    height:100%;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    background:#071426;
+
+}
+
+.profile-photo img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    animation:
+    counterRotate 5s linear infinite;
+
+}
+
+@keyframes counterRotate{
+
+    to{
+        transform:rotate(-360deg);
+    }
+
+}
+
+.profile-card h3{
+
+    text-align:center;
+
+    font-size:19px;
+
+}
+
+.profile-role{
+
+    text-align:center;
+
+    color:#7dd3fc;
+
+    font-size:11px;
+
+    margin-top:5px;
+
+}
+
+.status{
+
+    text-align:center;
+
+    margin-top:14px;
+
+    font-family:"JetBrains Mono";
+
+    color:#86efac;
+
+    font-size:9px;
+
+}
+
+.status::before{
+
+    content:"";
+
+    display:inline-block;
+
+    width:7px;
+
+    height:7px;
+
+    margin-right:6px;
+
+    border-radius:50%;
+
+    background:#22c55e;
+
+    box-shadow:
+    0 0 10px #22c55e;
+
+}
+
+
+/* =====================================================
+   PROFILE INFORMATION
+===================================================== */
+
+.profile-info{
+
+    border-top:
+    1px solid
+    rgba(255,255,255,.10);
+
+    margin-top:20px;
+
+    padding-top:18px;
+
+}
+
+.profile-line{
+
+    display:flex;
+
+    gap:10px;
+
+    color:#b6c5d8;
+
+    font-size:10px;
+
+    margin-bottom:10px;
+
+}
+
+.profile-line strong{
+    color:#fff;
+}
+
+
+/* =====================================================
+   SCROLL INDICATOR
+===================================================== */
+
+.scroll-indicator{
+
+    position:absolute;
+
+    bottom:25px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    z-index:5;
+
+    font-family:"JetBrains Mono";
+
+    color:#64748b;
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
+    animation:
+    scrollBounce 2s infinite;
+
+}
+
+@keyframes scrollBounce{
+
+    0%,100%{
+        transform:
+        translate(-50%,0);
+    }
+
+    50%{
+        transform:
+        translate(-50%,8px);
+    }
+
+}
+
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.stats{
+
+    position:relative;
+
+    z-index:10;
+
+    margin-top:-55px;
+
+}
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    background:#fff;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 20px 50px
+    rgba(15,23,42,.12);
+
+}
+
+.stat{
+
+    text-align:center;
+
+    padding:28px 10px;
+
+    border-right:
+    1px solid #e5e7eb;
+
+}
+
+.stat:last-child{
+    border-right:0;
+}
+
+.stat h2{
+
+    color:#2563eb;
+
+    font-size:34px;
+
+}
+
+.stat p{
+
+    color:#64748b;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+}
+
+
+/* =====================================================
+   GENERAL SECTIONS
+===================================================== */
+
+section.content-section{
+
+    padding:100px 0;
+
+}
+
+.section-label{
+
+    font-family:"JetBrains Mono";
+
+    color:#2563eb;
+
+    font-size:9px;
+
+    letter-spacing:3px;
+
+    margin-bottom:10px;
+
+}
+
+.section-title{
+
+    font-size:38px;
+
+    line-height:1.2;
+
+    margin-bottom:20px;
+
+}
+
+.section-description{
+
+    max-width:720px;
+
+    color:#64748b;
+
+    font-size:13px;
+
+    line-height:1.9;
+
+}
+
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(35px);
+
+    transition:
+    opacity .8s ease,
+    transform .8s ease;
+
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+/* =====================================================
+   ABOUT
+===================================================== */
+
+.about-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    1.2fr .8fr;
+
+    gap:50px;
+
+    margin-top:35px;
+
+}
+
+.about-text p{
+
+    color:#526174;
+
+    font-size:13px;
+
+    line-height:1.9;
+
+    margin-bottom:18px;
+
+}
+
+.about-card{
+
+    background:#fff;
+
+    padding:30px;
+
+    border-radius:16px;
+
+    border:
+    1px solid #e2e8f0;
+
+    box-shadow:
+    0 10px 30px
+    rgba(15,23,42,.05);
+
+}
+
+.about-card h3{
+
+    font-size:17px;
+
+    margin-bottom:18px;
+
+}
+
+.interest{
+
+    display:inline-block;
+
+    padding:8px 11px;
+
+    margin:4px;
+
+    background:#eff6ff;
+
+    color:#1d4ed8;
+
+    border-radius:7px;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.interest:hover{
+
+    transform:
+    translateY(-3px);
+
+    box-shadow:
+    0 8px 20px
+    rgba(37,99,235,.12);
+
+}
+
+
+/* =====================================================
+   RESEARCH
+===================================================== */
+
+.research-grid{
+
+    margin-top:40px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:18px;
+
+}
+
+.research-card{
+
+    background:#fff;
+
+    padding:28px;
+
+    border:
+    1px solid #e2e8f0;
+
+    border-radius:16px;
+
+    transition:.35s;
+
+}
+
+.research-card:hover{
+
+    transform:
+    translateY(-8px);
+
+    border-color:#93c5fd;
+
+    box-shadow:
+    0 20px 40px
+    rgba(15,23,42,.08);
+
+}
+
+.research-icon{
+
+    font-size:28px;
+
+    margin-bottom:14px;
+
+}
+
+.research-card h3{
+
+    font-size:16px;
+
+    margin-bottom:9px;
+
+}
+
+.research-card p{
+
+    color:#64748b;
+
+    font-size:11px;
+
+    line-height:1.7;
+
+}
+
+
+/* =====================================================
+   PUBLICATIONS
+===================================================== */
+
+.publication-preview{
+
+    margin-top:40px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:18px;
+
+}
+
+.pub-card{
+
+    background:#fff;
+
+    padding:25px;
+
+    border:
+    1px solid #e2e8f0;
+
+    border-radius:16px;
+
+    transition:.3s;
+
+}
+
+.pub-card:hover{
+
+    transform:
+    translateY(-6px);
+
+    box-shadow:
+    0 15px 35px
+    rgba(15,23,42,.08);
+
+}
+
+.pub-number{
+
+    font-family:"JetBrains Mono";
+
+    color:#2563eb;
+
+    font-size:27px;
+
+    font-weight:700;
+
+}
+
+.pub-card h3{
+
+    font-size:16px;
+
+    margin-top:8px;
+
+}
+
+.pub-card p{
+
+    color:#64748b;
+
+    font-size:11px;
+
+    margin-top:8px;
+
+}
+
+
+/* =====================================================
+   TIMELINE
+===================================================== */
+
+.timeline{
+
+    margin-top:45px;
+
+    border-left:
+    2px solid #dbeafe;
+
+    padding-left:30px;
+
+}
+
+.timeline-item{
+
+    position:relative;
+
+    margin-bottom:35px;
+
+}
+
+.timeline-item::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-37px;
+
+    top:4px;
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+    box-shadow:
+    0 0 0 5px #eff6ff,
+    0 0 18px
+    rgba(37,99,235,.35);
+
+}
+
+.timeline-year{
+
+    font-family:"JetBrains Mono";
+
+    color:#2563eb;
+
+    font-size:9px;
+
+    margin-bottom:6px;
+
+}
+
+.timeline-item h3{
+
+    font-size:16px;
+
+}
+
+.timeline-item p{
+
+    color:#64748b;
+
+    font-size:11px;
+
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.cta{
+
+    padding:65px 30px;
+
+    border-radius:22px;
+
+    text-align:center;
+
+    color:#fff;
+
+    background:
+
+    radial-gradient(
+        circle at 50% 0,
+        rgba(56,189,248,.18),
+        transparent 45%
+    ),
+
+    linear-gradient(
+        135deg,
+        #020617,
+        #12345b
+    );
+
+}
+
+.cta h2{
+
+    font-size:33px;
+
+    margin-bottom:12px;
+
+}
+
+.cta p{
+
+    max-width:650px;
+
+    margin:auto;
+
+    color:#a9bad0;
+
+    font-size:12px;
+
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact-grid{
+
+    margin-top:40px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:18px;
+
+}
+
+.contact-card{
+
+    background:#fff;
+
+    padding:25px;
+
+    border:
+    1px solid #e2e8f0;
+
+    border-radius:14px;
+
+    transition:.3s;
+
+}
+
+.contact-card:hover{
+
+    transform:
+    translateY(-5px);
+
+}
+
+.contact-card span{
+
+    font-size:24px;
+
+}
+
+.contact-card h3{
+
+    font-size:15px;
+
+    margin:10px 0 5px;
+
+}
+
+.contact-card p{
+
+    color:#64748b;
+
+    font-size:10px;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    background:#020617;
+
+    color:#fff;
+
+    padding:35px 20px;
+
+}
+
+.footer-content{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.footer-left strong{
+
+    font-family:"JetBrains Mono";
+
+}
+
+.footer-left p{
+
+    color:#64748b;
+
+    font-size:9px;
+
+    margin-top:5px;
+
+}
+
+.footer-code{
+
+    color:#38bdf8;
+
+    font-family:"JetBrains Mono";
+
+    font-size:9px;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:800px){
+
+    .nav-links{
+
+        display:none;
+
+        position:absolute;
+
+        top:60px;
+
+        left:0;
+
+        right:0;
+
+        background:#020617;
+
+        padding:22px;
+
+        flex-direction:column;
+
+        gap:18px;
+
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero{
+
+        padding-top:130px;
+
+    }
+
+    .hero-content{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+        gap:45px;
+
+    }
+
+    .hero-description{
+
+        margin:auto;
+
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+
+    }
+
+    .profile-wrapper{
+
+        max-width:370px;
+
+        margin:auto;
+
+    }
+
+    .stats-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+    .stat{
+
+        border-bottom:
+        1px solid #e5e7eb;
+
+    }
+
+    .about-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .research-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .publication-preview{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .contact-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .footer-content{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:15px;
+
+    }
+
+}
+/* =====================================================
+   RESEARCH PROFILE CARDS
+===================================================== */
+
+.profile-links-grid{
+
+    margin-top:40px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:18px;
+
+}
+
+
+/* =====================================================
+   PROFILE CARD
+===================================================== */
+
+.research-profile-card{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:22px;
+
+    background:#fff;
+
+    border:
+    1px solid #e2e8f0;
+
+    border-radius:16px;
+
+    color:#172033;
+
+    overflow:hidden;
+
+    transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease;
+
+}
+
+
+/* glowing line */
+
+.research-profile-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-100%;
+
+    width:100%;
+
+    height:2px;
+
+    background:#38bdf8;
+
+    transition:.5s;
+
+}
+
+
+.research-profile-card:hover::before{
+
+    left:0;
+
+}
+
+
+.research-profile-card:hover{
+
+    transform:
+    translateY(-7px);
+
+    border-color:#93c5fd;
+
+    box-shadow:
+    0 18px 40px
+    rgba(15,23,42,.10);
+
+}
+
+
+/* =====================================================
+   ICON
+===================================================== */
+
+.profile-icon{
+
+    min-width:58px;
+
+    width:58px;
+
+    height:58px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:14px;
+
+    color:#fff;
+
+    font-family:"JetBrains Mono";
+
+    font-size:13px;
+
+    font-weight:700;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0f172a,
+        #2563eb
+    );
+
+    box-shadow:
+    0 8px 20px
+    rgba(37,99,235,.18);
+
+    transition:.35s;
+
+}
+
+
+.research-profile-card:hover
+.profile-icon{
+
+    transform:
+    rotate(-5deg)
+    scale(1.08);
+
+}
+
+
+/* individual identity styles */
+
+.profile-icon.scholar{
+    background:#4285f4;
+}
+
+.profile-icon.scopus{
+    background:#e9711c;
+}
+
+.profile-icon.orcid{
+    background:#a6ce39;
+}
+
+.profile-icon.researchgate{
+    background:#00ccbb;
+}
+
+.profile-icon.vidwan{
+    background:#2563eb;
+}
+
+.profile-icon.researchid{
+    background:#7c3aed;
+}
+
+.profile-icon.wos{
+    background:#475569;
+}
+
+.profile-icon.ieee{
+    background:#00629b;
+}
+
+.profile-icon.books{
+    background:
+    linear-gradient(
+        135deg,
+        #7c3aed,
+        #2563eb
+    );
+}
+
+
+/* =====================================================
+   CARD CONTENT
+===================================================== */
+
+.profile-link-content{
+
+    flex:1;
+
+}
+
+
+.profile-link-content h3{
+
+    font-size:16px;
+
+    margin-bottom:5px;
+
+}
+
+
+.profile-link-content p{
+
+    color:#64748b;
+
+    font-size:10px;
+
+    line-height:1.5;
+
+}
+
+
+.profile-link-content span{
+
+    display:inline-block;
+
+    margin-top:9px;
+
+    color:#2563eb;
+
+    font-size:9px;
+
+    font-weight:700;
+
+    letter-spacing:.3px;
+
+}
+
+
+/* =====================================================
+   COLLABORATION BOX
+===================================================== */
+
+.collaboration-box{
+
+    margin-top:35px;
+
+    padding:25px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    border-radius:16px;
+
+    color:#fff;
+
+    background:
+
+    radial-gradient(
+        circle at 90% 20%,
+        rgba(56,189,248,.18),
+        transparent 35%
+    ),
+
+    linear-gradient(
+        135deg,
+        #020617,
+        #12345b
+    );
+
+    box-shadow:
+    0 20px 45px
+    rgba(15,23,42,.12);
+
+}
+
+
+.collaboration-symbol{
+
+    min-width:55px;
+
+    width:55px;
+
+    height:55px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:14px;
+
+    font-size:25px;
+
+    color:#38bdf8;
+
+    border:
+    1px solid
+    rgba(56,189,248,.25);
+
+    background:
+    rgba(56,189,248,.08);
+
+}
+
+
+.collaboration-box h3{
+
+    font-size:16px;
+
+    margin-bottom:7px;
+
+}
+
+
+.collaboration-box p{
+
+    color:#a9bad0;
+
+    font-size:10px;
+
+    line-height:1.7;
+
+}
+
+
+/* =====================================================
+   MOBILE PROFILE GRID
+===================================================== */
+
+@media(max-width:800px){
+
+    .profile-links-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .collaboration-box{
+
+        align-items:flex-start;
+
+    }
+
+}
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<header class="navbar">
+
+<div class="nav-container">
+
+<div class="logo">
+
+<span>&lt;</span> DR. BUTKAR <span>/&gt;</span>
+
+</div>
+
+
+<button
+class="menu-btn"
+onclick="toggleMenu()">
+
+☰
+
+</button>
+
+<ul class="nav-links" id="navLinks">
+
+<li>
+<a href="#home">Home</a>
+</li>
+
+<li>
+<a href="#about">About</a>
+</li>
+
+<li>
+<a href="#research">Research</a>
+</li>
+
+<li>
+<a href="#profiles">Profiles</a>
+</li>
+
+<li>
+<a href="#journey">Journey</a></li>
+<li>
+<a href="publications.html#books">Books</a>
+</li>
+
+<li>
+<a href="publications.html">Publications</a>
+</li>
+
+<li>
+<a href="#contact">Contact</a>
+</li>
+
+</ul>
+
+</div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section
+class="hero"
+id="home">
+
+
+<!-- ANIMATED GRID -->
+
+<div class="hero-grid"></div>
+
+
+<!-- GLOWING BACKGROUND -->
+
+<div class="glow one"></div>
+
+<div class="glow two"></div>
+
+
+<!-- PARTICLES -->
+
+<div class="particles">
+
+<div class="particle"></div>
+
+<div class="particle"></div>
+
+<div class="particle"></div>
+
+<div class="particle"></div>
+
+<div class="particle"></div>
+
+<div class="particle"></div>
+
+<div class="particle"></div>
+
+</div>
+
+
+<div class="hero-content">
+
+
+<!-- HERO TEXT -->
+
+<div class="hero-text">
+
+
+<div class="hero-tag">
+
+ACADEMIA • RESEARCH • INNOVATION
+
+</div>
+
+
+<h1>
+
+Dr. Umakant
+
+<br>
+
+<span>Butkar</span>
+
+</h1>
+
+
+<div class="hero-subtitle">
+
+<span class="typing"></span>
+
+<span class="cursor"></span>
+
+</div>
+
+
+<p class="hero-description">
+
+Associate Professor in Computer Engineering with
+research and teaching interests in Artificial
+Intelligence, Machine Learning, Internet of Things,
+Computer Science and emerging technologies.
+
+Focused on transforming ideas into research,
+intellectual property, publications and practical
+technology solutions.
+
+</p>
+
+
+<div class="hero-buttons">
+
+
+<a
+href="publications.html"
+class="btn btn-primary">
+
+Explore Publications →
+
+</a>
+
+
+<a
+href="#about"
+class="btn btn-outline">
+
+Discover My Work
+
+</a>
+
+
+</div>
+
+</div>
+
+
+
+<!-- PROFILE -->
+
+<div class="profile-wrapper">
+
+
+<div class="profile-card">
+
+
+<div class="photo-ring">
+
+<div class="profile-photo">
+
+<img
+src="profile.jpg"
+alt="Dr. Umakant Butkar">
+
+</div>
+
+</div>
+
+
+<h3>
+
+Dr. Umakant Butkar
+
+</h3>
+
+
+<div class="profile-role">
+
+Associate Professor • Computer Engineering
+
+</div>
+
+
+<div class="status">
+
+AVAILABLE FOR ACADEMIC COLLABORATION
+
+</div>
+
+
+<div class="profile-info">
+
+
+<div class="profile-line">
+
+<span>🎓</span>
+
+<div>
+
+<strong>Academic</strong>
+<br>
+Teaching • Research • Mentoring
+
+</div>
+
+</div>
+
+
+<div class="profile-line">
+
+<span>🔬</span>
+
+<div>
+
+<strong>Research</strong>
+<br>
+AI • ML • IoT • Smart Systems
+
+</div>
+
+</div>
+
+
+<div class="profile-line">
+
+<span>📚</span>
+
+<div>
+
+<strong>Innovation</strong>
+<br>
+Books • Patents • Publications
+
+</div>
+
+</div>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+
+</div>
+
+
+<div class="scroll-indicator">
+
+SCROLL TO EXPLORE ↓
+
+</div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     STATISTICS
+===================================================== -->
+
+<section class="stats">
+
+<div class="container">
+
+<div class="stats-grid">
+
+
+<div class="stat">
+
+<h2
+class="counter"
+data-target="15">
+
+0
+
+</h2>
+
+<p>BOOKS</p>
+
+</div>
+
+
+<div class="stat">
+
+<h2
+class="counter"
+data-target="33">
+
+0
+
+</h2>
+
+<p>PUBLISHED PATENTS</p>
+
+</div>
+
+
+<div class="stat">
+
+<h2
+class="counter"
+data-target="21">
+
+0
+
+</h2>
+
+<p>GRANTED PATENTS</p>
+
+</div>
+
+
+<div class="stat">
+
+<h2
+class="counter"
+data-target="55">
+
+0
+
+</h2>
+
+<p>RESEARCH PAPERS</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section
+class="content-section"
+id="about">
+
+<div class="container reveal">
+
+
+<div class="section-label">
+
+</div>
+
+
+<div class="about-grid">
+
+
+<div class="about-text">
+
+
+<h2 class="section-title">
+
+Building Knowledge.
+<br>
+
+Creating Innovation.
+
+</h2>
+
+
+<p>
+
+Dr. Umakant Butkar is an academician and researcher
+in Computer Engineering, with a strong interest in
+emerging technologies and their practical
+applications.
+
+</p>
+
+
+<p>
+
+His academic and research work includes Artificial
+Intelligence, Machine Learning, Internet of Things,
+Computer Science applications and technology-driven
+solutions.
+
+</p>
+
+
+<p>
+
+His professional activities combine teaching,
+research, academic writing, patents, intellectual
+property and innovation-oriented projects.
+
+</p>
+
+
+<a
+href="publications.html"
+class="btn btn-primary">
+
+View Complete Publications →
+
+</a>
+
+
+</div>
+
+
+<div class="about-card">
+
+
+<h3>
+Research Interests
+</h3>
+
+
+<span class="interest">
+Artificial Intelligence
+</span>
+
+<span class="interest">
+Machine Learning
+</span>
+
+<span class="interest">
+Internet of Things
+</span>
+
+<span class="interest">
+Computer Engineering
+</span>
+
+<span class="interest">
+Data Science
+</span>
+
+<span class="interest">
+Cyber Security
+</span>
+
+<span class="interest">
+Smart Systems
+</span>
+
+<span class="interest">
+Emerging Technologies
+</span>
+
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     RESEARCH
+===================================================== -->
+
+<section
+class="content-section"
+id="research"
+style="background:#fff;">
+
+<div class="container reveal">
+
+
+<div class="section-label">
+
+</div>
+
+
+<h2 class="section-title">
+
+Research & Innovation
+
+</h2>
+
+
+<p class="section-description">
+
+Developing intelligent, connected and practical
+technology solutions that bridge academic research
+with real-world applications.
+
+</p>
+
+
+<div class="research-grid">
+
+
+<div class="research-card">
+
+<div class="research-icon">
+🤖
+</div>
+
+<h3>
+Artificial Intelligence
+</h3>
+
+<p>
+
+Intelligent systems, AI applications,
+deep learning and emerging AI technologies.
+
+</p>
+
+</div>
+
+
+<div class="research-card">
+
+<div class="research-icon">
+🧠
+</div>
+
+<h3>
+Machine Learning
+</h3>
+
+<p>
+
+Prediction, classification, optimization and
+intelligent decision-making.
+
+</p>
+
+</div>
+
+
+<div class="research-card">
+
+<div class="research-icon">
+🌐
+</div>
+
+<h3>
+Internet of Things
+</h3>
+
+<p>
+
+IoT monitoring, automation, smart systems,
+sensing and connected applications.
+
+</p>
+
+</div>
+
+
+<div class="research-card">
+
+<div class="research-icon">
+🔐
+</div>
+
+<h3>
+Cyber Security
+</h3>
+
+<p>
+
+Security-oriented research involving intelligent
+systems, networks and digital environments.
+
+</p>
+
+</div>
+
+
+<div class="research-card">
+
+<div class="research-icon">
+📊
+</div>
+
+<h3>
+Data & Analytics
+</h3>
+
+<p>
+
+Data-driven systems, analytics and computational
+approaches for intelligent applications.
+
+</p>
+
+</div>
+
+
+<div class="research-card">
+
+<div class="research-icon">
+⚙️
+</div>
+
+<h3>
+Smart Engineering
+</h3>
+
+<p>
+
+Technology integration for practical engineering,
+automation and innovation.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PUBLICATIONS
+===================================================== -->
+
+<section
+class="content-section">
+
+<div class="container reveal">
+
+
+<div class="section-label">
+
+</div>
+
+
+<h2 class="section-title">
+
+Research Output
+
+</h2>
+
+
+<p class="section-description">
+
+Explore books, patents, copyrights and research
+papers through the complete publication collection.
+
+</p>
+
+
+<div class="publication-preview">
+
+
+<div class="pub-card">
+
+<div class="pub-number">
+15+
+</div>
+
+<h3>
+Books
+</h3>
+
+<p>
+
+Academic and professional books covering emerging
+technology domains.
+
+</p>
+
+</div>
+
+
+<div class="pub-card">
+
+<div class="pub-number">
+40+
+</div>
+
+<h3>
+Patents
+</h3>
+
+<p>
+
+Published and granted intellectual property covering
+innovative technology concepts.
+
+</p>
+
+</div>
+
+
+<div class="pub-card">
+
+<div class="pub-number">
+55+
+</div>
+
+<h3>
+Research Papers
+</h3>
+
+<p>
+
+Research contributions across AI, ML, IoT,
+cyber security and engineering applications.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+<div style="text-align:center;margin-top:35px;">
+
+<a
+href="publications.html"
+class="btn btn-primary">
+
+📚 View Complete Publications
+
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     RESEARCH PROFILES & COLLABORATION
+===================================================== -->
+
+<section
+class="content-section"
+id="profiles"
+style="background:#f5f8fc;">
+
+<div class="container reveal">
+
+<div class="section-label">
+
+</div>
+
+<h2 class="section-title">
+Research Profiles & Collaboration
+</h2>
+
+<p class="section-description">
+
+Connect with my academic, research and publication
+profiles across major international research platforms.
+
+</p>
+
+
+<div class="profile-links-grid">
+
+
+<!-- GOOGLE SCHOLAR -->
+
+<a
+href="https://scholar.google.com/citations?hl=en&authuser=1&user=rnX6w4AAAAAJ"
+target="_blank"
+rel="noopener noreferrer"
+class="research-profile-card">
+
+<div class="profile-icon scholar">
+GS
+</div>
+
+<div class="profile-link-content">
+
+<h3>
+Google Scholar
+</h3>
+
+<p>
+Publications • Citations • Research Metrics
+</p>
+
+<span>
+View Profile →
+</span>
+
+</div>
+
+</a>
+
+
+
+<!-- SCOPUS -->
+
+<a
+href="https://www.scopus.com/authid/detail.uri?authorId=58679571700"
+target="_blank"
+rel="noopener noreferrer"
+class="research-profile-card">
+
+<div class="profile-icon scopus">
+S
+</div>
+
+<div class="profile-link-content">
+
+<h3>
+Scopus
+</h3>
+
+<p>
+Author Profile • Publications • Citations
+</p>
+
+<span>
+View Author ID →
+</span>
+
+</div>
+
+</a>
+
+
+
+<!-- ORCID -->
+
+<a
+href="https://orcid.org/0000-0002-9697-4568"
+target="_blank"
+rel="noopener noreferrer"
+class="research-profile-card">
+
+<div class="profile-icon orcid">
+iD
+</div>
+
+<div class="profile-link-content">
+
+<h3>
+ORCID
+</h3>
+
+<p>
+Researcher Identifier • Publications
+</p>
+
+<span>
+View ORCID Profile →
+</span>
+
+</div>
+
+</a>
+
+
+
+<!-- RESEARCHGATE -->
+
+<a
+href="https://www.researchgate.net/profile/Umakant-Butkar?ev=hdr_xprf"
+target="_blank"
+rel="noopener noreferrer"
+class="research-profile-card">
+
+<div class="profile-icon researchgate">
+RG
+</div>
+
+<div class="profile-link-content">
+
+<h3>
+ResearchGate
+</h3>
+
+<p>
+Research • Publications • Collaboration
+</p>
+
+<span>
+View ResearchGate →
+</span>
+
+</div>
+
+</a>
+
+
+
+<!-- VIDWAN -->
+
+<a
+href="https://vidwan.inflibnet.ac.in//profile/424764"
+target="_blank"
+rel="noopener noreferrer"
+class="research-profile-card">
+
+<div class="profile-icon vidwan">
+V
+</div>
+
+<div class="profile-link-content">
+
+<h3>
+VIDWAN
+</h3>
+
+<p>
+Indian Researcher & Academic Profile
+</p>
+
+<span>
+View VIDWAN Profile →
+</span>
+
+</div>
+
+</a>
+
+
+
+<!-- RESEARCH ID -->
+
+<a
+href="https://researchid.co/umakantbutkar"
+target="_blank"
+rel="noopener noreferrer"
+class="research-profile-card">
+
+<div class="profile-icon researchid">
+RID
+</div>
+
+<div class="profile-link-content">
+
+<h3>
+ResearchID
+</h3>
+
+<p>
+Researcher Profile • Publications
+</p>
+
+<span>
+View ResearchID →
+</span>
+
+</div>
+
+</a>
+
+
+
+<!-- WEB OF SCIENCE -->
+
+<a
+href="https://www.webofscience.com/wos/author/record/NRB-7258-2025"
+target="_blank"
+rel="noopener noreferrer"
+class="research-profile-card">
+
+<div class="profile-icon wos">
+WoS
+</div>
+
+<div class="profile-link-content">
+
+<h3>
+Web of Science
+</h3>
+
+<p>
+Author Record • Research Publications
+</p>
+
+<span>
+View Author Record →
+</span>
+
+</div>
+
+</a>
+
+
+
+<!-- IEEE XPLORE -->
+
+<a
+href="https://ieeexplore.ieee.org/search/searchresult.jsp?newsearch=true&queryText=umakant%20butkar"
+target="_blank"
+rel="noopener noreferrer"
+class="research-profile-card">
+
+<div class="profile-icon ieee">
+IEEE
+</div>
+
+<div class="profile-link-content">
+
+<h3>
+IEEE Xplore
+</h3>
+
+<p>
+Research Papers • Technical Publications
+</p>
+
+<span>
+Explore IEEE Publications →
+</span>
+
+</div>
+
+</a>
+
+
+
+<!-- AMAZON BOOKS -->
+
+<a
+href="https://www.amazon.in/Books-Dr-Umakant-Dinkar-Butkar/s?rh=n%3A976389031%2Cp_27%3ADr.%2BUmakant%2BDinkar%2BButkar"
+target="_blank"
+rel="noopener noreferrer"
+class="research-profile-card book-profile">
+
+<div class="profile-icon books">
+📚
+</div>
+
+<div class="profile-link-content">
+
+<h3>
+Books – Amazon
+</h3>
+
+<p>
+Books authored and published by Dr. Umakant Butkar
+</p>
+
+<span>
+View Books →
+</span>
+
+</div>
+
+</a>
+
+
+
+<!-- NAMYA PRESS -->
+
+<a
+href="https://namyapress.com/nbl/prof-dr-umakant-dinkar-butkar"
+target="_blank"
+rel="noopener noreferrer"
+class="research-profile-card book-profile">
+
+<div class="profile-icon books">
+📖
+</div>
+
+<div class="profile-link-content">
+
+<h3>
+Books – Namya Press
+</h3>
+
+<p>
+International Books & Publications
+</p>
+
+<span>
+View Book Collection →
+</span>
+
+</div>
+
+</a>
+
+
+</div>
+
+
+<!-- COLLABORATION MESSAGE -->
+
+<div class="collaboration-box">
+
+<div class="collaboration-symbol">
+◈
+</div>
+
+<div>
+
+<h3>
+Open for Research Collaboration
+</h3>
+
+<p>
+
+Interested in academic collaboration, joint research,
+publication, intellectual property, funded projects,
+student projects and emerging technology initiatives.
+
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section
+class="content-section">
+
+<div class="container reveal">
+
+<div class="cta">
+
+
+<h2>
+Explore My Work
+</h2>
+
+
+<p>
+
+Discover books, patents, copyrights and research
+papers through the complete academic publication
+collection.
+
+</p>
+
+
+<div style="margin-top:25px;">
+
+<a
+href="publications.html"
+class="btn btn-primary">
+
+Open Publication Database →
+
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section
+class="content-section"
+id="contact"
+style="background:#fff;">
+
+<div class="container reveal">
+
+
+<div class="section-label">
+
+</div>
+
+
+<h2 class="section-title">
+
+Connect & Collaborate
+
+</h2>
+
+
+<p class="section-description">
+
+For academic collaboration, research discussions,
+student projects, publications and innovation
+activities.
+
+</p>
+
+
+<div class="contact-grid">
+
+
+<div class="contact-card">
+
+<span>🏛️</span>
+
+<h3>
+Institution
+</h3>
+
+<p>
+
+Guru Gobind Singh College of Engineering
+and Research Centre, Nashik
+
+</p>
+
+</div>
+
+
+<div class="contact-card">
+
+<span>🔬</span>
+
+<h3>
+Research
+</h3>
+
+<p>
+
+Google Scholar • Research Profiles
+
+</p>
+
+</div>
+
+
+<div class="contact-card">
+
+<span>💻</span>
+
+<h3>
+Academic Website
+</h3>
+
+<p>
+
+GitHub Pages Professional Profile
+
+</p>
+
+</div>
+
+
+</div>
+
+
+<div style="text-align:center;margin-top:35px;">
+
+<a
+href="publications.html"
+class="btn btn-primary">
+
+View Books & Patents →
+
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+<div class="footer-content">
+
+
+<div class="footer-left">
+
+<strong>
+
+&lt;DR. BUTKAR /&gt;
+
+</strong>
+
+<p>
+
+Academician • Researcher • Author • Innovator
+
+</p>
+
+</div>
+
+
+<div class="footer-code">
+
+research → innovation → impact
+
+</div>
+
+
+</div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+function toggleMenu(){
+
+    document
+    .getElementById("navLinks")
+    .classList
+    .toggle("active");
+
+}
+
+
+document
+.querySelectorAll(".nav-links a")
+.forEach(function(link){
+
+    link.addEventListener("click",function(){
+
+        document
+        .getElementById("navLinks")
+        .classList
+        .remove("active");
+
+    });
+
+});
+
+
+
+/* =====================================================
+   TYPING EFFECT
+===================================================== */
+
+const typingText = [
+
+    "Academician",
+    "Researcher",
+    "Author",
+    "Innovator",
+    "Technology Enthusiast"
+
+];
+
+let textIndex = 0;
+
+let charIndex = 0;
+
+let deleting = false;
+
+
+function typeEffect(){
+
+    const element =
+    document.querySelector(".typing");
+
+    const current =
+    typingText[textIndex];
+
+
+    if(!deleting){
+
+        element.textContent =
+        current.substring(
+            0,
+            charIndex + 1
+        );
+
+        charIndex++;
+
+
+        if(charIndex === current.length){
+
+            deleting = true;
+
+            setTimeout(
+                typeEffect,
+                1400
+            );
+
+            return;
+
+        }
+
+    }else{
+
+        element.textContent =
+        current.substring(
+            0,
+            charIndex - 1
+        );
+
+        charIndex--;
+
+
+        if(charIndex === 0){
+
+            deleting = false;
+
+            textIndex =
+            (textIndex + 1)
+            % typingText.length;
+
+        }
+
+    }
+
+
+    setTimeout(
+        typeEffect,
+        deleting ? 50 : 100
+    );
+
+}
+
+
+typeEffect();
+
+
+
+/* =====================================================
+   COUNTER ANIMATION
+===================================================== */
+
+const counters =
+document.querySelectorAll(".counter");
+
+
+const counterObserver =
+new IntersectionObserver(
+
+    function(entries){
+
+        entries.forEach(function(entry){
+
+            if(entry.isIntersecting){
+
+                const counter =
+                entry.target;
+
+                const target =
+                Number(
+                    counter.dataset.target
+                );
+
+                let count = 0;
+
+                const speed =
+                Math.max(
+                    10,
+                    1200 / target
+                );
+
+
+                function update(){
+
+                    if(count < target){
+
+                        count++;
+
+                        counter.textContent =
+                        count;
+
+                        setTimeout(
+                            update,
+                            speed
+                        );
+
+                    }else{
+
+                        counter.textContent =
+                        target + "+";
+
+                    }
+
+                }
+
+
+                update();
+
+                counterObserver
+                .unobserve(counter);
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold:.5
+    }
+
+);
+
+
+counters.forEach(function(counter){
+
+    counterObserver.observe(counter);
+
+});
+
+
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+const reveals =
+document.querySelectorAll(".reveal");
+
+
+const revealObserver =
+new IntersectionObserver(
+
+    function(entries){
+
+        entries.forEach(function(entry){
+
+            if(entry.isIntersecting){
+
+                entry.target
+                .classList
+                .add("active");
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold:.12
+    }
+
+);
+
+
+reveals.forEach(function(element){
+
+    revealObserver.observe(element);
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>
