@@ -1,2306 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>
-Expert Sessions & Academic Events | Dr. Umakant D. Butkar
-</title>
-
-<meta name="description"
-content="Expert Sessions, Conferences, Workshops, Awards and News Articles of Dr. Umakant D. Butkar.">
-
-
-<!-- GOOGLE FONT -->
-
-<link rel="preconnect"
-href="https://fonts.googleapis.com">
-
-<link rel="preconnect"
-href="https://fonts.gstatic.com"
-crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap"
-rel="stylesheet">
-
+<title>Academic Activities | Dr. Umakant D. Butkar</title>
 
 <style>
-
-/* =====================================================
-   ROOT
-===================================================== */
-
-:root{
-
-    --navy:#071426;
-
-    --navy2:#0c2744;
-
-    --blue:#1769e0;
-
-    --cyan:#20bfdc;
-
-    --white:#ffffff;
-
-    --bg:#f5f8fc;
-
-    --text:#152033;
-
-    --muted:#64748b;
-
-    --border:#e2e8f0;
-
-}
-
-
-/* =====================================================
-   RESET
-===================================================== */
-
-*{
-
-    margin:0;
-
-    padding:0;
-
-    box-sizing:border-box;
-
-}
-
-
-html{
-
-    scroll-behavior:smooth;
-
-}
-
-
-body{
-
-    font-family:
-    Inter,
-    Arial,
-    sans-serif;
-
-    background:var(--bg);
-
-    color:var(--text);
-
-}
-
-
-a{
-
-    text-decoration:none;
-
-    color:inherit;
-
-}
-
-
-.container{
-
-    width:92%;
-
-    max-width:1200px;
-
-    margin:auto;
-
-}
-
-
-/* =====================================================
-   NAVIGATION
-===================================================== */
-
-.navbar{
-
-    position:sticky;
-
-    top:0;
-
-    z-index:1000;
-
-    background:
-    rgba(7,20,38,.96);
-
-    backdrop-filter:
-    blur(15px);
-
-    border-bottom:
-    1px solid
-    rgba(255,255,255,.08);
-
-}
-
-
-.nav{
-
-    min-height:68px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-}
-
-
-.logo{
-
-    color:#fff;
-
-    font-weight:800;
-
-    letter-spacing:2px;
-
-    font-size:15px;
-
-}
-
-
-.logo span{
-
-    color:var(--cyan);
-
-}
-
-
-.menu{
-
-    display:flex;
-
-    gap:25px;
-
-    list-style:none;
-
-}
-
-
-.menu a{
-
-    color:#cbd5e1;
-
-    font-size:11px;
-
-    font-weight:700;
-
-    transition:.3s;
-
-}
-
-
-.menu a:hover{
-
-    color:var(--cyan);
-
-}
-
-
-/* =====================================================
-   HERO
-===================================================== */
-
-.hero{
-
-    position:relative;
-
-    overflow:hidden;
-
-    padding:
-    90px 20px 85px;
-
-    text-align:center;
-
-    color:#fff;
-
-    background:
-
-    radial-gradient(
-        circle at 50% 0,
-        rgba(32,191,220,.20),
-        transparent 42%
-    ),
-
-    linear-gradient(
-        135deg,
-        #020617,
-        #0c2744
-    );
-
-}
-
-
-.hero::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    opacity:.15;
-
-    background-image:
-
-    linear-gradient(
-        rgba(32,191,220,.35) 1px,
-        transparent 1px
-    ),
-
-    linear-gradient(
-        90deg,
-        rgba(32,191,220,.35) 1px,
-        transparent 1px
-    );
-
-    background-size:45px 45px;
-
-    animation:
-    gridMove 15s linear infinite;
-
-}
-
-
-@keyframes gridMove{
-
-    from{
-        transform:translateY(0);
-    }
-
-    to{
-        transform:translateY(45px);
-    }
-
-}
-
-
-.hero-content{
-
-    position:relative;
-
-    z-index:2;
-
-    max-width:900px;
-
-    margin:auto;
-
-}
-
-
-.hero-label{
-
-    font-family:
-    "JetBrains Mono";
-
-    color:var(--cyan);
-
-    font-size:10px;
-
-    letter-spacing:3px;
-
-    margin-bottom:18px;
-
-}
-
-
-.hero h1{
-
-    font-size:
-    clamp(38px,5vw,65px);
-
-    line-height:1.1;
-
-    margin-bottom:18px;
-
-}
-
-
-.hero h1 span{
-
-    color:var(--cyan);
-
-}
-
-
-.hero p{
-
-    max-width:750px;
-
-    margin:auto;
-
-    color:#a9bad0;
-
-    font-size:13px;
-
-    line-height:1.8;
-
-}
-
-
-/* =====================================================
-   STATISTICS
-===================================================== */
-
-.stats{
-
-    background:#fff;
-
-    border-bottom:
-    1px solid var(--border);
-
-}
-
-
-.stats-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(5,1fr);
-
-}
-
-
-.stat{
-
-    padding:25px 10px;
-
-    text-align:center;
-
-    border-right:
-    1px solid #edf1f5;
-
-}
-
-
-.stat:last-child{
-
-    border-right:0;
-
-}
-
-
-.stat-number{
-
-    display:block;
-
-    color:var(--blue);
-
-    font-family:
-    "JetBrains Mono";
-
-    font-size:26px;
-
-    font-weight:700;
-
-}
-
-
-.stat-label{
-
-    display:block;
-
-    margin-top:7px;
-
-    color:var(--muted);
-
-    font-size:8px;
-
-    font-weight:800;
-
-    letter-spacing:1px;
-
-}
-
-
-/* =====================================================
-   FILTER AREA
-===================================================== */
-
-.filter-area{
-
-    padding:
-    45px 20px 10px;
-
-}
-
-
-.filters{
-
-    display:flex;
-
-    justify-content:center;
-
-    flex-wrap:wrap;
-
-    gap:9px;
-
-}
-
-
-.filter-btn{
-
-    padding:
-    10px 17px;
-
-    border:
-    1px solid
-    var(--border);
-
-    border-radius:30px;
-
-    background:#fff;
-
-    color:#475569;
-
-    font-size:9px;
-
-    font-weight:800;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-
-.filter-btn:hover{
-
-    transform:
-    translateY(-2px);
-
-    border-color:
-    var(--blue);
-
-    color:var(--blue);
-
-}
-
-
-.filter-btn.active{
-
-    color:#fff;
-
-    background:var(--blue);
-
-    border-color:var(--blue);
-
-}
-
-
-/* =====================================================
-   SEARCH
-===================================================== */
-
-.search-box{
-
-    max-width:600px;
-
-    margin:
-    22px auto 0;
-
-}
-
-
-.search-box input{
-
-    width:100%;
-
-    padding:
-    14px 18px;
-
-    border:
-    1px solid
-    var(--border);
-
-    border-radius:10px;
-
-    outline:none;
-
-    background:#fff;
-
-    font-size:11px;
-
-}
-
-
-.search-box input:focus{
-
-    border-color:
-    var(--cyan);
-
-    box-shadow:
-    0 0 0 3px
-    rgba(32,191,220,.10);
-
-}
-
-
-/* =====================================================
-   EVENTS SECTION
-===================================================== */
-
-.events-section{
-
-    padding:
-    45px 0 90px;
-
-}
-
-
-.section-label{
-
-    color:var(--blue);
-
-    font-family:
-    "JetBrains Mono";
-
-    font-size:9px;
-
-    font-weight:700;
-
-    letter-spacing:2px;
-
-    margin-bottom:12px;
-
-}
-
-
-.section-title{
-
-    font-size:
-    clamp(28px,4vw,40px);
-
-    margin-bottom:10px;
-
-}
-
-
-.section-description{
-
-    max-width:750px;
-
-    color:var(--muted);
-
-    font-size:11px;
-
-    line-height:1.8;
-
-    margin-bottom:30px;
-
-}
-
-
-/* =====================================================
-   EVENT GRID
-===================================================== */
-
-.events-grid{
-
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:24px;
-
-}
-
-
-/* =====================================================
-   CARD
-===================================================== */
-
-.event-card{
-
-    background:#fff;
-
-    border:
-    1px solid
-    var(--border);
-
-    border-radius:18px;
-
-    overflow:hidden;
-
-    box-shadow:
-    0 8px 25px
-    rgba(15,23,42,.05);
-
-    transition:
-    transform .35s ease,
-    box-shadow .35s ease,
-    border-color .35s ease;
-
-    animation:
-    cardIn .6s ease both;
-
-}
-
-
-@keyframes cardIn{
-
-    from{
-
-        opacity:0;
-
-        transform:
-        translateY(25px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-        translateY(0);
-
-    }
-
-}
-
-
-.event-card:hover{
-
-    transform:
-    translateY(-8px);
-
-    border-color:
-    rgba(32,191,220,.45);
-
-    box-shadow:
-    0 22px 50px
-    rgba(15,23,42,.12);
-
-}
-
-
-/* =====================================================
-   PHOTO
-===================================================== */
-
-.event-photo{
-
-    position:relative;
-
-    height:220px;
-
-    overflow:hidden;
-
-    background:
-
-    linear-gradient(
-        135deg,
-        #071426,
-        #123b61
-    );
-
-}
-
-
-.event-photo img{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-    transition:
-    transform .6s ease;
-
-}
-
-
-.event-card:hover
-.event-photo img{
-
-    transform:
-    scale(1.08);
-
-}
-
-
-.photo-placeholder{
-
-    width:100%;
-
-    height:100%;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    color:var(--cyan);
-
-    font-size:40px;
-
-}
-
-
-/* =====================================================
-   CATEGORY
-===================================================== */
-
-.category-badge{
-
-    position:absolute;
-
-    top:14px;
-
-    left:14px;
-
-    padding:
-    7px 12px;
-
-    border-radius:20px;
-
-    background:
-    rgba(2,6,23,.84);
-
-    color:#fff;
-
-    font-size:8px;
-
-    font-weight:800;
-
-    letter-spacing:1px;
-
-    backdrop-filter:
-    blur(7px);
-
-}
-
-
-/* =====================================================
-   CARD CONTENT
-===================================================== */
-
-.event-content{
-
-    padding:22px;
-
-}
-
-
-.event-date{
-
-    color:var(--blue);
-
-    font-family:
-    "JetBrains Mono";
-
-    font-size:9px;
-
-    font-weight:700;
-
-    margin-bottom:9px;
-
-}
-
-
-.event-title{
-
-    font-size:17px;
-
-    line-height:1.45;
-
-    margin-bottom:8px;
-
-}
-
-
-.event-topic{
-
-    color:var(--blue);
-
-    font-size:10px;
-
-    font-weight:700;
-
-    line-height:1.5;
-
-    margin-bottom:10px;
-
-}
-
-
-.event-description{
-
-    color:var(--muted);
-
-    font-size:10px;
-
-    line-height:1.7;
-
-}
-
-
-/* =====================================================
-   META
-===================================================== */
-
-.event-meta{
-
-    margin-top:16px;
-
-    padding-top:14px;
-
-    border-top:
-    1px solid #eef2f7;
-
-}
-
-
-.meta-row{
-
-    display:flex;
-
-    align-items:flex-start;
-
-    gap:9px;
-
-    margin-bottom:9px;
-
-    color:var(--muted);
-
-    font-size:9px;
-
-    line-height:1.5;
-
-}
-
-
-.meta-icon{
-
-    min-width:18px;
-
-    color:var(--blue);
-
-}
-
-
-.meta-row strong{
-
-    color:#334155;
-
-}
-
-
-/* =====================================================
-   DETAILS LINK
-===================================================== */
-
-.details-link{
-
-    display:inline-block;
-
-    margin-top:8px;
-
-    color:var(--blue);
-
-    font-size:9px;
-
-    font-weight:800;
-
-}
-
-
-.details-link:hover{
-
-    color:var(--cyan);
-
-}
-
-
-/* =====================================================
-   EMPTY
-===================================================== */
-
-.empty{
-
-    grid-column:
-    1 / -1;
-
-    text-align:center;
-
-    padding:70px 20px;
-
-    background:#fff;
-
-    border:
-    1px solid
-    var(--border);
-
-    border-radius:18px;
-
-}
-
-
-.empty-icon{
-
-    font-size:40px;
-
-    margin-bottom:12px;
-
-}
-
-
-.empty p{
-
-    color:var(--muted);
-
-    font-size:10px;
-
-}
-
-
-/* =====================================================
-   COLLABORATION
-===================================================== */
-
-.collaboration{
-
-    margin-top:50px;
-
-    padding:30px;
-
-    border-radius:18px;
-
-    color:#fff;
-
-    background:
-
-    radial-gradient(
-        circle at 90% 20%,
-        rgba(32,191,220,.20),
-        transparent 35%
-    ),
-
-    linear-gradient(
-        135deg,
-        #020617,
-        #123b61
-    );
-
-}
-
-
-.collaboration h3{
-
-    font-size:18px;
-
-    margin-bottom:8px;
-
-}
-
-
-.collaboration p{
-
-    max-width:750px;
-
-    color:#a9bad0;
-
-    font-size:10px;
-
-    line-height:1.8;
-
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer{
-
-    padding:
-    35px 20px;
-
-    background:#020617;
-
-    color:#fff;
-
-}
-
-
-.footer{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-}
-
-
-.footer-code{
-
-    color:var(--cyan);
-
-    font-family:
-    "JetBrains Mono";
-
-    font-size:9px;
-
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media(max-width:900px){
-
-    .events-grid{
-
-        grid-template-columns:
-        repeat(2,1fr);
-
-    }
-
-
-    .stats-grid{
-
-        grid-template-columns:
-        repeat(3,1fr);
-
-    }
-
-
-    .stat:nth-child(3){
-
-        border-right:0;
-
-    }
-
-}
-
-
-@media(max-width:650px){
-
-    .menu{
-
-        gap:12px;
-
-    }
-
-
-    .menu a{
-
-        font-size:9px;
-
-    }
-
-
-    .events-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    .stats-grid{
-
-        grid-template-columns:
-        repeat(2,1fr);
-
-    }
-
-
-    .stat{
-
-        border-bottom:
-        1px solid #edf1f5;
-
-    }
-
-
-    .hero{
-
-        padding:
-        65px 20px;
-
-    }
-
-
-    .footer{
-
-        flex-direction:column;
-
-        align-items:flex-start;
-
-        gap:12px;
-
-    }
-
-}
-
-
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,sans-serif;background:#f5f8fc;color:#172033}
+nav{background:#071426;padding:18px;text-align:center}
+nav a{color:white;text-decoration:none;margin:0 12px;font-size:13px}
+nav a:hover{color:#20bfdc}
+
+.hero{text-align:center;padding:65px 20px;color:white;
+background:linear-gradient(135deg,#071426,#123b61)}
+.hero h1{font-size:42px;margin:10px}
+.hero span{color:#20bfdc}
+.hero p{color:#b9c8d8}
+
+.filters{text-align:center;padding:30px 10px}
+button{border:1px solid #ddd;background:white;padding:10px 16px;
+border-radius:20px;margin:4px;cursor:pointer}
+button.active,button:hover{background:#1769e0;color:white}
+
+.search{display:block;width:90%;max-width:600px;margin:15px auto;
+padding:13px;border:1px solid #ddd;border-radius:8px}
+
+.grid{max-width:1150px;margin:20px auto 70px;padding:10px;
+display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+
+.card{background:white;border-radius:15px;overflow:hidden;
+box-shadow:0 5px 20px #00000010;transition:.3s}
+.card:hover{transform:translateY(-6px)}
+
+.card img{width:100%;height:190px;object-fit:cover}
+.noimg{height:190px;background:#09213b;color:#20bfdc;
+display:flex;align-items:center;justify-content:center;font-size:40px}
+
+.content{padding:18px}
+.date{color:#1769e0;font-size:12px;font-weight:bold}
+.tag{display:inline-block;background:#071426;color:white;
+padding:5px 9px;border-radius:15px;font-size:9px;margin:8px 0}
+h3{margin:8px 0;font-size:17px}
+p{font-size:12px;line-height:1.6;color:#64748b}
+.info{font-size:11px;line-height:1.8}
+.link{color:#1769e0;font-weight:bold;font-size:11px}
+
+footer{text-align:center;background:#071426;color:white;padding:30px}
+@media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:550px){.grid{grid-template-columns:1fr}.hero h1{font-size:32px}}
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- =====================================================
-     NAVIGATION
-===================================================== -->
-
-<nav class="navbar">
-
-<div class="container nav">
-
-
-<a href="index.html"
-class="logo">
-
-<span>&lt;</span>
-DR. BUTKAR
-<span>/&gt;</span>
-
-</a>
-
-
-<ul class="menu">
-
-<li>
-<a href="index.html">
-Home
-</a>
-</li>
-
-<li>
-<a href="publications.html">
-Publications
-</a>
-</li>
-
-<li>
-<a href="#events">
-All Events
-</a>
-</li>
-
-<li>
-<a href="#expert">
-Expert Sessions
-</a>
-</li>
-
-<li>
-<a href="#conference">
-Conferences
-</a>
-</li>
-
-<li>
-<a href="#awards">
-Awards
-</a>
-</li>
-
-<li>
-<a href="#news">
-News
-</a>
-</li>
-
-</ul>
-
-
-</div>
-
+<nav>
+<a href="index.html">Home</a>
+<a href="publications.html">Publications</a>
+<a href="expert-sessions.html">Academic Activities</a>
 </nav>
 
-
-
-<!-- =====================================================
-     HERO
-===================================================== -->
-
-<header class="hero">
-
-<div class="hero-content">
-
-
-<div class="hero-label">
-
-ACADEMIC EVENTS • ACHIEVEMENTS • MEDIA
-
-</div>
-
-
-<h1>
-
-Dr. Umakant
-<span>D. Butkar</span>
-
-</h1>
-
-
-<p>
-
-Expert Speaker • Resource Person • Researcher • Academician
-
-<br><br>
-
-A professional archive of expert sessions,
-invited lectures, conferences, workshops,
-faculty-development programmes, awards,
-recognitions and media coverage.
-
-</p>
-
-
-</div>
-
-</header>
-
-
-
-<!-- =====================================================
-     STATISTICS
-===================================================== -->
-
-<section class="stats">
-
-<div class="container">
-
-<div class="stats-grid">
-
-
-<div class="stat">
-
-<span
-class="stat-number"
-id="totalEvents">
-
-0
-
-</span>
-
-<span class="stat-label">
-
-TOTAL EVENTS
-
-</span>
-
-</div>
-
-
-<div class="stat">
-
-<span
-class="stat-number"
-id="expertEvents">
-
-0
-
-</span>
-
-<span class="stat-label">
-
-EXPERT SESSIONS
-
-</span>
-
-</div>
-
-
-<div class="stat">
-
-<span
-class="stat-number"
-id="conferenceEvents">
-
-0
-
-</span>
-
-<span class="stat-label">
-
-CONFERENCES
-
-</span>
-
-</div>
-
-
-<div class="stat">
-
-<span
-class="stat-number"
-id="workshopEvents">
-
-0
-
-</span>
-
-<span class="stat-label">
-
-WORKSHOPS / FDP
-
-</span>
-
-</div>
-
-
-<div class="stat">
-
-<span
-class="stat-number"
-id="awardEvents">
-
-0
-
-</span>
-
-<span class="stat-label">
-
-AWARDS / RECOGNITIONS
-
-</span>
-
-</div>
-
-
-</div>
-
-</div>
-
+<section class="hero">
+<p>ACADEMIC • RESEARCH • PROFESSIONAL ACTIVITIES</p>
+<h1>Dr. Umakant <span>D. Butkar</span></h1>
+<p>Expert Sessions • Conferences • Workshops • Awards • News</p>
 </section>
-
-
-
-<!-- =====================================================
-     FILTER
-===================================================== -->
-
-<section class="filter-area">
-
-<div class="container">
-
 
 <div class="filters">
 
+<button class="active" onclick="show('all',this)">All</button>
+<button onclick="show('expert',this)">🎤 Expert Sessions</button>
+<button onclick="show('conference',this)">🏛 Conferences</button>
+<button onclick="show('workshop',this)">💻 Workshops / FDP</button>
+<button onclick="show('award',this)">🏆 Awards</button>
+<button onclick="show('news',this)">📰 News</button>
 
-<button
-class="filter-btn active"
-onclick="filterEvents('all',this)">
-
-All
-
-</button>
-
-
-<button
-class="filter-btn"
-onclick="filterEvents('expert',this)">
-
-🎤 Expert Sessions
-
-</button>
-
-
-<button
-class="filter-btn"
-onclick="filterEvents('conference',this)">
-
-🏛️ Conferences
-
-</button>
-
-
-<button
-class="filter-btn"
-onclick="filterEvents('workshop',this)">
-
-💻 Workshops / FDP
-
-</button>
-
-
-<button
-class="filter-btn"
-onclick="filterEvents('award',this)">
-
-🏆 Awards
-
-</button>
-
-
-<button
-class="filter-btn"
-onclick="filterEvents('news',this)">
-
-📰 News
-
-</button>
-
+<input class="search" id="search"
+placeholder="🔎 Search activity, institution, venue...">
 
 </div>
 
-
-<div class="search-box">
-
-<input
-type="text"
-id="searchInput"
-placeholder="🔎 Search event, institution, venue or topic...">
-
-</div>
-
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     EVENTS
-===================================================== -->
-
-<section
-class="events-section"
-id="events">
-
-<div class="container">
-
-
-<div class="section-label">
-
-01 · ACADEMIC ACTIVITY ARCHIVE
-
-</div>
-
-
-<h2 class="section-title">
-
-Events & Achievements
-
-</h2>
-
-
-<p class="section-description">
-
-Explore expert sessions, conferences,
-workshops, FDPs, awards and media
-coverage associated with academic,
-research and professional activities.
-
-</p>
-
-
-<div
-class="events-grid"
-id="eventsGrid">
-
-</div>
-
-
-<div
-class="collaboration">
-
-<h3>
-
-◈ Open for Academic & Research Collaboration
-
-</h3>
-
-<p>
-
-Interested in expert sessions, invited talks,
-research collaboration, conferences,
-faculty-development programmes, industry
-interaction, student projects and emerging
-technology initiatives.
-
-</p>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+<div class="grid" id="events"></div>
 
 <footer>
-
-<div class="container footer">
-
-
-<div>
-
-<strong>
-
-&lt;DR. BUTKAR /&gt;
-
-</strong>
-
-<p style="
-color:#64748b;
-font-size:9px;
-margin-top:5px;
-">
-
+<strong>Dr. Umakant D. Butkar</strong><br>
 Academician • Researcher • Author • Innovator
-
-</p>
-
-</div>
-
-
-<div class="footer-code">
-
-academia → research → innovation → impact
-
-</div>
-
-
-</div>
-
 </footer>
 
 
-
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
 <script>
 
-
 /* =====================================================
-   EVENT DATABASE
+   ONLY EDIT THIS SECTION TO ADD NEW EVENTS
+   ===================================================== */
 
-   ADD YOUR EVENTS HERE
-===================================================== */
-
-const events = [
-
-
-/* =====================================================
-   EXPERT SESSION
-===================================================== */
+const data = [
 
 {
-
-    category:"expert",
-
-    title:
-    "Expert Session on Intellectual Property Rights",
-
-    topic:
-    "Intellectual Property Rights",
-
-    institution:
-    "Jawahar Education Society's Institute of Technology, Management & Research",
-
-    venue:
-    "JES Institute of Technology, Management & Research",
-
-    location:
-    "Nashik, Maharashtra",
-
-    date:
-    "03 February 2025",
-
-    description:
-    "Expert session on Intellectual Property Rights and awareness of innovation and intellectual property.",
-
-    image:
-    "events/ipr-2025.jpg",
-
-    source:
-    "https://www.jitnew.jitnashik.edu.in/department/IT/ITseminar.php",
-
-    sourceLabel:
-    "View Event Details"
-
+type:"expert",
+title:"Expert Session on Intellectual Property Rights",
+topic:"Intellectual Property Rights",
+date:"03 February 2025",
+institution:"JES Institute of Technology, Management & Research",
+venue:"Seminar Hall",
+location:"Nashik, Maharashtra",
+photo:"events/ipr-2025.jpg",
+link:"https://www.jitnew.jitnashik.edu.in/department/IT/ITseminar.php"
 },
 
-
-/* =====================================================
-   EXPERT SESSION
-===================================================== */
-
 {
-
-    category:"expert",
-
-    title:
-    "Expert Panel Discussion on Internet of Things",
-
-    topic:
-    "IoT • Smart Systems • Emerging Technologies",
-
-    institution:
-    "Academic Institution",
-
-    venue:
-    "Conference / Seminar Hall",
-
-    location:
-    "Maharashtra, India",
-
-    date:
-    "2025",
-
-    description:
-    "Expert interaction and panel discussion on Internet of Things, smart systems and emerging technology applications.",
-
-    image:
-    "events/iot-panel.jpg",
-
-    source:
-    "",
-
-    sourceLabel:
-    "Event Details"
-
+type:"expert",
+title:"Expert Panel Discussion on Internet of Things",
+topic:"IoT • Smart Systems • Emerging Technologies",
+date:"2025",
+institution:"Academic Institution",
+venue:"Conference Hall",
+location:"Maharashtra, India",
+photo:"events/iot-panel.jpg",
+link:""
 },
 
-
-/* =====================================================
-   CONFERENCE
-===================================================== */
-
 {
-
-    category:"conference",
-
-    title:
-    "International Conference on Emerging Technologies",
-
-    topic:
-    "Emerging Technologies • Research • Innovation",
-
-    institution:
-    "Conference Organizing Institution",
-
-    venue:
-    "Conference Venue",
-
-    location:
-    "Maharashtra, India",
-
-    date:
-    "2024",
-
-    description:
-    "Participation and academic contribution in an international conference focusing on emerging technologies and research innovation.",
-
-    image:
-    "events/conference-2024.jpg",
-
-    source:
-    "",
-
-    sourceLabel:
-    "Conference Details"
-
+type:"conference",
+title:"International Conference on Emerging Technologies",
+topic:"Research • Innovation • Emerging Technologies",
+date:"2024",
+institution:"Conference Organizing Institution",
+venue:"Conference Venue",
+location:"Maharashtra, India",
+photo:"events/conference-2024.jpg",
+link:""
 },
 
-
-/* =====================================================
-   WORKSHOP / FDP
-===================================================== */
-
 {
-
-    category:"workshop",
-
-    title:
-    "Faculty Development Programme",
-
-    topic:
-    "Emerging Technologies & Research",
-
-    institution:
-    "Organizing Institution",
-
-    venue:
-    "Institution Campus",
-
-    location:
-    "Maharashtra, India",
-
-    date:
-    "2025",
-
-    description:
-    "Faculty development programme focused on emerging technologies, academic practices and research opportunities.",
-
-    image:
-    "events/fdp-2025.jpg",
-
-    source:
-    "",
-
-    sourceLabel:
-    "FDP Details"
-
+type:"workshop",
+title:"Faculty Development Programme",
+topic:"Emerging Technologies & Research",
+date:"2025",
+institution:"Organizing Institution",
+venue:"Institution Campus",
+location:"Maharashtra, India",
+photo:"events/fdp-2025.jpg",
+link:""
 },
 
-
-/* =====================================================
-   AWARD
-===================================================== */
-
 {
-
-    category:"award",
-
-    title:
-    "Academic Excellence & Research Recognition",
-
-    topic:
-    "Academic • Research • Innovation",
-
-    institution:
-    "Awarding Organization",
-
-    venue:
-    "Award Ceremony",
-
-    location:
-    "India",
-
-    date:
-    "2025",
-
-    description:
-    "Recognition for academic contribution, research, innovation and professional activities.",
-
-    image:
-    "events/award-2025.jpg",
-
-    source:
-    "",
-
-    sourceLabel:
-    "View Recognition"
-
+type:"award",
+title:"Academic Excellence & Research Recognition",
+topic:"Academic • Research • Innovation",
+date:"2025",
+institution:"Awarding Organization",
+venue:"Award Ceremony",
+location:"India",
+photo:"events/award-2025.jpg",
+link:""
 },
 
-
-/* =====================================================
-   NEWS
-===================================================== */
-
 {
-
-    category:"news",
-
-    title:
-    "Research & Innovation Featured in News",
-
-    topic:
-    "Research • Innovation • Technology",
-
-    institution:
-    "News Publication",
-
-    venue:
-    "Nashik",
-
-    location:
-    "Maharashtra, India",
-
-    date:
-    "2025",
-
-    description:
-    "Media coverage highlighting research, innovation, academic activities and technology initiatives.",
-
-    image:
-    "events/news-2025.jpg",
-
-    source:
-    "",
-
-    sourceLabel:
-    "Read News Article"
-
+type:"news",
+title:"Research & Innovation Featured in News",
+topic:"Research • Innovation • Technology",
+date:"2025",
+institution:"News Publication",
+venue:"Nashik",
+location:"Maharashtra, India",
+photo:"events/news-2025.jpg",
+link:""
 }
-
 
 ];
 
 
-
 /* =====================================================
-   DISPLAY EVENTS
-===================================================== */
+   DO NOT EDIT BELOW THIS LINE
+   ===================================================== */
 
-function displayEvents(data){
+let current="all";
 
-    const grid =
-    document.getElementById("eventsGrid");
+function show(type,btn){
 
+current=type;
 
-    grid.innerHTML="";
+document.querySelectorAll("button")
+.forEach(b=>b.classList.remove("active"));
 
+if(btn)btn.classList.add("active");
 
-    if(data.length===0){
-
-        grid.innerHTML=`
-
-        <div class="empty">
-
-            <div class="empty-icon">
-                🔎
-            </div>
-
-            <h3>
-                No Records Found
-            </h3>
-
-            <p>
-                Try another category or search term.
-            </p>
-
-        </div>
-
-        `;
-
-        return;
-
-    }
-
-
-    data.forEach(function(event){
-
-
-        const card =
-        document.createElement("article");
-
-
-        card.className="event-card";
-
-
-        let imageHTML;
-
-
-        if(event.image){
-
-            imageHTML=`
-
-            <img
-            src="${event.image}"
-            alt="${event.title}"
-            loading="lazy"
-            onerror="
-            this.style.display='none';
-            this.nextElementSibling.style.display='flex';
-            "
-            >
-
-            <div
-            class="photo-placeholder"
-            style="display:none;"
-            >
-
-            📸
-
-            </div>
-
-            `;
-
-        }
-
-        else{
-
-            imageHTML=`
-
-            <div class="photo-placeholder">
-
-            📸
-
-            </div>
-
-            `;
-
-        }
-
-
-        let linkHTML="";
-
-
-        if(event.source){
-
-            linkHTML=`
-
-            <a
-
-            href="${event.source}"
-
-            target="_blank"
-
-            rel="noopener noreferrer"
-
-            class="details-link">
-
-            ${event.sourceLabel || "View Details"} →
-
-            </a>
-
-            `;
-
-        }
-
-
-        card.innerHTML=`
-
-        <div class="event-photo">
-
-            ${imageHTML}
-
-            <div class="category-badge">
-
-                ${getCategoryName(event.category)}
-
-            </div>
-
-        </div>
-
-
-        <div class="event-content">
-
-
-            <div class="event-date">
-
-                📅 ${event.date}
-
-            </div>
-
-
-            <h3 class="event-title">
-
-                ${event.title}
-
-            </h3>
-
-
-            <p class="event-topic">
-
-                ${event.topic || ""}
-
-            </p>
-
-
-            <p class="event-description">
-
-                ${event.description || ""}
-
-            </p>
-
-
-            <div class="event-meta">
-
-
-                <div class="meta-row">
-
-                    <span class="meta-icon">
-                    🏢
-                    </span>
-
-                    <div>
-
-                    <strong>
-                    Institution
-                    </strong>
-
-                    <br>
-
-                    ${event.institution || ""}
-
-                    </div>
-
-                </div>
-
-
-                <div class="meta-row">
-
-                    <span class="meta-icon">
-                    📍
-                    </span>
-
-                    <div>
-
-                    <strong>
-                    Venue
-                    </strong>
-
-                    <br>
-
-                    ${event.venue || event.location || ""}
-
-                    </div>
-
-                </div>
-
-
-                ${
-                    event.location
-
-                    ?
-
-                    `
-
-                    <div class="meta-row">
-
-                        <span class="meta-icon">
-                        🌐
-                        </span>
-
-                        <div>
-
-                        ${event.location}
-
-                        </div>
-
-                    </div>
-
-                    `
-
-                    :
-
-                    ""
-
-                }
-
-
-            </div>
-
-
-            ${linkHTML}
-
-
-        </div>
-
-        `;
-
-
-        grid.appendChild(card);
-
-    });
+render();
 
 }
 
+document.getElementById("search")
+.addEventListener("input",render);
 
 
-/* =====================================================
-   CATEGORY NAME
-===================================================== */
+function render(){
 
-function getCategoryName(category){
+let word=document.getElementById("search")
+.value.toLowerCase();
 
-    const names={
+let list=data.filter(e=>
 
-        expert:"EXPERT SESSION",
+(current=="all"||e.type==current)&&
 
-        conference:"CONFERENCE",
+Object.values(e).join(" ")
+.toLowerCase().includes(word)
 
-        workshop:"WORKSHOP / FDP",
+);
 
-        award:"AWARD",
+document.getElementById("events").innerHTML=list.map(e=>`
 
-        news:"NEWS ARTICLE"
+<article class="card">
 
-    };
+${e.photo
+?`<img src="${e.photo}" alt="${e.title}">`
+:`<div class="noimg">📸</div>`}
 
+<div class="content">
 
-    return names[category]
-    || "ACADEMIC EVENT";
+<div class="date">📅 ${e.date}</div>
 
-}
+<div class="tag">${e.type.toUpperCase()}</div>
 
+<h3>${e.title}</h3>
 
+<p><b>${e.topic}</b></p>
 
-/* =====================================================
-   FILTER
-===================================================== */
+<div class="info">
+🏢 ${e.institution}<br>
+📍 ${e.venue}<br>
+🌐 ${e.location}
+</div>
 
-function filterEvents(type,button){
+${e.link
+?`<p><a class="link" href="${e.link}" target="_blank">
+View Details →</a></p>`
+:""}
 
+</div>
+</article>
 
-    document
-    .querySelectorAll(".filter-btn")
-    .forEach(function(btn){
-
-        btn.classList.remove("active");
-
-    });
-
-
-    if(button){
-
-        button.classList.add("active");
-
-    }
-
-
-    if(type==="all"){
-
-        displayEvents(events);
-
-        return;
-
-    }
-
-
-    const filtered =
-    events.filter(function(event){
-
-        return event.category===type;
-
-    });
-
-
-    displayEvents(filtered);
+`).join("");
 
 }
 
-
-
-/* =====================================================
-   SEARCH
-===================================================== */
-
-document
-.getElementById("searchInput")
-.addEventListener(
-"input",
-function(){
-
-
-    const keyword =
-    this.value
-    .toLowerCase()
-    .trim();
-
-
-    const filtered =
-    events.filter(function(event){
-
-
-        const searchable = `
-
-        ${event.title}
-
-        ${event.topic}
-
-        ${event.institution}
-
-        ${event.venue}
-
-        ${event.location}
-
-        ${event.description}
-
-        ${event.date}
-
-        ${event.category}
-
-        `.toLowerCase();
-
-
-        return searchable.includes(keyword);
-
-    });
-
-
-    displayEvents(filtered);
-
-});
-
-
-
-/* =====================================================
-   STATISTICS
-===================================================== */
-
-function updateStatistics(){
-
-
-    document.getElementById(
-        "totalEvents"
-    ).textContent=events.length;
-
-
-    document.getElementById(
-        "expertEvents"
-    ).textContent=
-
-    events.filter(
-        e=>e.category==="expert"
-    ).length;
-
-
-    document.getElementById(
-        "conferenceEvents"
-    ).textContent=
-
-    events.filter(
-        e=>e.category==="conference"
-    ).length;
-
-
-    document.getElementById(
-        "workshopEvents"
-    ).textContent=
-
-    events.filter(
-        e=>e.category==="workshop"
-    ).length;
-
-
-    document.getElementById(
-        "awardEvents"
-    ).textContent=
-
-    events.filter(
-        e=>e.category==="award"
-    ).length;
-
-}
-
-
-
-/* =====================================================
-   INITIALIZE
-===================================================== */
-
-displayEvents(events);
-
-updateStatistics();
-
+render();
 
 </script>
 
-
 </body>
-
 </html>
