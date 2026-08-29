@@ -1,5 +1,4 @@
-<! Update session in const data = [>
-<!DOCTYPE html>       
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -9,21 +8,21 @@
 
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f5f8fc;color:#172033}
+body{margin:0;font-family:Arial;background:#f5f8fc;color:#172033}
 nav{background:#071426;padding:18px;text-align:center}
-nav a{color:white;text-decoration:none;margin:0 12px;font-size:13px}
+nav a{color:#fff;text-decoration:none;margin:0 12px;font-size:13px}
 nav a:hover{color:#20bfdc}
 
-.hero{text-align:center;padding:65px 20px;color:white;
+.hero{text-align:center;padding:60px 20px;color:#fff;
 background:linear-gradient(135deg,#071426,#123b61)}
 .hero h1{font-size:42px;margin:10px}
-.hero span{color:#20bfdc}
+.hero h1 span{color:#20bfdc}
 .hero p{color:#b9c8d8}
 
-.filters{text-align:center;padding:30px 10px}
-button{border:1px solid #ddd;background:white;padding:10px 16px;
+.filters{text-align:center;padding:25px 10px}
+button{border:1px solid #ddd;background:#fff;padding:10px 15px;
 border-radius:20px;margin:4px;cursor:pointer}
-button.active,button:hover{background:#1769e0;color:white}
+button.active,button:hover{background:#1769e0;color:#fff}
 
 .search{display:block;width:90%;max-width:600px;margin:15px auto;
 padding:13px;border:1px solid #ddd;border-radius:8px}
@@ -31,26 +30,49 @@ padding:13px;border:1px solid #ddd;border-radius:8px}
 .grid{max-width:1150px;margin:20px auto 70px;padding:10px;
 display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 
-.card{background:white;border-radius:15px;overflow:hidden;
-box-shadow:0 5px 20px #00000010;transition:.3s}
+.card{background:#fff;border-radius:15px;overflow:hidden;
+box-shadow:0 5px 20px #0001;transition:.3s}
 .card:hover{transform:translateY(-6px)}
 
-.card img{width:100%;height:190px;object-fit:cover}
-.noimg{height:190px;background:#09213b;color:#20bfdc;
-display:flex;align-items:center;justify-content:center;font-size:40px}
+.gallery{position:relative;height:210px;background:#071426}
+.gallery img{width:100%;height:100%;object-fit:cover;cursor:pointer}
+
+.gallery button{position:absolute;top:50%;transform:translateY(-50%);
+background:#0009;color:#fff;border:0;width:35px;height:35px;
+padding:0;border-radius:50%;z-index:2}
+.prev{left:10px}.next{right:10px}
+
+.count{position:absolute;bottom:8px;right:10px;
+background:#000b;color:#fff;padding:5px 9px;border-radius:15px;font-size:10px}
 
 .content{padding:18px}
 .date{color:#1769e0;font-size:12px;font-weight:bold}
-.tag{display:inline-block;background:#071426;color:white;
+.tag{display:inline-block;background:#071426;color:#fff;
 padding:5px 9px;border-radius:15px;font-size:9px;margin:8px 0}
 h3{margin:8px 0;font-size:17px}
 p{font-size:12px;line-height:1.6;color:#64748b}
 .info{font-size:11px;line-height:1.8}
 .link{color:#1769e0;font-weight:bold;font-size:11px}
 
-footer{text-align:center;background:#071426;color:white;padding:30px}
-@media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:550px){.grid{grid-template-columns:1fr}.hero h1{font-size:32px}}
+/* FULL SCREEN PHOTO */
+.modal{display:none;position:fixed;inset:0;background:#000e;
+z-index:9999;align-items:center;justify-content:center}
+.modal img{max-width:90%;max-height:85%;object-fit:contain}
+.modal button{position:absolute;background:#fff;color:#111;
+border:0;border-radius:50%;width:40px;height:40px;font-size:20px}
+.close{top:20px;right:25px}
+.modalPrev{left:25px}
+.modalNext{right:25px}
+
+footer{text-align:center;background:#071426;color:#fff;padding:30px}
+
+@media(max-width:800px){
+.grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:550px){
+.grid{grid-template-columns:1fr}
+.hero h1{font-size:32px}
+}
 </style>
 </head>
 
@@ -70,12 +92,12 @@ footer{text-align:center;background:#071426;color:white;padding:30px}
 
 <div class="filters">
 
-<button class="active" onclick="show('all',this)">All</button>
-<button onclick="show('expert',this)">🎤 Expert Sessions</button>
-<button onclick="show('conference',this)">🏛 Conferences</button>
-<button onclick="show('workshop',this)">💻 Workshops / FDP</button>
-<button onclick="show('award',this)">🏆 Awards</button>
-<button onclick="show('news',this)">📰 News</button>
+<button class="active" onclick="filter('all',this)">All</button>
+<button onclick="filter('expert',this)">🎤 Expert Sessions</button>
+<button onclick="filter('conference',this)">🏛 Conferences</button>
+<button onclick="filter('workshop',this)">💻 Workshops / FDP</button>
+<button onclick="filter('award',this)">🏆 Awards</button>
+<button onclick="filter('news',this)">📰 News</button>
 
 <input class="search" id="search"
 placeholder="🔎 Search activity, institution, venue...">
@@ -83,6 +105,20 @@ placeholder="🔎 Search activity, institution, venue...">
 </div>
 
 <div class="grid" id="events"></div>
+
+<!-- PHOTO VIEWER -->
+
+<div class="modal" id="modal">
+
+<button class="close" onclick="closePhoto()">×</button>
+
+<button class="modalPrev" onclick="changePhoto(-1)">‹</button>
+
+<img id="modalImg">
+
+<button class="modalNext" onclick="changePhoto(1)">›</button>
+
+</div>
 
 <footer>
 <strong>Dr. Umakant D. Butkar</strong><br>
@@ -93,10 +129,11 @@ Academician • Researcher • Author • Innovator
 <script>
 
 /* =====================================================
-   ONLY EDIT THIS SECTION TO ADD NEW EVENTS
-   ===================================================== */
+   ONLY EDIT THIS SECTION
+   ADD NEW EVENTS HERE
+===================================================== */
 
-const data = [
+const data=[
 
 {
 type:"expert",
@@ -106,7 +143,14 @@ date:"03 February 2025",
 institution:"JES Institute of Technology, Management & Research",
 venue:"Seminar Hall",
 location:"Nashik, Maharashtra",
-photos:["events/ipr-2025-1.jpg"],
+
+photos:[
+"events/ipr-2025-1.jpg",
+"events/ipr-2025-2.jpg",
+"events/ipr-2025-3.jpg",
+"events/ipr-2025-4.jpg"
+],
+
 link:"https://www.jitnew.jitnashik.edu.in/department/IT/ITseminar.php"
 },
 
@@ -118,7 +162,13 @@ date:"2025",
 institution:"Academic Institution",
 venue:"Conference Hall",
 location:"Maharashtra, India",
-photo:"events/iot-panel.jpg",
+
+photos:[
+"events/iot-1.jpg",
+"events/iot-2.jpg",
+"events/iot-3.jpg"
+],
+
 link:""
 },
 
@@ -130,7 +180,13 @@ date:"2024",
 institution:"Conference Organizing Institution",
 venue:"Conference Venue",
 location:"Maharashtra, India",
-photo:"events/conference-2024.jpg",
+
+photos:[
+"events/conference-1.jpg",
+"events/conference-2.jpg",
+"events/conference-3.jpg"
+],
+
 link:""
 },
 
@@ -142,7 +198,12 @@ date:"2025",
 institution:"Organizing Institution",
 venue:"Institution Campus",
 location:"Maharashtra, India",
-photo:"events/fdp-2025.jpg",
+
+photos:[
+"events/fdp-1.jpg",
+"events/fdp-2.jpg"
+],
+
 link:""
 },
 
@@ -154,7 +215,12 @@ date:"2025",
 institution:"Awarding Organization",
 venue:"Award Ceremony",
 location:"India",
-photo:"events/award-2025.jpg",
+
+photos:[
+"events/award-1.jpg",
+"events/award-2.jpg"
+],
+
 link:""
 },
 
@@ -166,7 +232,11 @@ date:"2025",
 institution:"News Publication",
 venue:"Nashik",
 location:"Maharashtra, India",
-photo:"events/news-2025.jpg",
+
+photos:[
+"events/news-1.jpg"
+],
+
 link:""
 }
 
@@ -174,23 +244,25 @@ link:""
 
 
 /* =====================================================
-   DO NOT EDIT BELOW THIS LINE
-   ===================================================== */
+   DO NOT EDIT BELOW
+===================================================== */
 
 let current="all";
+let currentPhotos=[];
+let photoIndex=0;
 
-function show(type,btn){
+function filter(type,btn){
 
 current=type;
 
-document.querySelectorAll("button")
+document.querySelectorAll(".filters button")
 .forEach(b=>b.classList.remove("active"));
 
-if(btn)btn.classList.add("active");
+btn.classList.add("active");
 
 render();
-
 }
+
 
 document.getElementById("search")
 .addEventListener("input",render);
@@ -202,21 +274,36 @@ let word=document.getElementById("search")
 .value.toLowerCase();
 
 let list=data.filter(e=>
-
 (current=="all"||e.type==current)&&
-
-Object.values(e).join(" ")
-.toLowerCase().includes(word)
-
+Object.values(e).join(" ").toLowerCase().includes(word)
 );
 
-document.getElementById("events").innerHTML=list.map(e=>`
+document.getElementById("events").innerHTML=
+list.map((e,i)=>`
 
 <article class="card">
 
-${e.photo
-?`<img src="${e.photo}" alt="${e.title}">`
-:`<div class="noimg">📸</div>`}
+<div class="gallery">
+
+<img id="img${i}"
+src="${e.photos[0]}"
+onclick="openPhoto(${i})">
+
+${e.photos.length>1?`
+
+<button class="prev"
+onclick="cardPhoto(${i},-1)">‹</button>
+
+<button class="next"
+onclick="cardPhoto(${i},1)">›</button>
+
+<div class="count">
+📷 ${e.photos.length} Photos
+</div>
+
+`:""}
+
+</div>
 
 <div class="content">
 
@@ -234,17 +321,92 @@ ${e.photo
 🌐 ${e.location}
 </div>
 
-${e.link
-?`<p><a class="link" href="${e.link}" target="_blank">
-View Details →</a></p>`
-:""}
+${e.link?
+`<p><a class="link"
+href="${e.link}"
+target="_blank">
+View Details →
+</a></p>`:""}
 
 </div>
+
 </article>
 
 `).join("");
 
 }
+
+
+/* CARD PHOTO */
+
+let cardIndexes={};
+
+function cardPhoto(i,d){
+
+let list=data.filter(e=>
+current=="all"||e.type==current);
+
+let e=list[i];
+
+if(!cardIndexes[i])
+cardIndexes[i]=0;
+
+cardIndexes[i]+=d;
+
+if(cardIndexes[i]<0)
+cardIndexes[i]=e.photos.length-1;
+
+if(cardIndexes[i]>=e.photos.length)
+cardIndexes[i]=0;
+
+document.getElementById("img"+i).src=
+e.photos[cardIndexes[i]];
+
+}
+
+
+/* FULL SCREEN */
+
+function openPhoto(i){
+
+let list=data.filter(e=>
+current=="all"||e.type==current);
+
+currentPhotos=list[i].photos;
+
+photoIndex=0;
+
+document.getElementById("modalImg").src=
+currentPhotos[photoIndex];
+
+document.getElementById("modal").style.display="flex";
+
+}
+
+
+function changePhoto(d){
+
+photoIndex+=d;
+
+if(photoIndex<0)
+photoIndex=currentPhotos.length-1;
+
+if(photoIndex>=currentPhotos.length)
+photoIndex=0;
+
+document.getElementById("modalImg").src=
+currentPhotos[photoIndex];
+
+}
+
+
+function closePhoto(){
+
+document.getElementById("modal")
+.style.display="none";
+
+}
+
 
 render();
 
