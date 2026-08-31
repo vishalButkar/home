@@ -1,414 +1,1376 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<meta name="viewport"
+content="width=device-width,initial-scale=1.0">
 
 <title>Academic Activities | Dr. Umakant D. Butkar</title>
 
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial;background:#f5f8fc;color:#172033}
-nav{background:#071426;padding:18px;text-align:center}
-nav a{color:#fff;text-decoration:none;margin:0 12px;font-size:13px}
-nav a:hover{color:#20bfdc}
 
-.hero{text-align:center;padding:60px 20px;color:#fff;
-background:linear-gradient(135deg,#071426,#123b61)}
-.hero h1{font-size:42px;margin:10px}
-.hero h1 span{color:#20bfdc}
-.hero p{color:#b9c8d8}
+/* ================= BASIC ================= */
 
-.filters{text-align:center;padding:25px 10px}
-button{border:1px solid #ddd;background:#fff;padding:10px 15px;
-border-radius:20px;margin:4px;cursor:pointer}
-button.active,button:hover{background:#1769e0;color:#fff}
-
-.search{display:block;width:90%;max-width:600px;margin:15px auto;
-padding:13px;border:1px solid #ddd;border-radius:8px}
-
-.grid{max-width:1150px;margin:20px auto 70px;padding:10px;
-display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-
-.card{background:#fff;border-radius:15px;overflow:hidden;
-box-shadow:0 5px 20px #0001;transition:.3s}
-.card:hover{transform:translateY(-6px)}
-
-.gallery{position:relative;height:210px;background:#071426}
-.gallery img{width:100%;height:100%;object-fit:cover;cursor:pointer}
-
-.gallery button{position:absolute;top:50%;transform:translateY(-50%);
-background:#0009;color:#fff;border:0;width:35px;height:35px;
-padding:0;border-radius:50%;z-index:2}
-.prev{left:10px}.next{right:10px}
-
-.count{position:absolute;bottom:8px;right:10px;
-background:#000b;color:#fff;padding:5px 9px;border-radius:15px;font-size:10px}
-
-.content{padding:18px}
-.date{color:#1769e0;font-size:12px;font-weight:bold}
-.tag{display:inline-block;background:#071426;color:#fff;
-padding:5px 9px;border-radius:15px;font-size:9px;margin:8px 0}
-h3{margin:8px 0;font-size:17px}
-p{font-size:12px;line-height:1.6;color:#64748b}
-.info{font-size:11px;line-height:1.8}
-.link{color:#1769e0;font-weight:bold;font-size:11px}
-
-/* FULL SCREEN PHOTO */
-.modal{display:none;position:fixed;inset:0;background:#000e;
-z-index:9999;align-items:center;justify-content:center}
-.modal img{max-width:90%;max-height:85%;object-fit:contain}
-.modal button{position:absolute;background:#fff;color:#111;
-border:0;border-radius:50%;width:40px;height:40px;font-size:20px}
-.close{top:20px;right:25px}
-.modalPrev{left:25px}
-.modalNext{right:25px}
-
-footer{text-align:center;background:#071426;color:#fff;padding:30px}
-
-@media(max-width:800px){
-.grid{grid-template-columns:repeat(2,1fr)}
+*{
+    box-sizing:border-box;
 }
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#172033;
+}
+
+a{
+    text-decoration:none;
+}
+
+
+/* ================= NAVIGATION ================= */
+
+nav{
+    background:#071426;
+    padding:18px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    margin:0 10px;
+    font-size:13px;
+}
+
+nav a:hover{
+    color:#20bfdc;
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+    background:linear-gradient(135deg,#071426,#12436b);
+    color:white;
+    text-align:center;
+    padding:65px 20px;
+}
+
+.hero h1{
+    font-size:42px;
+    margin:10px;
+}
+
+.hero h1 span{
+    color:#20bfdc;
+}
+
+.hero p{
+    color:#b9c8d8;
+    line-height:1.6;
+}
+
+
+/* ================= FILTER ================= */
+
+.filters{
+    text-align:center;
+    padding:30px 10px;
+}
+
+.filters button{
+    padding:10px 15px;
+    margin:4px;
+    border:1px solid #ddd;
+    border-radius:20px;
+    background:white;
+    cursor:pointer;
+}
+
+.filters button:hover,
+.filters button.active{
+    background:#1769e0;
+    color:white;
+}
+
+.search{
+    display:block;
+    width:90%;
+    max-width:600px;
+    margin:15px auto;
+    padding:13px;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+
+/* ================= EVENT GRID ================= */
+
+.events{
+    max-width:1150px;
+    margin:20px auto 70px;
+    padding:10px;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:22px;
+}
+
+
+/* ================= CARD ================= */
+
+.card{
+    position:relative;
+
+    background:white;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 5px 20px #0001;
+
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+
+/* ================= EVENT NUMBER ================= */
+
+.event-number{
+
+    position:absolute;
+
+    top:12px;
+    right:12px;
+
+    z-index:5;
+
+    background:#071426;
+
+    color:#20bfdc;
+
+    padding:7px 10px;
+
+    border-radius:20px;
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    box-shadow:
+    0 3px 12px #0005;
+
+}
+
+
+/* ================= PHOTO GALLERY ================= */
+
+.gallery{
+
+    position:relative;
+
+    height:210px;
+
+    background:#071426;
+
+}
+
+.gallery img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    cursor:pointer;
+
+}
+
+
+.gallery button{
+
+    position:absolute;
+
+    top:50%;
+
+    transform:
+    translateY(-50%);
+
+    width:35px;
+
+    height:35px;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:#0009;
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    z-index:3;
+
+}
+
+.gallery button:hover{
+
+    background:#1769e0;
+
+}
+
+
+.prev{
+    left:10px;
+}
+
+.next{
+    right:10px;
+}
+
+
+.photo-count{
+
+    position:absolute;
+
+    bottom:8px;
+
+    right:10px;
+
+    background:#000b;
+
+    color:white;
+
+    padding:5px 9px;
+
+    border-radius:15px;
+
+    font-size:10px;
+
+}
+
+
+/* ================= CARD CONTENT ================= */
+
+.content{
+
+    padding:18px;
+
+}
+
+
+.type{
+
+    display:inline-block;
+
+    background:#071426;
+
+    color:white;
+
+    padding:6px 10px;
+
+    border-radius:15px;
+
+    font-size:9px;
+
+}
+
+
+.date{
+
+    color:#1769e0;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    margin:10px 0;
+
+}
+
+
+h2{
+
+    font-size:18px;
+
+    line-height:1.4;
+
+}
+
+
+.topic{
+
+    color:#1769e0;
+
+    font-weight:bold;
+
+    font-size:11px;
+
+}
+
+
+.info{
+
+    color:#64748b;
+
+    font-size:11px;
+
+    line-height:1.9;
+
+    margin-top:10px;
+
+}
+
+
+.description{
+
+    color:#64748b;
+
+    font-size:11px;
+
+    line-height:1.6;
+
+}
+
+
+.details{
+
+    display:inline-block;
+
+    margin-top:10px;
+
+    color:#1769e0;
+
+    font-size:11px;
+
+    font-weight:bold;
+
+}
+
+
+/* ================= FULL SCREEN PHOTO ================= */
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:#000e;
+
+    z-index:9999;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+.modal img{
+
+    max-width:90%;
+
+    max-height:85%;
+
+    object-fit:contain;
+
+}
+
+
+.modal button{
+
+    position:absolute;
+
+    border:0;
+
+    border-radius:50%;
+
+    width:42px;
+
+    height:42px;
+
+    background:white;
+
+    color:#111;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+}
+
+
+.close{
+
+    top:20px;
+
+    right:25px;
+
+}
+
+
+.modal-prev{
+
+    left:25px;
+
+}
+
+
+.modal-next{
+
+    right:25px;
+
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    background:#071426;
+
+    color:white;
+
+    text-align:center;
+
+    padding:30px;
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:850px){
+
+    .events{
+
+        grid-template-columns:
+        repeat(2,1fr);
+
+    }
+
+}
+
+
 @media(max-width:550px){
-.grid{grid-template-columns:1fr}
-.hero h1{font-size:32px}
+
+    .events{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .hero h1{
+
+        font-size:32px;
+
+    }
+
+    nav a{
+
+        display:inline-block;
+
+        margin:5px;
+
+    }
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
+
+<!-- ==================================================
+     NAVIGATION
+================================================== -->
+
 <nav>
-<a href="index.html">Home</a>
-<a href="publications.html">Publications</a>
-<a href="expert-sessions.html">Academic Activities</a>
+
+<a href="index.html">
+Home
+</a>
+
+<a href="publications.html">
+Publications
+</a>
+
+<a href="expert-sessions.html">
+Academic Activities
+</a>
+
 </nav>
 
+
+
+<!-- ==================================================
+     HERO
+================================================== -->
+
 <section class="hero">
-<p>ACADEMIC • RESEARCH • PROFESSIONAL ACTIVITIES</p>
-<h1>Dr. Umakant <span>D. Butkar</span></h1>
-<p>Expert Sessions • Conferences • Workshops • Awards • News</p>
+
+<p>
+ACADEMIC • RESEARCH • PROFESSIONAL ACTIVITIES
+</p>
+
+<h1>
+Dr. Umakant <span>D. Butkar</span>
+</h1>
+
+<p>
+Expert Sessions • Conference Speaker • FDP / Workshops
+• Awards • News • YouTube
+</p>
+
 </section>
+
+
+
+<!-- ==================================================
+     FILTERS
+================================================== -->
 
 <div class="filters">
 
-<button class="active" onclick="filter('all',this)">All</button>
-<button onclick="filter('expert',this)">🎤 Expert Sessions</button>
-<button onclick="filter('conference',this)">🏛 Conferences</button>
-<button onclick="filter('workshop',this)">💻 Workshops / FDP</button>
-<button onclick="filter('award',this)">🏆 Awards</button>
-<button onclick="filter('news',this)">📰 News</button>
 
-<input class="search" id="search"
-placeholder="🔎 Search activity, institution, venue...">
+<button
+class="active"
+onclick="filterEvents('all',this)">
+All
+</button>
+
+
+<button
+onclick="filterEvents('expert',this)">
+🎤 Expert Sessions
+</button>
+
+
+<button
+onclick="filterEvents('conference',this)">
+🎙️ Conference Speaker
+</button>
+
+
+<button
+onclick="filterEvents('workshop',this)">
+💻 FDP / Workshops
+</button>
+
+
+<button
+onclick="filterEvents('award',this)">
+🏆 Awards
+</button>
+
+
+<button
+onclick="filterEvents('news',this)">
+📰 News Articles
+</button>
+
+
+<button
+onclick="filterEvents('youtube',this)">
+▶️ YouTube Bites
+</button>
+
+
+<input
+class="search"
+id="search"
+placeholder="🔎 Search event, institution, venue...">
 
 </div>
 
-<div class="grid" id="events"></div>
 
-<!-- PHOTO VIEWER -->
 
-<div class="modal" id="modal">
+<!-- ==================================================
+     EVENTS
+================================================== -->
 
-<button class="close" onclick="closePhoto()">×</button>
-
-<button class="modalPrev" onclick="changePhoto(-1)">‹</button>
-
-<img id="modalImg">
-
-<button class="modalNext" onclick="changePhoto(1)">›</button>
+<div
+class="events"
+id="events">
 
 </div>
+
+
+
+<!-- ==================================================
+     PHOTO MODAL
+================================================== -->
+
+<div
+class="modal"
+id="modal">
+
+<button
+class="close"
+onclick="closePhoto()">
+×
+</button>
+
+<button
+class="modal-prev"
+onclick="changePhoto(-1)">
+‹
+</button>
+
+<img
+id="modalImage">
+
+<button
+class="modal-next"
+onclick="changePhoto(1)">
+›
+</button>
+
+</div>
+
+
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
 
 <footer>
-<strong>Dr. Umakant D. Butkar</strong><br>
+
+<strong>
+Dr. Umakant D. Butkar
+</strong>
+
+<br><br>
+
 Academician • Researcher • Author • Innovator
+
 </footer>
+
 
 
 <script>
 
-/* =====================================================
+
+/* ==================================================
+   EVENT DATA
+
    ONLY EDIT THIS SECTION
-   ADD NEW EVENTS HERE
-===================================================== */
+================================================== */
 
-const data=[
+
+const data = [
+
+
+/* ================= EVENT 01 ================= */
 
 {
+id:1,
+
 type:"expert",
+
 title:"Expert Session on Intellectual Property Rights",
+
 topic:"Intellectual Property Rights",
+
 date:"03 February 2025",
-institution:"JES Institute of Technology, Management & Research",
-venue:"Seminar Hall",
-location:"Nashik, Maharashtra",
+
+institution:
+"JES Institute of Technology, Management & Research",
+
+venue:
+"Seminar Hall",
+
+location:
+"Nashik, Maharashtra",
+
+description:
+"Expert session on Intellectual Property Rights.",
 
 photos:[
-"events/ipr-2025-1.jpg",
-"events/ipr-2025-2.jpg",
-"events/ipr-2025-3.jpg"
+
+"events/ipr-1.jpg",
+
+"events/ipr-2.jpg",
+
+"events/ipr-3.jpg",
+
+"events/ipr-4.jpg"
+
 ],
 
-link:"https://www.jitnew.jitnashik.edu.in/department/IT/ITseminar.php"
+link:
+"https://www.jitnew.jitnashik.edu.in/department/IT/ITseminar.php"
+
 },
 
-{
-type:"expert",
-title:"Expert Panel Discussion on Internet of Things",
-topic:"IoT • Smart Systems • Emerging Technologies",
-date:"November 21st, 2025"
-institution:"Industry experts and Academic Institution",
-venue:"Conference Hall",
-location:"Delhi, India",
 
-photos:[
-"events/paneliot.jpg",
-"events/paneliot.jpg"
-],
 
-link:"https://iotsocietyofindia.com/"
-},
+/* ================= EVENT 02 ================= */
 
 {
+id:2,
+
 type:"conference",
-title:"International Conference on Emerging Technologies",
-topic:"Research • Innovation • Emerging Technologies",
-date:"2024",
-institution:"Conference Organizing Institution",
-venue:"Conference Venue",
-location:"Maharashtra, India",
+
+title:"Conference Speaker – Emerging Technologies",
+
+topic:"AI • IoT • Emerging Technologies",
+
+date:"15 November 2025",
+
+institution:
+"ABC Institute of Technology",
+
+venue:
+"Conference Hall",
+
+location:
+"Pune, Maharashtra",
+
+description:
+"Invited speaker at an academic conference.",
 
 photos:[
+
 "events/conference-1.jpg",
+
 "events/conference-2.jpg",
+
 "events/conference-3.jpg"
+
 ],
 
 link:""
+
 },
 
+
+
+/* ================= EVENT 03 ================= */
+
 {
+id:3,
+
 type:"workshop",
-title:"Faculty Development Programme",
-topic:"Emerging Technologies & Research",
-date:"2025",
-institution:"Organizing Institution",
-venue:"Institution Campus",
-location:"Maharashtra, India",
+
+title:"Faculty Development Programme on Emerging Technologies",
+
+topic:"AI • ML • IoT",
+
+date:"20 October 2025",
+
+institution:
+"ABC College of Engineering",
+
+venue:
+"Seminar Hall",
+
+location:
+"Nashik, Maharashtra",
+
+description:
+"Faculty Development Programme focusing on emerging technologies, teaching and research.",
 
 photos:[
+
 "events/fdp-1.jpg",
-"events/fdp-2.jpg"
+
+"events/fdp-2.jpg",
+
+"events/fdp-3.jpg"
+
 ],
 
 link:""
+
 },
 
+
+
+/* ================= EVENT 04 ================= */
+
 {
+id:4,
+
+type:"workshop",
+
+title:"Hands-on Workshop on Internet of Things",
+
+topic:"IoT • Smart Systems",
+
+date:"10 September 2025",
+
+institution:
+"XYZ Institute",
+
+venue:
+"IoT Laboratory",
+
+location:
+"Maharashtra, India",
+
+description:
+"Hands-on technical workshop on Internet of Things and smart systems.",
+
+photos:[
+
+"events/iot-workshop-1.jpg",
+
+"events/iot-workshop-2.jpg"
+
+],
+
+link:""
+
+},
+
+
+
+/* ================= EVENT 05 ================= */
+
+{
+id:5,
+
 type:"award",
-title:"Academic Excellence & Research Recognition",
+
+title:"Academic Excellence Award",
+
 topic:"Academic • Research • Innovation",
-date:"5th October 2023-",
-institution:"Eskill Grow University",
-venue:"Hyderabad- Online",
-location:"India, Hydrabad ",
+
+date:"20 August 2025",
+
+institution:
+"Awarding Organization",
+
+venue:
+"Award Ceremony",
+
+location:
+"India",
+
+description:
+"Recognition for academic, research and innovation contribution.",
 
 photos:[
-"events/award1.jpg"
+
+"events/award-1.jpg",
+
+"events/award-2.jpg"
+
 ],
 
 link:""
+
 },
 
+
+
+/* ================= EVENT 06 ================= */
+
 {
+id:6,
+
 type:"news",
-title:"Research & Innovation Featured in News",
+
+title:"Research & Innovation Featured in Newspaper",
+
 topic:"Research • Innovation • Technology",
-date:"2025",
-institution:"News Publication",
-venue:"Nashik",
-location:"Maharashtra, India",
+
+date:"10 July 2025",
+
+institution:
+"News Publication",
+
+venue:
+"Nashik",
+
+location:
+"Maharashtra, India",
+
+description:
+"News coverage highlighting research and innovation activities.",
 
 photos:[
+
 "events/news-1.jpg"
+
 ],
 
 link:""
+
+},
+
+
+
+/* ================= EVENT 07 ================= */
+
+{
+id:7,
+
+type:"youtube",
+
+title:"Expert Talk on Artificial Intelligence",
+
+topic:"Artificial Intelligence",
+
+date:"05 June 2025",
+
+institution:
+"Academic YouTube Channel",
+
+venue:
+"Online",
+
+location:
+"Online",
+
+description:
+"Video bite / expert discussion on Artificial Intelligence.",
+
+photos:[
+
+"events/youtube-ai.jpg"
+
+],
+
+link:
+"https://www.youtube.com/"
+
 }
+
 
 ];
 
 
-/* =====================================================
-   DO NOT EDIT BELOW
-===================================================== */
+
+/* ==================================================
+   DO NOT EDIT BELOW THIS LINE
+================================================== */
+
 
 let current="all";
+
 let currentPhotos=[];
+
 let photoIndex=0;
 
-function filter(type,btn){
+let cardPhotoIndexes={};
 
-current=type;
 
-document.querySelectorAll(".filters button")
-.forEach(b=>b.classList.remove("active"));
 
-btn.classList.add("active");
+/* ================= FILTER ================= */
 
-render();
+function filterEvents(type,button){
+
+    current=type;
+
+    document
+    .querySelectorAll(".filters button")
+    .forEach(
+        b=>b.classList.remove("active")
+    );
+
+    button.classList.add("active");
+
+    display();
+
 }
 
 
-document.getElementById("search")
-.addEventListener("input",render);
 
+/* ================= SEARCH ================= */
 
-function render(){
-
-let word=document.getElementById("search")
-.value.toLowerCase();
-
-let list=data.filter(e=>
-(current=="all"||e.type==current)&&
-Object.values(e).join(" ").toLowerCase().includes(word)
+document
+.getElementById("search")
+.addEventListener(
+"input",
+display
 );
 
-document.getElementById("events").innerHTML=
-list.map((e,i)=>`
 
-<article class="card">
 
-<div class="gallery">
+/* ================= DISPLAY ================= */
 
-<img id="img${i}"
-src="${e.photos[0]}"
-onclick="openPhoto(${i})">
+function display(){
 
-${e.photos.length>1?`
 
-<button class="prev"
-onclick="cardPhoto(${i},-1)">‹</button>
+    let keyword=
+    document
+    .getElementById("search")
+    .value
+    .toLowerCase();
 
-<button class="next"
-onclick="cardPhoto(${i},1)">›</button>
 
-<div class="count">
-📷 ${e.photos.length} Photos
-</div>
+    let list=
+    data.filter(e=>
 
-`:""}
+        (current=="all" ||
+        e.type==current)
 
-</div>
+        &&
 
-<div class="content">
+        Object.values(e)
+        .join(" ")
+        .toLowerCase()
+        .includes(keyword)
 
-<div class="date">📅 ${e.date}</div>
+    );
 
-<div class="tag">${e.type.toUpperCase()}</div>
 
-<h3>${e.title}</h3>
+    document
+    .getElementById("events")
+    .innerHTML=
 
-<p><b>${e.topic}</b></p>
+    list.map((e,index)=>{
 
-<div class="info">
-🏢 ${e.institution}<br>
-📍 ${e.venue}<br>
-🌐 ${e.location}
-</div>
 
-${e.link?
-`<p><a class="link"
-href="${e.link}"
-target="_blank">
-View Details →
-</a></p>`:""}
+        if(cardPhotoIndexes[e.id]===undefined){
 
-</div>
+            cardPhotoIndexes[e.id]=0;
 
-</article>
+        }
 
-`).join("");
+
+        let photo=
+        e.photos[
+            cardPhotoIndexes[e.id]
+        ];
+
+
+        return `
+
+        <article class="card">
+
+
+            <!-- NUMBER -->
+
+            <div class="event-number">
+
+                #${String(e.id).padStart(2,"0")}
+
+            </div>
+
+
+            <!-- PHOTO -->
+
+            <div class="gallery">
+
+
+                <img
+                id="photo-${e.id}"
+                src="${photo}"
+                alt="${e.title}"
+                onclick="openPhoto(${e.id})">
+
+
+                ${
+                    e.photos.length>1
+
+                    ?
+
+                    `
+
+                    <button
+                    class="prev"
+                    onclick="cardPhoto(${e.id},-1)">
+
+                    ‹
+
+                    </button>
+
+
+                    <button
+                    class="next"
+                    onclick="cardPhoto(${e.id},1)">
+
+                    ›
+
+                    </button>
+
+
+                    <div class="photo-count">
+
+                    📷 ${e.photos.length} Photos
+
+                    </div>
+
+                    `
+
+                    :
+
+                    ""
+
+                }
+
+            </div>
+
+
+            <!-- CONTENT -->
+
+            <div class="content">
+
+
+                <span class="type">
+
+                    ${getType(e.type)}
+
+                </span>
+
+
+                <div class="date">
+
+                    📅 ${e.date}
+
+                </div>
+
+
+                <h2>
+
+                    ${e.title}
+
+                </h2>
+
+
+                <p class="topic">
+
+                    ${e.topic}
+
+                </p>
+
+
+                <p class="description">
+
+                    ${e.description}
+
+                </p>
+
+
+                <div class="info">
+
+                    🏢 ${e.institution}
+
+                    <br>
+
+                    📍 ${e.venue}
+
+                    <br>
+
+                    🌐 ${e.location}
+
+                </div>
+
+
+                ${
+                    e.link
+
+                    ?
+
+                    `
+
+                    <a
+                    class="details"
+                    href="${e.link}"
+                    target="_blank"
+                    rel="noopener">
+
+                    View Details →
+
+                    </a>
+
+                    `
+
+                    :
+
+                    ""
+
+                }
+
+
+            </div>
+
+
+        </article>
+
+        `;
+
+    }).join("");
 
 }
 
 
-/* CARD PHOTO */
 
-let cardIndexes={};
+/* ================= TYPE ================= */
 
-function cardPhoto(i,d){
+function getType(type){
 
-let list=data.filter(e=>
-current=="all"||e.type==current);
+    const names={
 
-let e=list[i];
+        expert:"🎤 EXPERT SESSION",
 
-if(!cardIndexes[i])
-cardIndexes[i]=0;
+        conference:"🎙️ CONFERENCE SPEAKER",
 
-cardIndexes[i]+=d;
+        workshop:"💻 FDP / WORKSHOP",
 
-if(cardIndexes[i]<0)
-cardIndexes[i]=e.photos.length-1;
+        award:"🏆 AWARD",
 
-if(cardIndexes[i]>=e.photos.length)
-cardIndexes[i]=0;
+        news:"📰 NEWS ARTICLE",
 
-document.getElementById("img"+i).src=
-e.photos[cardIndexes[i]];
+        youtube:"▶️ YOUTUBE BITE"
+
+    };
+
+    return names[type] || "ACADEMIC EVENT";
 
 }
 
 
-/* FULL SCREEN */
 
-function openPhoto(i){
+/* ================= CARD PHOTOS ================= */
 
-let list=data.filter(e=>
-current=="all"||e.type==current);
+function cardPhoto(id,d){
 
-currentPhotos=list[i].photos;
+    const event=
+    data.find(e=>e.id===id);
 
-photoIndex=0;
 
-document.getElementById("modalImg").src=
-currentPhotos[photoIndex];
+    cardPhotoIndexes[id]+=d;
 
-document.getElementById("modal").style.display="flex";
+
+    if(
+        cardPhotoIndexes[id]<0
+    ){
+
+        cardPhotoIndexes[id]=
+        event.photos.length-1;
+
+    }
+
+
+    if(
+        cardPhotoIndexes[id]>=
+        event.photos.length
+    ){
+
+        cardPhotoIndexes[id]=0;
+
+    }
+
+
+    document
+    .getElementById(
+        "photo-"+id
+    )
+    .src=
+    event.photos[
+        cardPhotoIndexes[id]
+    ];
 
 }
 
 
-function changePhoto(d){
 
-photoIndex+=d;
+/* ================= OPEN PHOTO ================= */
 
-if(photoIndex<0)
-photoIndex=currentPhotos.length-1;
+function openPhoto(id){
 
-if(photoIndex>=currentPhotos.length)
-photoIndex=0;
+    const event=
+    data.find(e=>e.id===id);
 
-document.getElementById("modalImg").src=
-currentPhotos[photoIndex];
+
+    currentPhotos=
+    event.photos;
+
+    photoIndex=
+    cardPhotoIndexes[id] || 0;
+
+
+    document
+    .getElementById("modalImage")
+    .src=
+    currentPhotos[photoIndex];
+
+
+    document
+    .getElementById("modal")
+    .style.display="flex";
 
 }
 
+
+
+/* ================= NEXT / PREVIOUS ================= */
+
+function changePhoto(direction){
+
+    photoIndex+=direction;
+
+
+    if(photoIndex<0){
+
+        photoIndex=
+        currentPhotos.length-1;
+
+    }
+
+
+    if(
+        photoIndex>=
+        currentPhotos.length
+    ){
+
+        photoIndex=0;
+
+    }
+
+
+    document
+    .getElementById("modalImage")
+    .src=
+    currentPhotos[photoIndex];
+
+}
+
+
+
+/* ================= CLOSE ================= */
 
 function closePhoto(){
 
-document.getElementById("modal")
-.style.display="none";
+    document
+    .getElementById("modal")
+    .style.display="none";
 
 }
 
 
-render();
+
+/* ================= START ================= */
+
+display();
 
 </script>
 
+
 </body>
+
 </html>
