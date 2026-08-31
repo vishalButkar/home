@@ -1,1 +1,570 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Events & Achievements | Dr. Umakant Butkar</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f7fb;
+    color:#172033;
+}
+
+nav{
+    background:#071426;
+    padding:18px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:0 12px;
+    font-size:13px;
+}
+
+nav a:hover{
+    color:#20bfdc;
+}
+
+.hero{
+    background:linear-gradient(135deg,#071426,#12436b);
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero h1{
+    font-size:40px;
+}
+
+.hero span{
+    color:#20bfdc;
+}
+
+.filters{
+    text-align:center;
+    padding:30px 10px;
+}
+
+button{
+    padding:10px 16px;
+    margin:5px;
+    border:1px solid #ddd;
+    border-radius:20px;
+    background:white;
+    cursor:pointer;
+}
+
+button.active,
+button:hover{
+    background:#1769e0;
+    color:white;
+}
+
+.search{
+    display:block;
+    width:90%;
+    max-width:600px;
+    margin:15px auto;
+    padding:13px;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+.events{
+    max-width:1150px;
+    margin:20px auto 70px;
+    padding:10px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 20px #0001;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.no-photo{
+    height:200px;
+    background:#09213b;
+    color:#20bfdc;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:45px;
+}
+
+.content{
+    padding:18px;
+}
+
+.type{
+    display:inline-block;
+    background:#071426;
+    color:white;
+    padding:6px 10px;
+    border-radius:15px;
+    font-size:9px;
+}
+
+.date{
+    color:#1769e0;
+    font-size:12px;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+h2{
+    font-size:18px;
+}
+
+.info{
+    color:#64748b;
+    font-size:11px;
+    line-height:1.8;
+}
+
+.details{
+    display:inline-block;
+    margin-top:12px;
+    color:#1769e0;
+    font-size:11px;
+    font-weight:bold;
+}
+
+footer{
+    background:#071426;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+@media(max-width:800px){
+    .events{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:550px){
+    .events{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:30px;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<a href="index.html">Home</a>
+
+<a href="publications.html">Publications</a>
+
+<a href="events.html">Events & Achievements</a>
+
+</nav>
+
+
+<!-- HEADER -->
+
+<section class="hero">
+
+<p>ACADEMIC • RESEARCH • PROFESSIONAL ACTIVITIES</p>
+
+<h1>
+Dr. Umakant <span>Butkar</span>
+</h1>
+
+<p>
+Expert Sessions • Conference Speaker • Awards • News • YouTube
+</p>
+
+</section>
+
+
+<!-- FILTER -->
+
+<div class="filters">
+
+<button class="active"
+onclick="filterEvents('all',this)">
+All
+</button>
+
+<button onclick="filterEvents('expert',this)">
+🎤 Expert Sessions
+</button>
+
+<button onclick="filterEvents('conference',this)">
+🎙️ Conference Speaker
+</button>
+
+<button onclick="filterEvents('award',this)">
+🏆 Awards
+</button>
+
+<button onclick="filterEvents('news',this)">
+📰 News
+</button>
+
+<button onclick="filterEvents('youtube',this)">
+▶️ YouTube
+</button>
+
+<input
+class="search"
+id="search"
+placeholder="🔎 Search events...">
+
+</div>
+
+
+<!-- EVENTS -->
+
+<div class="events" id="events"></div>
+
+
+<footer>
+
+<strong>
+Dr. Umakant D. Butkar
+</strong>
+
+<br><br>
+
+Academician • Researcher • Author • Innovator
+
+</footer>
+
+
+<script>
+
+
+/* =====================================================
+   ONLY EDIT THIS SECTION
+   ADD YOUR EVENTS HERE
+===================================================== */
+
+
+const data = [
+
+
+/* ---------- EXPERT SESSION ---------- */
+
+{
+type:"expert",
+
+title:"Expert Session on Intellectual Property Rights",
+
+date:"03 February 2025",
+
+institution:"JES Institute of Technology, Management & Research",
+
+venue:"Seminar Hall",
+
+description:"Expert session on Intellectual Property Rights.",
+
+photo:"events/ipr.jpg",
+
+link:"https://www.jitnew.jitnashik.edu.in/department/IT/ITseminar.php"
+},
+
+
+
+/* ---------- CONFERENCE SPEAKER ---------- */
+
+{
+type:"conference",
+
+title:"Conference Speaker – Emerging Technologies",
+
+date:"15 November 2025",
+
+institution:"ABC Institute of Technology",
+
+venue:"Conference Hall",
+
+description:"Invited speaker at an academic conference.",
+
+photo:"events/conference.jpg",
+
+link:"https://example.com"
+},
+
+
+
+/* ---------- AWARD ---------- */
+
+{
+type:"award",
+
+title:"Academic Excellence Award",
+
+date:"20 August 2025",
+
+institution:"Awarding Organization",
+
+venue:"Award Ceremony",
+
+description:"Recognition for academic and research contribution.",
+
+photo:"events/award.jpg",
+
+link:"https://example.com"
+},
+
+
+
+/* ---------- NEWS ARTICLE ---------- */
+
+{
+type:"news",
+
+title:"Research Innovation Featured in Newspaper",
+
+date:"10 July 2025",
+
+institution:"News Publication",
+
+venue:"Nashik",
+
+description:"News coverage of research and innovation activities.",
+
+photo:"events/news.jpg",
+
+link:"https://example.com"
+},
+
+
+
+/* ---------- YOUTUBE ---------- */
+
+{
+type:"youtube",
+
+title:"Expert Talk on Artificial Intelligence",
+
+date:"05 June 2025",
+
+institution:"YouTube / Academic Channel",
+
+venue:"Online",
+
+description:"Video bite / expert discussion on Artificial Intelligence.",
+
+photo:"events/youtube.jpg",
+
+link:"https://www.youtube.com/"
+}
+
+
+];
+
+
+
+/* =====================================================
+   DO NOT CHANGE BELOW
+===================================================== */
+
+
+let current="all";
+
+
+function filterEvents(type,button){
+
+    current=type;
+
+    document
+    .querySelectorAll("button")
+    .forEach(b=>b.classList.remove("active"));
+
+    button.classList.add("active");
+
+    display();
+
+}
+
+
+document
+.getElementById("search")
+.addEventListener("input",display);
+
+
+function display(){
+
+    let search=
+    document
+    .getElementById("search")
+    .value
+    .toLowerCase();
+
+
+    let list=data.filter(e=>
+
+        (current=="all" || e.type==current)
+
+        &&
+
+        Object.values(e)
+        .join(" ")
+        .toLowerCase()
+        .includes(search)
+
+    );
+
+
+    document
+    .getElementById("events")
+    .innerHTML=
+
+    list.map(e=>`
+
+        <div class="card">
+
+
+            ${
+                e.photo
+
+                ?
+
+                `<img
+                src="${e.photo}"
+                alt="${e.title}">`
+
+                :
+
+                `<div class="no-photo">
+                📸
+                </div>`
+            }
+
+
+            <div class="content">
+
+
+                <span class="type">
+
+                ${getType(e.type)}
+
+                </span>
+
+
+                <div class="date">
+
+                📅 ${e.date}
+
+                </div>
+
+
+                <h2>
+
+                ${e.title}
+
+                </h2>
+
+
+                <div class="info">
+
+                🏢 ${e.institution}
+
+                <br>
+
+                📍 ${e.venue}
+
+                <br><br>
+
+                ${e.description}
+
+                </div>
+
+
+                ${
+                    e.link
+
+                    ?
+
+                    `<a
+                    class="details"
+                    href="${e.link}"
+                    target="_blank">
+
+                    View Details →
+
+                    </a>`
+
+                    :
+
+                    ""
+                }
+
+
+            </div>
+
+        </div>
+
+    `).join("");
+
+}
+
+
+function getType(type){
+
+    const names={
+
+        expert:"🎤 EXPERT SESSION",
+
+        conference:"🎙️ CONFERENCE SPEAKER",
+
+        award:"🏆 AWARD",
+
+        news:"📰 NEWS ARTICLE",
+
+        youtube:"▶️ YOUTUBE"
+
+    };
+
+    return names[type];
+
+}
+
+
+display();
+
+</script>
+
+
+</body>
+</html>
