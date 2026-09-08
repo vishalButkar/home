@@ -1,51 +1,179 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Dr. Umakant Butkar - Digital Card</title>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dr. Umakant Butkar | Digital Visiting Card</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    color: #222;
+}
+
+.card {
+    max-width: 500px;
+    margin: 30px auto;
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+}
+
+.header {
+    background: linear-gradient(135deg, #003366, #0066cc);
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+.header h1 {
+    margin: 10px 0;
+    font-size: 28px;
+}
+
+.header h3 {
+    margin: 8px 0;
+    font-weight: normal;
+}
+
+.header p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.content {
+    padding: 25px;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #003366;
+}
+
+.button {
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    background: #f4f6f9;
+    color: #003366;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #003366;
+    color: white;
+}
+
+.primary {
+    background: #0066cc;
+    color: white;
+    border: none;
+}
+
+.primary:hover {
+    background: #003366;
+}
+
+.footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+    color: #777;
+}
+
+</style>
 </head>
 
 <body>
 
-    <h1>Dr. Umakant Butkar</h1>
+<div class="card">
 
-    <h3>Associate Professor | Researcher | Innovator</h3>
+    <div class="header">
 
-    <p>
-        Artificial Intelligence | Data Science | Research
-    </p>
+        <h1>Dr. Umakant Butkar</h1>
 
-    <hr>
+        <h3>Associate Professor | Researcher | Innovator</h3>
 
-    <h2>Contact Me</h2>
+        <p>
+            Artificial Intelligence • Data Science • Research
+        </p>
 
-    <p>
-        <a href="tel:+91-9096481982">📞 Call Me</a>
-    </p>
+    </div>
 
-    <p>
-        <a href="https://wa.me/919096481982">💬 WhatsApp Me</a>
-    </p>
 
-    <p>
-        <a href="mailto:vishal.butkar@email.com">✉️ Email Me</a>
-    </p>
+    <div class="content">
 
-    <hr>
+        <div class="section-title">
+            Contact Me
+        </div>
 
-    <h2>My Professional Profile</h2>
+        <a class="button primary"
+           href="tel:+91-9096481982">
+           📞 Call Me
+        </a>
 
-    <p>
-        <a href="index.html">🌐 View Full Portfolio</a>
-    </p>
+        <a class="button"
+           href="https://wa.me/919096481982"
+           target="_blank">
+           💬 WhatsApp Me
+        </a>
 
-    <p>
-        <a href="index.html#publications">📚 Publications</a>
-    </p>
+        <a class="button"
+           href="mailto:vishal.butkar@email.com">
+           ✉️ Email Me
+        </a>
 
-    <p>
-        <a href="index.html#patents">💡 Patents</a>
-    </p>
+
+        <br>
+
+
+        <div class="section-title">
+            Professional Profile
+        </div>
+
+        <a class="button primary"
+           href="index.html">
+           🌐 View Full Portfolio
+        </a>
+
+        <a class="button"
+           href="index.html#publications">
+           📚 Publications
+        </a>
+
+        <a class="button"
+           href="index.html#patents">
+           💡 Patents & Innovations
+        </a>
+
+    </div>
+
+
+    <div class="footer">
+
+        © Dr. Umakant Butkar<br>
+        Academic • Research • Innovation
+
+    </div>
+
+</div>
 
 </body>
 </html>
