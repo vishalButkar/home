@@ -99,17 +99,6 @@ body {
 .primary:hover {
     background: #003366;
 }
-    <div id="visitorCount"
-     style="
-     text-align:center;
-     margin:15px 0;
-     font-size:14px;
-     font-weight:600;
-     color:#087f23;">
-     🟢 Connecting...
-</div>
-
-</div>
 .footer {
     text-align: center;
     padding: 20px;
@@ -185,6 +174,11 @@ body {
     </div>
 
 
+    <!-- Firebase visitor counter display -->
+    <div id="visitorCount" style="text-align:center; margin:15px 0; font-size:14px; font-weight:600; color:#087f23;">
+        🟢 Connecting...
+    </div>
+
     <div class="footer">
 
         © Dr. Umakant Butkar<br>
@@ -193,438 +187,92 @@ body {
     </div>
 
 </div>
-<!-- Firebase Visitor Counter -->
-<script type="module">
-
-  import { initializeApp } 
-    from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
-
-  import {
-    getDatabase,
-    ref,
-    transaction,
-    onValue,
-    push,
-    set,
-    onDisconnect
-  } 
-    from "https://www.gstatic.com/firebasejs/12.9.0/firebase-database.js";
-
-
-  // Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyARKurflvdAScF7SPIS-Reo4Yx4I6U9xTE",
-    authDomain: "umakant-butkar-visiting-card.firebaseapp.com",
-    databaseURL: "https://umakant-butkar-visiting-card-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "umakant-butkar-visiting-card",
-    storageBucket: "umakant-butkar-visiting-card.firebasestorage.app",
-    messagingSenderId: "729478979666",
-    appId: "1:729478979666:web:2b3ff61ad9e3d6b57f7f8b"
-  };
-
-
-  // Start Firebase
-  const app = initializeApp(firebaseConfig);
-  const db = getDatabase(app);
-
-
-  // -----------------------------------------
-  // TOTAL VISITOR COUNT
-  // -----------------------------------------
-
-  const totalVisitsRef = ref(db, "stats/totalVisits");
-
-  transaction(totalVisitsRef, (current) => {
-    return (current || 0) + 1;
-  });
-
-
-  // -----------------------------------------
-  // LIVE VISITOR COUNT
-  // -----------------------------------------
-
-  const visitorId = push(ref(db, "liveVisitors"));
-  const visitorRef = ref(db, "liveVisitors/" + visitorId.key);
-
-  set(visitorRef, {
-    timestamp: Date.now()
-  });
-
-  onDisconnect(visitorRef).remove();
-
-
-  // -----------------------------------------
-  // DISPLAY COUNTER ON CARD
-  // -----------------------------------------
-
-  const counterBox = document.createElement("div");
-
-  counterBox.id = "firebaseVisitorCounter";
-
-  counterBox.innerHTML = `
-    <div style="
-      margin:25px auto;
-      padding:14px;
-      max-width:420px;
-      text-align:center;
-      background:#f5f7fa;
-      border-radius:12px;
-      font-family:Arial,sans-serif;
-      color:#003f7f;
-      box-shadow:0 2px 8px rgba(0,0,0,0.08);
-    ">
-      <div style="font-size:16px;font-weight:bold;">
-        👁️ <span id="totalVisits">...</span> Profile Visits
-      </div>
-
-      <div style="
-        margin-top:7px;
-        font-size:14px;
-        color:#16823b;
-      ">
-        🟢 <span id="liveVisitors">...</span> Viewing Now
-      </div>
-    </div>
-  `;
-
-  document.body.appendChild(counterBox);
-
-
-  // Total visits display
-  onValue(totalVisitsRef, (snapshot) => {
-
-    const total = snapshot.val() || 0;
-
-    document.getElementById("totalVisits").textContent =
-      total.toLocaleString();
-
-  });
-
-
-  // Live visitors display
-  const liveVisitorsRef = ref(db, "liveVisitors");
-
-  onValue(liveVisitorsRef, (snapshot) => {
-
-    const data = snapshot.val();
-
-    const count = data ? Object.keys(data).length : 0;
-
-    document.getElementById("liveVisitors").textContent = count;
-
-  });
-
-
-  // -----------------------------------------
-  // RECORD QR / WEBSITE SOURCE
-  // -----------------------------------------
-
-  const urlParams = new URLSearchParams(window.location.search);
-
-  const source = urlParams.get("source") || "direct";
-
-  const visitLogRef = push(ref(db, "visitLogs"));
-
-  set(visitLogRef, {
-    source: source,
-    timestamp: new Date().toISOString(),
-    page: window.location.pathname
-  });
-
-</script>
     <!-- Firebase Visitor Counter -->
-<script type="module">
-
-  import { initializeApp } 
-    from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
-
-  import {
-    getDatabase,
-    ref,
-    transaction,
-    onValue,
-    push,
-    set,
-    onDisconnect
-  } 
-    from "https://www.gstatic.com/firebasejs/12.9.0/firebase-database.js";
-
-
-  // Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyARKurflvdAScF7SPIS-Reo4Yx4I6U9xTE",
-    authDomain: "umakant-butkar-visiting-card.firebaseapp.com",
-    databaseURL: "https://umakant-butkar-visiting-card-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "umakant-butkar-visiting-card",
-    storageBucket: "umakant-butkar-visiting-card.firebasestorage.app",
-    messagingSenderId: "729478979666",
-    appId: "1:729478979666:web:2b3ff61ad9e3d6b57f7f8b"
-  };
-
-
-  // Start Firebase
-  const app = initializeApp(firebaseConfig);
-  const db = getDatabase(app);
-
-
-  // -----------------------------------------
-  // TOTAL VISITOR COUNT
-  // -----------------------------------------
-
-  const totalVisitsRef = ref(db, "stats/totalVisits");
-
-  transaction(totalVisitsRef, (current) => {
-    return (current || 0) + 1;
-  });
-
-
-  // -----------------------------------------
-  // LIVE VISITOR COUNT
-  // -----------------------------------------
-
-  const visitorId = push(ref(db, "liveVisitors"));
-  const visitorRef = ref(db, "liveVisitors/" + visitorId.key);
-
-  set(visitorRef, {
-    timestamp: Date.now()
-  });
-
-  onDisconnect(visitorRef).remove();
-
-
-  // -----------------------------------------
-  // DISPLAY COUNTER ON CARD
-  // -----------------------------------------
-
-  const counterBox = document.createElement("div");
-
-  counterBox.id = "firebaseVisitorCounter";
-
-  counterBox.innerHTML = `
-    <div style="
-      margin:25px auto;
-      padding:14px;
-      max-width:420px;
-      text-align:center;
-      background:#f5f7fa;
-      border-radius:12px;
-      font-family:Arial,sans-serif;
-      color:#003f7f;
-      box-shadow:0 2px 8px rgba(0,0,0,0.08);
-    ">
-      <div style="font-size:16px;font-weight:bold;">
-        👁️ <span id="totalVisits">...</span> Profile Visits
-      </div>
-
-      <div style="
-        margin-top:7px;
-        font-size:14px;
-        color:#16823b;
-      ">
-        🟢 <span id="liveVisitors">...</span> Viewing Now
-      </div>
-    </div>
-  `;
-
-  document.body.appendChild(counterBox);
-
-
-  // Total visits display
-  onValue(totalVisitsRef, (snapshot) => {
-
-    const total = snapshot.val() || 0;
-
-    document.getElementById("totalVisits").textContent =
-      total.toLocaleString();
-
-  });
-
-
-  // Live visitors display
-  const liveVisitorsRef = ref(db, "liveVisitors");
-
-  onValue(liveVisitorsRef, (snapshot) => {
-
-    const data = snapshot.val();
-
-    const count = data ? Object.keys(data).length : 0;
-
-    document.getElementById("liveVisitors").textContent = count;
-
-  });
-
-
-  // -----------------------------------------
-  // RECORD QR / WEBSITE SOURCE
-  // -----------------------------------------
-
-  const urlParams = new URLSearchParams(window.location.search);
-
-  const source = urlParams.get("source") || "direct";
-
-  const visitLogRef = push(ref(db, "visitLogs"));
-
-  set(visitLogRef, {
-    source: source,
-    timestamp: new Date().toISOString(),
-    page: window.location.pathname
-  });
-
-</script>
     <script type="module">
-import { initializeApp } 
-from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
 
-import { 
-  getDatabase,
-  ref,
-  onValue,
-  onDisconnect,
-  set
-} 
-from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+        import {
+            getDatabase,
+            ref,
+            runTransaction,
+            onValue,
+            set,
+            onDisconnect,
+            push
+        } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
 
-import {
-  getAuth,
-  signInAnonymously
-}
-from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+        import {
+            getAuth,
+            signInAnonymously
+        } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "umakant-butkar-visiting-card.firebaseapp.com",
-  databaseURL: "https://umakant-butkar-visiting-card-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "umakant-butkar-visiting-card",
-  storageBucket: "umakant-butkar-visiting-card.firebasestorage.app",
-  messagingSenderId: "729478979666",
-  appId: "YOUR_APP_ID"
-};
+        const firebaseConfig = {
+            apiKey: "AIzaSyARKurflvdAScF7SPIS-Reo4Yx4I6U9xTE",
+            authDomain: "umakant-butkar-visiting-card.firebaseapp.com",
+            databaseURL: "https://umakant-butkar-visiting-card-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "umakant-butkar-visiting-card",
+            storageBucket: "umakant-butkar-visiting-card.firebasestorage.app",
+            messagingSenderId: "729478979666",
+            appId: "1:729478979666:web:2b3ff61ad9e3d6b57f7f8b"
+        };
 
-const app = initializeApp(firebaseConfig);
-const db = getDatabase(app);
-const auth = getAuth(app);
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+        const auth = getAuth(app);
+        const counter = document.getElementById("visitorCount");
 
-signInAnonymously(auth).then(() => {
+        signInAnonymously(auth)
+            .then(() => {
+                const visitorId = auth.currentUser.uid;
+                const totalVisitsRef = ref(db, "stats/totalVisits");
 
-    const visitorId = auth.currentUser.uid;
+                return runTransaction(totalVisitsRef, current => (current || 0) + 1)
+                    .then(() => {
+                        const visitorRef = ref(db, "onlineVisitors/" + visitorId);
 
-    const visitorRef = ref(db, "onlineVisitors/" + visitorId);
+                        return set(visitorRef, {
+                            online: true,
+                            timestamp: Date.now()
+                        }).then(() => {
+                            onDisconnect(visitorRef).remove();
 
-    // Mark visitor as online
-    set(visitorRef, {
-        online: true,
-        timestamp: Date.now()
-    });
+                            const liveVisitorsRef = ref(db, "onlineVisitors");
 
-    // Remove visitor when browser closes
-    onDisconnect(visitorRef).remove();
+                            const updateDisplay = () => {
+                                onValue(totalVisitsRef, totalSnapshot => {
+                                    onValue(liveVisitorsRef, liveSnapshot => {
+                                        const total = totalSnapshot.val() || 0;
+                                        const data = liveSnapshot.val();
+                                        const live = data ? Object.keys(data).length : 0;
 
-    // Count visitors
-    const visitorsRef = ref(db, "onlineVisitors");
+                                        if (counter) {
+                                            counter.innerHTML =
+                                                "👁️ " + total.toLocaleString() +
+                                                " Profile Visits &nbsp; | &nbsp; 🟢 " +
+                                                live + " Viewing Now";
+                                        }
+                                    }, { onlyOnce: true });
+                                }, { onlyOnce: true });
+                            };
 
-    onValue(visitorsRef, (snapshot) => {
+                            updateDisplay();
 
-        const visitors = snapshot.val();
+                            const urlParams = new URLSearchParams(window.location.search);
+                            const source = urlParams.get("source") || "direct";
+                            const visitLogRef = push(ref(db, "visitLogs"));
 
-        const count = visitors
-            ? Object.keys(visitors).length
-            : 0;
-
-        document.getElementById("visitorCount").innerText =
-            "🟢 " + count + " Visitors Online";
-    });
-
-});
-</script>
-    <script type="module">
-
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
-
-import {
-    getDatabase,
-    ref,
-    set,
-    onValue,
-    onDisconnect
-}
-from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
-
-import {
-    getAuth,
-    signInAnonymously
-}
-from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
-
-
-const firebaseConfig = {
-    apiKey: "AIzaSyARKurflvdAScF7SPIS-Reo4Yx4I6U9xTE",
-    authDomain: "umakant-butkar-visiting-card.firebaseapp.com",
-    databaseURL: "https://umakant-butkar-visiting-card-default-rtdb.asia-southeast1.firebasedatabase.app",
-    projectId: "umakant-butkar-visiting-card",
-    storageBucket: "umakant-butkar-visiting-card.firebasestorage.app",
-    messagingSenderId: "729478979666",
-    appId: "1:729478979666:web:2b3ff61ad9e3d6b57f7f8b"
-};
-
-
-const app = initializeApp(firebaseConfig);
-
-const db = getDatabase(app);
-
-const auth = getAuth(app);
-
-
-signInAnonymously(auth)
-.then(() => {
-
-    const visitorId = auth.currentUser.uid;
-
-    const visitorRef =
-        ref(db, "onlineVisitors/" + visitorId);
-
-
-    // Mark visitor as online
-    set(visitorRef, {
-        online: true,
-        timestamp: Date.now()
-    });
-
-
-    // Automatically remove visitor
-    // when browser disconnects
-    onDisconnect(visitorRef).remove();
-
-
-    // Listen for online visitors
-    const visitorsRef =
-        ref(db, "onlineVisitors");
-
-
-    onValue(visitorsRef, (snapshot) => {
-
-        const data = snapshot.val();
-
-        const count = data
-            ? Object.keys(data).length
-            : 0;
-
-
-        document.getElementById("visitorCount").innerHTML =
-            "🟢 " + count + " Visitors Online";
-
-    });
-
-})
-.catch((error) => {
-
-    console.error("Firebase Error:", error);
-
-    document.getElementById("visitorCount").innerHTML =
-        "🟢 Visitor counter unavailable";
-
-});
-
-</script>
+                            return set(visitLogRef, {
+                                source: source,
+                                timestamp: new Date().toISOString(),
+                                page: window.location.pathname
+                            });
+                        });
+                    });
+            })
+            .catch(error => {
+                console.error("Firebase visitor counter error:", error);
+                if (counter) counter.innerHTML = "🟢 Visitor counter unavailable";
+            });
+    </script>
 </body>
 </html>
