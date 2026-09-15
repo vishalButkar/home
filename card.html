@@ -108,7 +108,14 @@ body {
      color:#087f23;">
      🟢 Connecting...
 </div>
-
+<div id="visitorCount"
+     style="text-align:center;
+            margin:15px 0;
+            font-size:14px;
+            font-weight:600;
+            color:#087f23;">
+    🟢 Connecting...
+</div>
 .footer {
     text-align: center;
     padding: 20px;
@@ -534,6 +541,96 @@ signInAnonymously(auth).then(() => {
     });
 
 });
+</script>
+    <script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+import {
+    getDatabase,
+    ref,
+    set,
+    onValue,
+    onDisconnect
+}
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+
+import {
+    getAuth,
+    signInAnonymously
+}
+from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+
+const firebaseConfig = {
+    apiKey: "AIzaSyARKurflvdAScF7SPIS-Reo4Yx4I6U9xTE",
+    authDomain: "umakant-butkar-visiting-card.firebaseapp.com",
+    databaseURL: "https://umakant-butkar-visiting-card-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "umakant-butkar-visiting-card",
+    storageBucket: "umakant-butkar-visiting-card.firebasestorage.app",
+    messagingSenderId: "729478979666",
+    appId: "1:729478979666:web:2b3ff61ad9e3d6b57f7f8b"
+};
+
+
+const app = initializeApp(firebaseConfig);
+
+const db = getDatabase(app);
+
+const auth = getAuth(app);
+
+
+signInAnonymously(auth)
+.then(() => {
+
+    const visitorId = auth.currentUser.uid;
+
+    const visitorRef =
+        ref(db, "onlineVisitors/" + visitorId);
+
+
+    // Mark visitor as online
+    set(visitorRef, {
+        online: true,
+        timestamp: Date.now()
+    });
+
+
+    // Automatically remove visitor
+    // when browser disconnects
+    onDisconnect(visitorRef).remove();
+
+
+    // Listen for online visitors
+    const visitorsRef =
+        ref(db, "onlineVisitors");
+
+
+    onValue(visitorsRef, (snapshot) => {
+
+        const data = snapshot.val();
+
+        const count = data
+            ? Object.keys(data).length
+            : 0;
+
+
+        document.getElementById("visitorCount").innerHTML =
+            "🟢 " + count + " Visitors Online";
+
+    });
+
+})
+.catch((error) => {
+
+    console.error("Firebase Error:", error);
+
+    document.getElementById("visitorCount").innerHTML =
+        "🟢 Visitor counter unavailable";
+
+});
+
 </script>
 </body>
 </html>
