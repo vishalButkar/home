@@ -183,6 +183,284 @@ body {
     </div>
 
 </div>
+<!-- Firebase Visitor Counter -->
+<script type="module">
 
+  import { initializeApp } 
+    from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
+
+  import {
+    getDatabase,
+    ref,
+    transaction,
+    onValue,
+    push,
+    set,
+    onDisconnect
+  } 
+    from "https://www.gstatic.com/firebasejs/12.9.0/firebase-database.js";
+
+
+  // Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyARKurflvdAScF7SPIS-Reo4Yx4I6U9xTE",
+    authDomain: "umakant-butkar-visiting-card.firebaseapp.com",
+    databaseURL: "https://umakant-butkar-visiting-card-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "umakant-butkar-visiting-card",
+    storageBucket: "umakant-butkar-visiting-card.firebasestorage.app",
+    messagingSenderId: "729478979666",
+    appId: "1:729478979666:web:2b3ff61ad9e3d6b57f7f8b"
+  };
+
+
+  // Start Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+
+
+  // -----------------------------------------
+  // TOTAL VISITOR COUNT
+  // -----------------------------------------
+
+  const totalVisitsRef = ref(db, "stats/totalVisits");
+
+  transaction(totalVisitsRef, (current) => {
+    return (current || 0) + 1;
+  });
+
+
+  // -----------------------------------------
+  // LIVE VISITOR COUNT
+  // -----------------------------------------
+
+  const visitorId = push(ref(db, "liveVisitors"));
+  const visitorRef = ref(db, "liveVisitors/" + visitorId.key);
+
+  set(visitorRef, {
+    timestamp: Date.now()
+  });
+
+  onDisconnect(visitorRef).remove();
+
+
+  // -----------------------------------------
+  // DISPLAY COUNTER ON CARD
+  // -----------------------------------------
+
+  const counterBox = document.createElement("div");
+
+  counterBox.id = "firebaseVisitorCounter";
+
+  counterBox.innerHTML = `
+    <div style="
+      margin:25px auto;
+      padding:14px;
+      max-width:420px;
+      text-align:center;
+      background:#f5f7fa;
+      border-radius:12px;
+      font-family:Arial,sans-serif;
+      color:#003f7f;
+      box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    ">
+      <div style="font-size:16px;font-weight:bold;">
+        👁️ <span id="totalVisits">...</span> Profile Visits
+      </div>
+
+      <div style="
+        margin-top:7px;
+        font-size:14px;
+        color:#16823b;
+      ">
+        🟢 <span id="liveVisitors">...</span> Viewing Now
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(counterBox);
+
+
+  // Total visits display
+  onValue(totalVisitsRef, (snapshot) => {
+
+    const total = snapshot.val() || 0;
+
+    document.getElementById("totalVisits").textContent =
+      total.toLocaleString();
+
+  });
+
+
+  // Live visitors display
+  const liveVisitorsRef = ref(db, "liveVisitors");
+
+  onValue(liveVisitorsRef, (snapshot) => {
+
+    const data = snapshot.val();
+
+    const count = data ? Object.keys(data).length : 0;
+
+    document.getElementById("liveVisitors").textContent = count;
+
+  });
+
+
+  // -----------------------------------------
+  // RECORD QR / WEBSITE SOURCE
+  // -----------------------------------------
+
+  const urlParams = new URLSearchParams(window.location.search);
+
+  const source = urlParams.get("source") || "direct";
+
+  const visitLogRef = push(ref(db, "visitLogs"));
+
+  set(visitLogRef, {
+    source: source,
+    timestamp: new Date().toISOString(),
+    page: window.location.pathname
+  });
+
+</script>
+    <!-- Firebase Visitor Counter -->
+<script type="module">
+
+  import { initializeApp } 
+    from "https://www.gstatic.com/firebasejs/12.9.0/firebase-app.js";
+
+  import {
+    getDatabase,
+    ref,
+    transaction,
+    onValue,
+    push,
+    set,
+    onDisconnect
+  } 
+    from "https://www.gstatic.com/firebasejs/12.9.0/firebase-database.js";
+
+
+  // Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyARKurflvdAScF7SPIS-Reo4Yx4I6U9xTE",
+    authDomain: "umakant-butkar-visiting-card.firebaseapp.com",
+    databaseURL: "https://umakant-butkar-visiting-card-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "umakant-butkar-visiting-card",
+    storageBucket: "umakant-butkar-visiting-card.firebasestorage.app",
+    messagingSenderId: "729478979666",
+    appId: "1:729478979666:web:2b3ff61ad9e3d6b57f7f8b"
+  };
+
+
+  // Start Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+
+
+  // -----------------------------------------
+  // TOTAL VISITOR COUNT
+  // -----------------------------------------
+
+  const totalVisitsRef = ref(db, "stats/totalVisits");
+
+  transaction(totalVisitsRef, (current) => {
+    return (current || 0) + 1;
+  });
+
+
+  // -----------------------------------------
+  // LIVE VISITOR COUNT
+  // -----------------------------------------
+
+  const visitorId = push(ref(db, "liveVisitors"));
+  const visitorRef = ref(db, "liveVisitors/" + visitorId.key);
+
+  set(visitorRef, {
+    timestamp: Date.now()
+  });
+
+  onDisconnect(visitorRef).remove();
+
+
+  // -----------------------------------------
+  // DISPLAY COUNTER ON CARD
+  // -----------------------------------------
+
+  const counterBox = document.createElement("div");
+
+  counterBox.id = "firebaseVisitorCounter";
+
+  counterBox.innerHTML = `
+    <div style="
+      margin:25px auto;
+      padding:14px;
+      max-width:420px;
+      text-align:center;
+      background:#f5f7fa;
+      border-radius:12px;
+      font-family:Arial,sans-serif;
+      color:#003f7f;
+      box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    ">
+      <div style="font-size:16px;font-weight:bold;">
+        👁️ <span id="totalVisits">...</span> Profile Visits
+      </div>
+
+      <div style="
+        margin-top:7px;
+        font-size:14px;
+        color:#16823b;
+      ">
+        🟢 <span id="liveVisitors">...</span> Viewing Now
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(counterBox);
+
+
+  // Total visits display
+  onValue(totalVisitsRef, (snapshot) => {
+
+    const total = snapshot.val() || 0;
+
+    document.getElementById("totalVisits").textContent =
+      total.toLocaleString();
+
+  });
+
+
+  // Live visitors display
+  const liveVisitorsRef = ref(db, "liveVisitors");
+
+  onValue(liveVisitorsRef, (snapshot) => {
+
+    const data = snapshot.val();
+
+    const count = data ? Object.keys(data).length : 0;
+
+    document.getElementById("liveVisitors").textContent = count;
+
+  });
+
+
+  // -----------------------------------------
+  // RECORD QR / WEBSITE SOURCE
+  // -----------------------------------------
+
+  const urlParams = new URLSearchParams(window.location.search);
+
+  const source = urlParams.get("source") || "direct";
+
+  const visitLogRef = push(ref(db, "visitLogs"));
+
+  set(visitLogRef, {
+    source: source,
+    timestamp: new Date().toISOString(),
+    page: window.location.pathname
+  });
+
+</script>
+    
 </body>
 </html>
