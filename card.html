@@ -1,290 +1,896 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FLZ1GG9487"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FLZ1GG9487"></script>
 
-  gtag('config', 'G-FLZ1GG9487');
-</script>
-<meta charset="UTF-8">
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        function gtag() {
+            dataLayer.push(arguments);
+        }
 
-<title>Dr. Umakant Butkar | Digital Visiting Card</title>
+        gtag('js', new Date());
 
-<style>
-.profile-photo {
-    width: 110px;
-    height: 110px;
-    object-fit: cover;
-    border-radius: 50%;
-    display: block;
-    margin: 0 auto 15px auto;
-    border: 4px solid #0b5ed7;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.20);
-}
-* {
-    box-sizing: border-box;
-}
+        gtag('config', 'G-FLZ1GG9487');
+    </script>
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f6f9;
-    color: #222;
-}
+    <meta charset="UTF-8">
 
-.card {
-    max-width: 500px;
-    margin: 30px auto;
-    background: white;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 5px 25px rgba(0,0,0,0.15);
-}
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-.header {
-    background: linear-gradient(135deg, #003366, #0066cc);
-    color: white;
-    text-align: center;
-    padding: 35px 20px;
-}
+    <title>Dr. Umakant Butkar | Digital Visiting Card</title>
 
-.header h1 {
-    margin: 10px 0;
-    font-size: 28px;
-}
 
-.header h3 {
-    margin: 8px 0;
-    font-weight: normal;
-}
+    <style>
 
-.header p {
-    margin-top: 15px;
-    font-size: 14px;
-}
+        * {
+            box-sizing: border-box;
+        }
 
-.content {
-    padding: 25px;
-}
 
-.section-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: #003366;
-}
+        /* ================================
+           PAGE
+        ================================= */
 
-.button {
-    display: block;
-    text-decoration: none;
-    text-align: center;
-    padding: 15px;
-    margin-bottom: 12px;
-    border-radius: 10px;
-    background: #f4f6f9;
-    color: #003366;
-    font-weight: bold;
-    border: 1px solid #ddd;
-    transition: 0.3s;
-}
+        body {
+            margin: 0;
+            padding: 0;
 
-.button:hover {
-    background: #003366;
-    color: white;
-}
+            font-family: Arial, Helvetica, sans-serif;
 
-.primary {
-    background: #0066cc;
-    color: white;
-    border: none;
-}
+            background: #f4f6f9;
 
-.primary:hover {
-    background: #003366;
-}
-.footer {
-    text-align: center;
-    padding: 20px;
-    font-size: 13px;
-    color: #777;
-}
+            color: #222;
+        }
 
-</style>
+
+        /* ================================
+           MAIN CARD
+        ================================= */
+
+        .card {
+
+            max-width: 500px;
+
+            margin: 30px auto;
+
+            background: white;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 5px 25px rgba(0,0,0,0.15);
+        }
+
+
+        /* ================================
+           PROFILE HEADER
+        ================================= */
+
+        .profile-header {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 18px;
+
+            padding: 25px 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #003b73,
+                    #0878d1
+                );
+
+            color: white;
+        }
+
+
+        /* ================================
+           PROFILE PHOTO
+        ================================= */
+
+        .profile-photo-box {
+
+            width: 100px;
+
+            height: 100px;
+
+            min-width: 100px;
+
+            border: 3px solid white;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+
+            background: white;
+
+            box-shadow:
+                0 4px 12px rgba(0,0,0,0.20);
+        }
+
+
+        .profile-photo-box img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+
+        /* ================================
+           PROFILE INFORMATION
+        ================================= */
+
+        .profile-info {
+
+            flex: 1;
+
+            min-width: 0;
+        }
+
+
+        .profile-info h1 {
+
+            margin: 0 0 6px 0;
+
+            font-size: 25px;
+
+            line-height: 1.2;
+
+            color: white;
+        }
+
+
+        .profile-info h2 {
+
+            margin: 0 0 5px 0;
+
+            font-size: 16px;
+
+            line-height: 1.3;
+
+            font-weight: 500;
+
+            color: white;
+        }
+
+
+        .profile-info p {
+
+            margin: 0 0 8px 0;
+
+            font-size: 14px;
+
+            color: white;
+        }
+
+
+        .profile-info span {
+
+            font-size: 11px;
+
+            line-height: 1.4;
+
+            color: #e8f4ff;
+        }
+
+
+        /* ================================
+           CONTENT
+        ================================= */
+
+        .content {
+
+            padding: 25px;
+        }
+
+
+        /* ================================
+           SECTION TITLE
+        ================================= */
+
+        .section-title {
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+            margin-bottom: 15px;
+
+            color: #003366;
+        }
+
+
+        /* ================================
+           BUTTONS
+        ================================= */
+
+        .button {
+
+            display: block;
+
+            width: 100%;
+
+            text-decoration: none;
+
+            text-align: center;
+
+            padding: 15px;
+
+            margin-bottom: 12px;
+
+            border-radius: 10px;
+
+            background: #f4f6f9;
+
+            color: #003366;
+
+            font-weight: bold;
+
+            border: 1px solid #ddd;
+
+            transition: 0.3s;
+        }
+
+
+        .button:hover {
+
+            background: #003366;
+
+            color: white;
+        }
+
+
+        .primary {
+
+            background: #0066cc;
+
+            color: white;
+
+            border: none;
+        }
+
+
+        .primary:hover {
+
+            background: #003366;
+
+            color: white;
+        }
+
+
+        /* ================================
+           VISITOR COUNTER
+        ================================= */
+
+        #visitorCount {
+
+            margin: 15px 20px;
+
+            padding: 12px;
+
+            text-align: center;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            color: #087f23;
+
+            background: #f4faf5;
+
+            border-radius: 10px;
+
+            border: 1px solid #d8eadc;
+        }
+
+
+        /* ================================
+           FOOTER
+        ================================= */
+
+        .footer {
+
+            text-align: center;
+
+            padding: 20px;
+
+            font-size: 13px;
+
+            line-height: 1.6;
+
+            color: #777;
+
+            border-top: 1px solid #eee;
+        }
+
+
+        /* ================================
+           MOBILE RESPONSIVE
+        ================================= */
+
+        @media (max-width: 420px) {
+
+            .profile-header {
+
+                gap: 12px;
+
+                padding: 20px 15px;
+            }
+
+
+            .profile-photo-box {
+
+                width: 85px;
+
+                height: 85px;
+
+                min-width: 85px;
+            }
+
+
+            .profile-info h1 {
+
+                font-size: 20px;
+            }
+
+
+            .profile-info h2 {
+
+                font-size: 14px;
+            }
+
+
+            .profile-info p {
+
+                font-size: 12px;
+            }
+
+
+            .profile-info span {
+
+                font-size: 10px;
+            }
+
+
+            .content {
+
+                padding: 20px;
+            }
+
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
-<div class="card">
-    <img src="profile.jpg" 
-     alt="Dr. Umakant Dinkar Butkar"
-     class="profile-photo">
 
-    <div class="header">
+    <!-- ==================================
+         MAIN DIGITAL VISITING CARD
+    =================================== -->
 
-        <h1>Dr. Umakant Butkar</h1>
-
-        <h3>Associate Professor | Researcher | Innovator</h3>
-
-        <p>
-            Artificial Intelligence • Data Science • Research
-        </p>
-
-    </div>
+    <div class="card">
 
 
-    <div class="content">
+        <!-- ==================================
+             PROFILE HEADER
+        =================================== -->
 
-        <div class="section-title">
-            Contact Me
+        <div class="profile-header">
+
+
+            <!-- PROFILE PHOTO -->
+
+            <div class="profile-photo-box">
+
+                <img
+                    src="profile.jpg"
+                    alt="Dr. Umakant Dinkar Butkar">
+
+            </div>
+
+
+            <!-- NAME AND DESIGNATION -->
+
+            <div class="profile-info">
+
+                <h1>
+                    Dr. Umakant Butkar
+                </h1>
+
+                <h2>
+                    Associate Professor
+                </h2>
+
+                <p>
+                    Researcher | Innovator
+                </p>
+
+                <span>
+                    Artificial Intelligence • Data Science • Research
+                </span>
+
+            </div>
+
+
         </div>
 
-        <a class="button primary"
-           href="tel:+91-9096481982">
-           📞 Call Me
-        </a>
 
-        <a class="button"
-           href="https://wa.me/919096481982"
-           target="_blank">
-           💬 WhatsApp Me
-        </a>
+        <!-- ==================================
+             CONTENT
+        =================================== -->
 
-        <a class="button"
-           href="mailto:vishal.butkar@email.com">
-           ✉️ Email Me
-        </a>
+        <div class="content">
 
 
-        <br>
+            <!-- CONTACT -->
+
+            <div class="section-title">
+                Contact Me
+            </div>
 
 
-        <div class="section-title">
-            Professional Profile
+            <!-- CALL -->
+
+            <a
+                class="button primary"
+                href="tel:+919096481982">
+
+                📞 Call Me
+
+            </a>
+
+
+            <!-- WHATSAPP -->
+
+            <a
+                class="button"
+                href="https://wa.me/919096481982"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                💬 WhatsApp Me
+
+            </a>
+
+
+            <!-- EMAIL -->
+
+            <a
+                class="button"
+                href="mailto:Umakant.Butkar@ggsf.edu.in">
+
+                ✉️ Email Me
+
+            </a>
+
+
+            <br>
+
+
+            <!-- PROFESSIONAL PROFILE -->
+
+            <div class="section-title">
+
+                Professional Profile
+
+            </div>
+
+
+            <!-- FULL PORTFOLIO -->
+
+            <a
+                class="button primary"
+                href="index.html">
+
+                🌐 View Full Portfolio
+
+            </a>
+
+
+            <!-- PUBLICATIONS -->
+
+            <a
+                class="button"
+                href="index.html#publications">
+
+                📚 Publications
+
+            </a>
+
+
+            <!-- PATENTS -->
+
+            <a
+                class="button"
+                href="index.html#patents">
+
+                💡 Patents & Innovations
+
+            </a>
+
+
         </div>
 
-        <a class="button primary"
-           href="index.html">
-           🌐 View Full Portfolio
-        </a>
 
-        <a class="button"
-           href="index.html#publications">
-           📚 Publications
-        </a>
+        <!-- ==================================
+             FIREBASE VISITOR COUNTER
+        =================================== -->
 
-        <a class="button"
-           href="index.html#patents">
-           💡 Patents & Innovations
-        </a>
+        <div id="visitorCount">
+
+            🟢 Connecting...
+
+        </div>
+
+
+        <!-- ==================================
+             FOOTER
+        =================================== -->
+
+        <div class="footer">
+
+            © Dr. Umakant Butkar
+
+            <br>
+
+            Academic • Research • Innovation
+
+        </div>
+
 
     </div>
 
 
-    <!-- Firebase visitor counter display -->
-    <div id="visitorCount" style="text-align:center; margin:15px 0; font-size:14px; font-weight:600; color:#087f23;">
-        🟢 Connecting...
-    </div>
+    <!-- ==================================
+         FIREBASE
+    =================================== -->
 
-    <div class="footer">
-
-        © Dr. Umakant Butkar<br>
-        Academic • Research • Innovation
-
-    </div>
-
-</div>
-    <!-- Firebase Visitor Counter -->
     <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+
+        /* Firebase App */
 
         import {
+            initializeApp
+        }
+        from
+        "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+
+
+        /* Firebase Realtime Database */
+
+        import {
+
             getDatabase,
+
             ref,
+
             runTransaction,
+
             onValue,
+
             set,
+
             onDisconnect,
+
             push
-        } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+
+        }
+        from
+        "https://www.gstatic.com/firebasejs/12.19.0/firebase-database.js";
+
+
+        /* Firebase Authentication */
 
         import {
+
             getAuth,
+
             signInAnonymously
-        } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+        }
+        from
+        "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+
+        /* ==================================
+           FIREBASE CONFIGURATION
+        =================================== */
 
         const firebaseConfig = {
-            apiKey: "AIzaSyARKurflvdAScF7SPIS-Reo4Yx4I6U9xTE",
-            authDomain: "umakant-butkar-visiting-card.firebaseapp.com",
-            databaseURL: "https://umakant-butkar-visiting-card-default-rtdb.asia-southeast1.firebasedatabase.app",
-            projectId: "umakant-butkar-visiting-card",
-            storageBucket: "umakant-butkar-visiting-card.firebasestorage.app",
-            messagingSenderId: "729478979666",
-            appId: "1:729478979666:web:2b3ff61ad9e3d6b57f7f8b"
+
+            apiKey:
+                "AIzaSyARKurflvdAScF7SPIS-Reo4Yx4I6U9xTE",
+
+            authDomain:
+                "umakant-butkar-visiting-card.firebaseapp.com",
+
+            databaseURL:
+                "https://umakant-butkar-visiting-card-default-rtdb.asia-southeast1.firebasedatabase.app",
+
+            projectId:
+                "umakant-butkar-visiting-card",
+
+            storageBucket:
+                "umakant-butkar-visiting-card.firebasestorage.app",
+
+            messagingSenderId:
+                "729478979666",
+
+            appId:
+                "1:729478979666:web:2b3ff61ad9e3d6b57f7f8b"
+
         };
 
-        const app = initializeApp(firebaseConfig);
-        const db = getDatabase(app);
-        const auth = getAuth(app);
-        const counter = document.getElementById("visitorCount");
+
+        /* ==================================
+           INITIALIZE FIREBASE
+        =================================== */
+
+        const app =
+            initializeApp(firebaseConfig);
+
+
+        const db =
+            getDatabase(app);
+
+
+        const auth =
+            getAuth(app);
+
+
+        const counter =
+            document.getElementById("visitorCount");
+
+
+        /* ==================================
+           ANONYMOUS LOGIN
+        =================================== */
 
         signInAnonymously(auth)
+
+        .then(() => {
+
+
+            /* Visitor ID */
+
+            const visitorId =
+                auth.currentUser.uid;
+
+
+            /* ==================================
+               TOTAL VISITS
+            =================================== */
+
+            const totalVisitsRef =
+                ref(db, "stats/totalVisits");
+
+
+            return runTransaction(
+
+                totalVisitsRef,
+
+                currentValue => {
+
+                    return (currentValue || 0) + 1;
+
+                }
+
+            )
+
             .then(() => {
-                const visitorId = auth.currentUser.uid;
-                const totalVisitsRef = ref(db, "stats/totalVisits");
 
-                return runTransaction(totalVisitsRef, current => (current || 0) + 1)
-                    .then(() => {
-                        const visitorRef = ref(db, "onlineVisitors/" + visitorId);
 
-                        return set(visitorRef, {
-                            online: true,
-                            timestamp: Date.now()
-                        }).then(() => {
-                            onDisconnect(visitorRef).remove();
+                /* ==================================
+                   ONLINE VISITOR
+                =================================== */
 
-                            const liveVisitorsRef = ref(db, "onlineVisitors");
+                const visitorRef =
+                    ref(
+                        db,
+                        "onlineVisitors/" + visitorId
+                    );
 
-                            const updateDisplay = () => {
-                                onValue(totalVisitsRef, totalSnapshot => {
-                                    onValue(liveVisitorsRef, liveSnapshot => {
-                                        const total = totalSnapshot.val() || 0;
-                                        const data = liveSnapshot.val();
-                                        const live = data ? Object.keys(data).length : 0;
 
-                                        if (counter) {
-                                            counter.innerHTML =
-                                                "👁️ " + total.toLocaleString() +
-                                                " Profile Visits &nbsp; | &nbsp; 🟢 " +
-                                                live + " Viewing Now";
-                                        }
-                                    }, { onlyOnce: true });
-                                }, { onlyOnce: true });
-                            };
+                return set(
 
-                            updateDisplay();
+                    visitorRef,
 
-                            const urlParams = new URLSearchParams(window.location.search);
-                            const source = urlParams.get("source") || "direct";
-                            const visitLogRef = push(ref(db, "visitLogs"));
+                    {
 
-                            return set(visitLogRef, {
-                                source: source,
-                                timestamp: new Date().toISOString(),
-                                page: window.location.pathname
-                            });
-                        });
-                    });
-            })
-            .catch(error => {
-                console.error("Firebase visitor counter error:", error);
-                if (counter) counter.innerHTML = "🟢 Visitor counter unavailable";
+                        online: true,
+
+                        timestamp: Date.now()
+
+                    }
+
+                )
+
+                .then(() => {
+
+
+                    /* Remove visitor
+                       when they disconnect */
+
+                    onDisconnect(
+                        visitorRef
+                    ).remove();
+
+
+                    /* ==================================
+                       LIVE VISITOR COUNT
+                    =================================== */
+
+                    const liveVisitorsRef =
+                        ref(db, "onlineVisitors");
+
+
+                    /* Listen for live visitors */
+
+                    onValue(
+
+                        liveVisitorsRef,
+
+                        liveSnapshot => {
+
+
+                            const liveData =
+                                liveSnapshot.val();
+
+
+                            const liveCount =
+                                liveData
+                                ?
+                                Object.keys(liveData).length
+                                :
+                                0;
+
+
+                            /* Get total visits */
+
+                            onValue(
+
+                                totalVisitsRef,
+
+                                totalSnapshot => {
+
+
+                                    const totalVisits =
+                                        totalSnapshot.val() || 0;
+
+
+                                    if (counter) {
+
+                                        counter.innerHTML =
+
+                                            "👁️ "
+                                            +
+                                            totalVisits.toLocaleString()
+                                            +
+                                            " Profile Visits"
+                                            +
+                                            " &nbsp; | &nbsp; "
+                                            +
+                                            "🟢 "
+                                            +
+                                            liveCount
+                                            +
+                                            " Viewing Now";
+
+                                    }
+
+                                },
+
+                                {
+                                    onlyOnce: true
+                                }
+
+                            );
+
+                        }
+
+                    );
+
+
+                    /* ==================================
+                       VISIT SOURCE
+                    =================================== */
+
+                    const urlParams =
+                        new URLSearchParams(
+                            window.location.search
+                        );
+
+
+                    const source =
+                        urlParams.get("source")
+                        ||
+                        "direct";
+
+
+                    /* ==================================
+                       VISIT LOG
+                    =================================== */
+
+                    const visitLogRef =
+                        push(
+                            ref(db, "visitLogs")
+                        );
+
+
+                    return set(
+
+                        visitLogRef,
+
+                        {
+
+                            source: source,
+
+                            timestamp:
+                                new Date().toISOString(),
+
+                            page:
+                                window.location.pathname
+
+                        }
+
+                    );
+
+                });
+
             });
+
+        })
+
+
+        /* ==================================
+           ERROR HANDLING
+        =================================== */
+
+        .catch(error => {
+
+
+            console.error(
+
+                "Firebase visitor counter error:",
+
+                error
+
+            );
+
+
+            if (counter) {
+
+                counter.innerHTML =
+                    "🟢 Visitor counter unavailable";
+
+            }
+
+        });
+
+
     </script>
+
+
 </body>
+
 </html>
